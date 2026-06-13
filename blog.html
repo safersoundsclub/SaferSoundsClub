@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — The Safer Sounds Club</title>
+  <meta name="description" content="Articles on misophonia — what it is, what causes it, how somatic therapy helps, and what people with misophonia actually need to know. Written by a licensed therapist with misophonia.">
+  <meta name="keywords" content="misophonia blog, misophonia articles, misophonia research, misophonia therapy blog, somatic therapy misophonia">
+  <meta property="og:title" content="Blog — The Safer Sounds Club">
+  <meta property="og:description" content="Misophonia articles written by a licensed therapist who has it — grounded in research and real clinical experience.">
+  <meta property="og:type" content="website">
+  <meta name="robots" content="index, follow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --cream: #f5f0e8; --ink: #1a1a1a; --sage: #7a9e8a; --blue-slate: #7a95a8; }
+    body { background: var(--cream); color: var(--ink); font-family: 'Courier Prime', monospace; font-size: 17px; line-height: 1.7; }
+    nav { position: sticky; top: 0; z-index: 100; background: var(--cream); border-bottom: 1px solid rgba(26,26,26,0.12); padding: 14px 40px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-brand { font-family: 'Great Vibes', cursive; font-size: 1.6rem; color: var(--ink); text-decoration: none; }
+    .nav-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
+    .nav-links a { font-family: 'Jost', sans-serif; font-size: 0.7rem; font-weight: 400; letter-spacing: 0.11em; text-transform: uppercase; text-decoration: none; color: var(--ink); opacity: 0.75; }
+    .nav-links a:hover { opacity: 1; }
+    .page-hero { text-align: center; padding: 72px 32px 48px; }
+    .page-hero h1 { font-family: 'Great Vibes', cursive; font-size: clamp(3rem, 8vw, 5.5rem); margin-bottom: 12px; }
+    .page-hero p { font-family: 'Jost', sans-serif; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.6; }
+    .full-dashes { border: none; border-top: 1.5px dashed rgba(26,26,26,0.25); }
+    .blog-grid { max-width: 1100px; margin: 0 auto; padding: 64px 32px 96px; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 48px; }
+    .post-card { display: flex; flex-direction: column; }
+    .post-card a { text-decoration: none; color: var(--ink); }
+    .post-thumb { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; margin-bottom: 20px; transition: opacity 0.2s; background: var(--cream); mix-blend-mode: multiply; }
+    .post-card:hover .post-thumb { opacity: 0.85; }
+    .post-date { font-family: 'Jost', sans-serif; font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.5; margin-bottom: 8px; }
+    .post-title { font-family: 'Courier Prime', monospace; font-size: 1.05rem; font-weight: 700; line-height: 1.45; margin-bottom: 12px; transition: opacity 0.2s; }
+    .post-card:hover .post-title { opacity: 0.7; }
+    .post-excerpt { font-size: 0.9rem; line-height: 1.75; opacity: 0.8; margin-bottom: 16px; }
+    .read-more { font-family: 'Jost', sans-serif; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: underline; text-underline-offset: 4px; color: var(--ink); opacity: 0.55; transition: opacity 0.2s; }
+    .post-card:hover .read-more { opacity: 1; }
+    footer { text-align: center; padding: 32px 32px 48px; border-top: 1.5px solid rgba(26,26,26,0.12); }
+    .footer-links { display: flex; gap: 24px; justify-content: center; font-family: 'Jost', sans-serif; font-size: 0.72rem; letter-spacing: 0.12em; margin-top: 12px; }
+    .footer-links a { text-decoration: none; color: var(--ink); opacity: 0.5; }
+    @media (max-width: 600px) { nav { padding: 14px 20px; } .nav-links { gap: 16px; } .blog-grid { grid-template-columns: 1fr; gap: 40px; } }
+  
+    /* ── HAMBURGER NAV ── */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      flex-direction: column;
+      gap: 5px;
+      flex-shrink: 0;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--ink);
+      transition: transform 0.25s, opacity 0.2s;
+    }
+    nav.open .nav-toggle span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    nav.open .nav-toggle span:nth-child(2) { opacity: 0; }
+    nav.open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    @media (max-width: 720px) {
+      .nav-toggle { display: flex; }
+      nav { position: relative; flex-wrap: wrap; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--cream);
+        border-bottom: 1.5px solid rgba(26,26,26,0.15);
+        padding: 20px 24px 24px;
+        flex-direction: column;
+        gap: 18px;
+        z-index: 200;
+        box-shadow: 0 8px 24px rgba(26,26,26,0.06);
+      }
+      nav.open .nav-links { display: flex; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">the Safer Sounds Club</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="quiz.html">Free Quiz</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+</nav>
+
+<section class="page-hero">
+  <h1>the Blog</h1>
+  <p>What's actually happening in your nervous system — and why it makes sense</p>
+</section>
+
+<hr class="full-dashes">
+
+<div class="blog-grid">
+
+  <article class="post-card">
+    <a href="blog/why-does-the-sound-of-breathing-bother-me.html">
+      <img class="post-thumb" src="images/Beach.png" alt="Why Does The Sound of Breathing Bother Me?">
+      <p class="post-date">May 5, 2026</p>
+      <h2 class="post-title">Why Does The Sound of Breathing Bother Me?</h2>
+      <p class="post-excerpt">The slight catch in someone's inhale. The rhythm of their exhale. The particular quality of their breathing that, to everyone else in the room, registers as nothing at all — and to you, registers as something you cannot stop tracking.</p>
+      <span class="read-more">Read more →</span>
+    </a>
+  </article>
+
+  <article class="post-card">
+    <a href="blog/misophonia-worse-when-stressed.html">
+      <img class="post-thumb" src="images/Wave.png" alt="Why Misophonia Feels Worse When You're Stressed">
+      <p class="post-date">May 1, 2026</p>
+      <h2 class="post-title">Why Misophonia Feels Worse When You're Tired, Stressed, or Already Overwhelmed</h2>
+      <p class="post-excerpt">One of the most important concepts for understanding misophonia is the window of tolerance. Think of your nervous system as having a container — a window of what it can hold before it tips into threat response.</p>
+      <span class="read-more">Read more →</span>
+    </a>
+  </article>
+
+  <article class="post-card">
+    <a href="blog/why-cant-i-ignore-chewing-sounds.html">
+      <img class="post-thumb" src="images/Palm.png" alt="Why Can't I Ignore Chewing Sounds?">
+      <p class="post-date">April 29, 2026</p>
+      <h2 class="post-title">Why Can't I Ignore Chewing Sounds?</h2>
+      <p class="post-excerpt">The part of your brain responsible for detecting and responding to threat processes sensory information in milliseconds. It fires a response before your conscious mind has even registered what's happening — before you've had a chance to take a breath or remind yourself to calm down.</p>
+      <span class="read-more">Read more →</span>
+    </a>
+  </article>
+
+  <article class="post-card">
+    <a href="blog/do-i-overreact-to-chewing.html">
+      <img class="post-thumb" src="images/Umbrella.png" alt="Do I Overreact to Chewing?">
+      <p class="post-date">April 25, 2026</p>
+      <h2 class="post-title">Do I Overreact to Chewing?</h2>
+      <p class="post-excerpt">Many people find chewing sounds annoying, but for some the reaction goes well beyond annoyance — into rage, panic, or an overwhelming urge to escape. It's not an overreaction in the way most people think. It's a learned nervous system response to specific sounds.</p>
+      <span class="read-more">Read more →</span>
+    </a>
+  </article>
+
+  <article class="post-card">
+    <a href="blog/why-coping-strategies-dont-change-misophonia.html">
+      <img class="post-thumb" src="images/Sand Dollar.png" alt="Why Coping Strategies Don't Change Misophonia">
+      <p class="post-date">April 19, 2026</p>
+      <h2 class="post-title">Why Coping Strategies Don't Change Misophonia — And What Actually Does</h2>
+      <p class="post-excerpt">While coping strategies can help you get through the moment, they can't help you unlearn this pattern. The reaction happens before you can intervene. Coping strategies arrive after the fact — managing the aftermath of a response that already happened.</p>
+      <span class="read-more">Read more →</span>
+    </a>
+  </article>
+
+  <article class="post-card">
+    <a href="blog/misophonia-and-relationships.html">
+      <img class="post-thumb" src="images/Starfish.png" alt="Misophonia and Relationships">
+      <p class="post-date">April 13, 2026</p>
+      <h2 class="post-title">Misophonia and Relationships: Why the People You Love Trigger You Most</h2>
+      <p class="post-excerpt">The nervous system monitors the people it needs most — not casually, but carefully and continuously. The people we are most attached to are the people our nervous system watches with the most vigilance.</p>
+      <span class="read-more">Read more →</span>
+    </a>
+  </article>
+
+  <article class="post-card">
+    <a href="blog/why-does-misophonia-feel-so-out-of-control.html">
+      <img class="post-thumb" src="images/Stand.png" alt="Why Does Misophonia Feel So Out Of Control?">
+      <p class="post-date">March 18, 2026</p>
+      <h2 class="post-title">Why Does Misophonia Feel So Out Of Control?</h2>
+      <p class="post-excerpt">The sound itself is almost never the original source of threat. What your nervous system actually learned, somewhere and at some point, is that this type of sound is a signal — a reliable predictor that something overwhelming, unsafe, or uncontrollable was coming.</p>
+      <span class="read-more">Read more →</span>
+    </a>
+  </article>
+
+</div>
+
+<footer>
+  <p style="font-size:0.78rem;font-family:'Courier Prime',monospace;opacity:0.6;margin-bottom:12px;">The Safer Sounds Club, LLC &nbsp;|&nbsp; Educational only — not a substitute for therapy.</p>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html">Products</a>
+    <a href="quiz.html">Free Quiz</a>
+    <a href="faq.html">FAQ</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</footer>
+
+
+<script>
+  (function() {
+    var toggle = document.querySelector('.nav-toggle');
+    var nav = document.querySelector('nav');
+    if (!toggle || !nav) return;
+    toggle.addEventListener('click', function() { nav.classList.toggle('open'); });
+    document.querySelectorAll('.nav-links a').forEach(function(a) {
+      a.addEventListener('click', function() { nav.classList.remove('open'); });
+    });
+  })();
+</script>
+
+</body>
+</html>

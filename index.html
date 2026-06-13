@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Safer Sounds Club | Misophonia Help, Resources & Somatic Therapy</title>
+  <meta name="description" content="If certain sounds make your life smaller — chewing, breathing, sniffling — you're not overreacting. The Safer Sounds Club offers somatic tools and guided resources to help you understand and heal misophonia.">
+  <meta name="keywords" content="misophonia help, misophonia treatment, misophonia therapy, sound sensitivity, misophonia somatic therapy, misophonia EMDR, what is misophonia, misophonia resources">
+  <meta property="og:title" content="The Safer Sounds Club | Misophonia Help & Resources">
+  <meta property="og:description" content="Somatic tools and guided resources for people ready to stop just managing their misophonia.">
+  <meta property="og:type" content="website">
+  <meta name="robots" content="index, follow">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "The Safer Sounds Club",
+    "description": "Misophonia help, somatic therapy tools, and guided resources by licensed therapist Megan Carlson.",
+    "url": "https://safersoundsclub.com"
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #f5f0e8;
+      --ink: #1a1a1a;
+      --sage: #7a9e8a;
+      --blue-slate: #7a95a8;
+      --max-w: 860px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'Courier Prime', 'Courier New', monospace;
+      font-size: 17px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--cream);
+      border-bottom: 1px solid rgba(26,26,26,0.12);
+      padding: 14px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.6rem;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--ink);
+      opacity: 0.75;
+      transition: opacity 0.2s;
+    }
+    .nav-links a:hover { opacity: 1; }
+
+    /* ── HELPERS ── */
+    .line-art {
+      mix-blend-mode: multiply;
+      display: block;
+    }
+
+    .script { font-family: 'Great Vibes', cursive; }
+
+    .caps-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 300;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      line-height: 1.5;
+    }
+
+    .dashes { border: none; border-top: 1.5px dashed rgba(26,26,26,0.3); margin: 0; }
+
+    .section-wrap {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      text-align: center;
+      padding: 60px 32px 0;
+      overflow: hidden;
+    }
+
+    .welcome-badge {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 300;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .welcome-badge .deco {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      opacity: 0.6;
+    }
+    .welcome-badge .deco::before,
+    .welcome-badge .deco::after {
+      content: '';
+      display: inline-block;
+      width: 40px;
+      height: 1px;
+      background: var(--ink);
+    }
+
+    .hero-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(3.5rem, 10vw, 7rem);
+      line-height: 1.1;
+      margin-bottom: 32px;
+    }
+
+    .hero-chair-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .hero-side { flex: 0 0 140px; }
+    .hero-side .caps-label { line-height: 1.6; }
+    .hero-chair-img {
+      flex: 1;
+      max-width: 380px;
+      overflow: hidden;
+    }
+
+    .hero-chair-img img {
+      width: 100%;
+      mix-blend-mode: multiply;
+    }
+
+    /* ── TAGLINE ── */
+    .tagline-section {
+      text-align: center;
+      padding: 48px 32px 32px;
+    }
+    .tagline-caps {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .tagline-script {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      margin-bottom: 32px;
+    }
+    .dots-divider {
+      width: 100%;
+      max-width: 700px;
+      height: 24px;
+      object-fit: cover;
+      margin: 0 auto;
+      display: block;
+      mix-blend-mode: multiply;
+    }
+
+    /* ── PROBLEM SECTION ── */
+    .problem-section {
+      padding: 0;
+      max-width: 100%;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 42vw;
+      min-height: 540px;
+      align-items: center;
+    }
+    .problem-text {
+      padding: 72px clamp(24px, 4vw, 72px) 72px clamp(32px, 7vw, 140px);
+    }
+    .problem-script-h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+    .problem-body {
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .problem-img-col {
+      display: block;
+      height: 100%;
+      min-height: 540px;
+      background: url('images/Beach.png') center/contain no-repeat;
+      mix-blend-mode: multiply;
+      opacity: 0.82;
+    }
+
+    /* ── PAINTED BUTTONS ── */
+    /* Base: all CTA buttons share this shell */
+    .btn-painted {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: var(--ink);
+      font-family: 'Jost', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 20px 64px;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+    /* Sage variant — same PNG brushstroke system as blue, hidden legacy span */
+    .btn-sage .paint-bg { display: none; }
+
+    /* Blue/brushstroke variant: PNG image as bg */
+    .paint-bg-img {
+      position: absolute;
+      inset: 0;
+      overflow: visible;
+      transform: scaleX(1.1) scaleY(1.15);
+    }
+    .paint-bg-img img {
+      width: 100%; height: 100%;
+      object-fit: fill;
+      opacity: 0.92;
+    }
+
+    .btn-painted {
+      transition: transform 0.18s ease, opacity 0.18s ease;
+    }
+    .btn-painted:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+    .btn-label { position: relative; z-index: 2; }
+    .btn-price { font-size: 0.85rem; }
+
+    /* ── DASHED DIVIDER ── */
+    .full-dashes {
+      border: none;
+      border-top: 1.5px dashed rgba(26,26,26,0.25);
+      margin: 8px 0;
+    }
+
+    /* ── NARRATIVE SECTION ── */
+    .narrative-section {
+      padding: 56px 32px;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 440px 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+    .narrative-img img {
+      width: 100%;
+      mix-blend-mode: multiply;
+    }
+    .narrative-body p {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      line-height: 1.85;
+    }
+    .narrative-divider {
+      border: none;
+      border-top: 1px dashed rgba(26,26,26,0.3);
+      margin: 16px 0;
+    }
+
+    /* ── BRIDGE SECTION ── */
+    .bridge-section {
+      text-align: center;
+      padding: 56px 32px;
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    .bridge-h3 {
+      font-family: 'Courier Prime', monospace;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin-bottom: 16px;
+    }
+    .bridge-body {
+      font-size: 1rem;
+      line-height: 1.85;
+      margin-bottom: 16px;
+    }
+    .bridge-italic {
+      font-style: italic;
+      font-size: 0.95rem;
+      opacity: 0.85;
+    }
+
+    /* ── PRODUCT TEASER ── */
+    .product-teaser {
+      text-align: center;
+      padding: 16px 32px 48px;
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    .product-script-h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 12px;
+    }
+    .product-desc {
+      font-size: 1rem;
+      line-height: 1.8;
+      max-width: 640px;
+      margin: 0 auto 24px;
+    }
+
+    /* ── WHAT YOU'LL GET ── */
+    .wyg-section {
+      padding: 32px 32px 48px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    /* WYG section styled with decorative dashed border — no more frame overlay */
+    .wyg-frame { display: none; }
+    .wyg-inner {
+      position: relative;
+      padding: 48px 64px;
+      border: 2px solid rgba(26,26,26,0.18);
+      border-radius: 2px;
+      background: none;
+    }
+    .wyg-inner::before {
+      content: '';
+      position: absolute;
+      inset: 5px;
+      border: 1.5px dashed rgba(26,26,26,0.12);
+      border-radius: 2px;
+      pointer-events: none;
+    }
+    .wyg-script-h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.8rem;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .wyg-item {
+      margin-bottom: 28px;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+    .wyg-item strong {
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* ── READY SECTION ── */
+    .ready-section {
+      padding: 48px 32px;
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    .ready-h3 {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .ready-list {
+      list-style: disc;
+      padding-left: 24px;
+    }
+    .ready-list li {
+      margin-bottom: 12px;
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    /* ── CLOSING ── */
+    .closing-section {
+      padding: 64px 32px 56px;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .closing-script {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .closing-body {
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+
+    /* ── WAVE DIVIDER ── */
+    .wave-divider {
+      width: 100%;
+      height: 40px;
+      overflow: hidden;
+      margin: 16px 0;
+    }
+    .wave-divider img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      mix-blend-mode: multiply;
+    }
+
+    /* ── BIO / ABOUT MEGAN ── */
+    .bio-section {
+      padding: 56px 32px;
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    .bio-inner {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+    .bio-photo {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #d4c9b5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      color: rgba(26,26,26,0.5);
+    }
+    .bio-script-h3 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      margin-bottom: 4px;
+      line-height: 1.2;
+    }
+    .bio-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      opacity: 0.7;
+      margin-bottom: 20px;
+    }
+    .bio-body p {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 32px 32px 48px;
+      border-top: 1.5px solid rgba(26,26,26,0.12);
+    }
+    .footer-disclaimer {
+      font-size: 0.78rem;
+      font-family: 'Courier Prime', monospace;
+      opacity: 0.6;
+      margin-bottom: 24px;
+      letter-spacing: 0.02em;
+    }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      margin-top: 16px;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+    }
+    .footer-links a {
+      text-decoration: none;
+      color: var(--ink);
+      opacity: 0.5;
+    }
+    .footer-links a:hover { opacity: 0.85; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .closing-section { padding: 48px 24px 40px; }
+    }
+    @media (max-width: 768px) {
+      nav { padding: 14px 20px; }
+      .nav-links { gap: 16px; }
+      .nav-links li:first-child { display: none; } /* hide "Home" on mobile */
+      .hero { padding: 40px 20px 0; }
+      .hero-chair-row { gap: 16px; }
+      .hero-side { flex: 0 0 80px; }
+      .hero-side .caps-label { font-size: 0.62rem; }
+      .problem-section { grid-template-columns: 1fr; min-height: auto; }
+      .problem-text { padding: 48px 24px; }
+      .problem-img-col { min-height: 280px; background-size: contain; }
+      .narrative-section { grid-template-columns: 1fr; }
+      .narrative-img { max-width: 180px; margin: 0 auto; }
+      .wyg-inner { padding: 40px 24px; }
+      .bio-inner { grid-template-columns: 1fr; }
+      .bio-photo { margin: 0 auto; }
+      .btn-painted { padding: 18px 40px; }
+    }
+    @media (max-width: 480px) {
+      .hero-chair-row { flex-direction: column; gap: 8px; }
+      .hero-side { text-align: center; flex: none; }
+      .hero-chair-img { max-width: 100%; }
+      nav { padding: 12px 16px; }
+      .nav-links { gap: 12px; }
+    }
+  
+    /* ── HAMBURGER NAV ── */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      flex-direction: column;
+      gap: 5px;
+      flex-shrink: 0;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--ink);
+      transition: transform 0.25s, opacity 0.2s;
+    }
+    nav.open .nav-toggle span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    nav.open .nav-toggle span:nth-child(2) { opacity: 0; }
+    nav.open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    @media (max-width: 720px) {
+      .nav-toggle { display: flex; }
+      nav { position: relative; flex-wrap: wrap; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--cream);
+        border-bottom: 1.5px solid rgba(26,26,26,0.15);
+        padding: 20px 24px 24px;
+        flex-direction: column;
+        gap: 18px;
+        z-index: 200;
+        box-shadow: 0 8px 24px rgba(26,26,26,0.06);
+      }
+      nav.open .nav-links { display: flex; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="index.html" class="nav-brand">the Safer Sounds Club</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="quiz.html">Free Quiz</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="welcome-badge">
+    <span class="deco">———</span>
+    WELCOME TO
+    <span class="deco">———</span>
+  </div>
+  <h1 class="hero-title">the Safer Sounds Club</h1>
+  <div class="hero-chair-row">
+    <div class="hero-side" style="text-align:center;">
+      <p class="caps-label" style="opacity:0.5;letter-spacing:0.2em;line-height:2;">PEACE<br>IN YOUR<br>BODY</p>
+    </div>
+    <div class="hero-chair-img">
+      <img src="images/Chair.png" alt="Beach chair" style="width:100%;display:block;mix-blend-mode:multiply;">
+    </div>
+    <div class="hero-side">
+      <p class="caps-label" style="opacity:0.5;letter-spacing:0.2em;line-height:2;">AT HOME<br>IN YOUR<br>LIFE</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── TAGLINE ── -->
+<section class="tagline-section">
+  <p class="tagline-caps">IF CERTAIN SOUNDS MAKE YOUR LIFE HARDER THAN ANYONE UNDERSTANDS,</p>
+  <p class="tagline-script">you're in the right place.</p>
+</section>
+<!-- ── PROBLEM ── -->
+<section class="problem-section">
+  <div class="problem-text">
+    <h2 class="problem-script-h2">You deserve a life that<br>isn't built around<br>managing sounds.</h2>
+    <p class="problem-body">The headphones in every bag. The meals eaten alone. The exits you've planned before you even sat down. The trips you didn't take. The relationships that are fine, totally fine, as long as nobody breaks out a bag of chips near you.</p>
+    <p class="problem-body">You have built an entire architecture of avoidance and from the outside it looks like you just have a lot of preferences. From the inside it is a full time job with no days off. It's scary, overwhelming, helpless.</p>
+    <p class="problem-body">You don't have to keep suffering this way. Start with the free quiz: two minutes to begin seeing what's driving your sensitivity and what your nervous system needs.</p>
+    <div style="margin-top:32px;">
+      <a href="quiz.html" class="btn-painted btn-sage">
+        <span class="paint-bg-img" aria-hidden="true"><img src="images/brushstroke-sage.png" alt=""></span>
+        <span class="btn-label">Take the Free Quiz</span>
+      </a>
+    </div>
+  </div>
+  <div class="problem-img-col" aria-hidden="true"></div>
+</section>
+
+<hr class="full-dashes">
+
+<div style="text-align:center;padding:16px 0;">
+  <img src="images/Starfish.png" alt="" aria-hidden="true" style="width:110px;display:inline-block;mix-blend-mode:multiply;">
+</div>
+
+<!-- ── NARRATIVE ── -->
+<section class="narrative-section">
+  <div class="narrative-img">
+    <img src="images/Umbrella.png" alt="Beach umbrella line art" style="mix-blend-mode:multiply;width:100%;">
+  </div>
+  <div class="narrative-body">
+    <p style="font-style:italic;font-size:1.05rem;font-weight:700;margin-bottom:20px;">If this is your life:</p>
+    <p>You ate lunch at your desk alone again. Not because you're busy. Because the office kitchen is a minefield of chewing sounds and you learned a long time ago that it's just easier this way.</p>
+    <hr class="narrative-divider">
+    <p>You can hear the bass from your neighbor's car from three houses away and your whole body has already tensed before you've even looked up from what you're doing.</p>
+    <hr class="narrative-divider">
+    <p>You've mentioned it to a therapist before. They nodded and moved on. You got the sense they didn't really know what to do with it. So you stopped bringing it up and started managing it alone, the way you manage most things.</p>
+    <hr class="narrative-divider">
+    <p>Your partner tries. He really tries. He chews quietly, he waits until you're out of the kitchen, he checks in with you before he opens a bag of anything. But watching him shrink himself around your reaction is somehow worse than the reaction itself. You don't want this for him. You don't want this for either of you.</p>
+    <hr class="narrative-divider">
+    <p>Your siblings used to make the sound they knew would send you over the edge on purpose and laugh. And when you reacted, somehow you were the one who was in the wrong.</p>
+  </div>
+</section>
+
+<hr class="full-dashes">
+
+<div style="text-align:center;padding:16px 0;">
+  <img src="images/Starfish.png" alt="" aria-hidden="true" style="width:110px;display:inline-block;mix-blend-mode:multiply;">
+</div>
+
+<!-- ── BRIDGE ── -->
+<section class="bridge-section">
+  <p class="bridge-body" style="font-size:1.1rem;font-weight:700;">You don't need another coping strategy.</p>
+  <p class="bridge-body">You need someone to finally help you understand why this is happening, and what your nervous system has been trying to tell you all along.</p>
+  <p class="bridge-italic">This free 2-minute quiz turns "I don't know why I'm like this" into an actual starting point, showing you what your reactions have been trying to tell you. It costs nothing but two minutes — and it could be the moment this finally makes sense.</p>
+</section>
+
+<!-- ── PRODUCT TEASER ── -->
+<section class="product-teaser">
+  <p class="caps-label" style="margin-bottom:8px;">A guided experience for anyone who has made their world smaller to manage their reaction to sounds, and is ready to start getting it back</p>
+
+  <div style="margin:32px 0;">
+    <a href="https://the-safer-sounds-club.kit.com/products/the-safer-sounds-workshop" target="_blank" class="btn-painted">
+      <span class="paint-bg-img" aria-hidden="true">
+        <img src="images/brushstroke-blue.png" alt="">
+      </span>
+      <span class="btn-label">$17 &nbsp;|&nbsp; Get the Workshop</span>
+    </a>
+  </div>
+</section>
+
+<!-- ── WHAT YOU'LL GET ── -->
+<section class="wyg-section">
+
+  <div class="wyg-inner">
+    <h2 class="wyg-script-h2">What you'll get:</h2>
+    <div class="wyg-item">
+      <strong>A 60-minute guided experience:</strong> Not a lecture. An experience. You'll slow down a real trigger moment and finally understand your reaction from the inside: in your body, not just your mind. Work through it at your own pace, as many times as you need, with as many triggers as you'd like.
+    </div>
+    <div class="wyg-item">
+      <strong>A guided mindfulness and somatic regulation practice:</strong> A body-based practice to return to anytime, before a triggering environment, after a reaction hits, or on the days that things feel like too much.
+    </div>
+    <div class="wyg-item">
+      <strong>The Misophonia Relief Map worksheet:</strong> Your own personal map of what's underneath your reaction: the sensations, emotions, beliefs, and unmet needs your nervous system has been reaching for all along. Specific to your nervous system, your pattern, your history. Bring it to your therapist or work through it on your own. Yours to keep. Come back to it whenever you need.
+    </div>
+  </div>
+</section>
+
+<!-- ── WHEN YOU'RE READY ── -->
+<section class="ready-section">
+  <h3 class="ready-h3">WHEN YOU'RE READY FOR THE NEXT STEP</h3>
+  <p style="margin-bottom:20px;font-size:1rem;">You're ready for this if:</p>
+  <ul class="ready-list">
+    <li>You've eaten alone more times than you want to admit.</li>
+    <li>You've left meals early, turned down trips, made your world smaller to accommodate how difficult this is.</li>
+    <li>You know exactly who the gum chewers are in your life and you've never figured out how to talk to them about it.</li>
+    <li>You've been told you're too sensitive, probably by the same people whose sounds bother you most.</li>
+    <li>You've tried the coping strategies and you're still here.</li>
+    <li>You want to sit at the dinner table. Sleep in your own bed. Say yes to all the things. Have your life back.</li>
+  </ul>
+</section>
+
+<hr class="full-dashes">
+
+<!-- ── CLOSING ── -->
+<section class="closing-section">
+  <div style="margin:0 auto 44px;max-width:480px;">
+    <img src="images/Wave.png" alt="" aria-hidden="true" style="width:100%;display:block;mix-blend-mode:multiply;opacity:0.88;">
+  </div>
+  <h2 class="closing-script">You've spent years managing this.</h2>
+  <p class="closing-body">Sixty minutes to finally understand it &amp; start finding your way back to your life.</p>
+  <a href="https://the-safer-sounds-club.kit.com/products/the-safer-sounds-workshop" target="_blank" class="btn-painted">
+    <span class="paint-bg-img" aria-hidden="true">
+      <img src="images/brushstroke-blue.png" alt="">
+    </span>
+    <span class="btn-label">Get the Workshop</span>
+  </a>
+</section>
+
+
+<!-- ── BIO TEASER ── -->
+<section class="bio-section">
+  <p class="caps-label" style="text-align:center;margin-bottom:32px;">Meet your guide:</p>
+  <div class="bio-inner">
+    <div>
+      <div class="bio-photo">
+        <img src="images/megan-carlson.jpg" alt="Megan Carlson, licensed therapist" style="width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:top center;">
+      </div>
+    </div>
+    <div class="bio-body">
+      <p class="bio-script-h3">Hi, I'm Megan.</p>
+      <p class="bio-label">Licensed Therapist &bull; EMDR &bull; Sensorimotor Psychotherapy &bull; Colorado</p>
+      <p>I've had misophonia for most of my life — and spent years wishing someone had built what I built here. I'm a licensed therapist trained in EMDR and Sensorimotor Psychotherapy. This isn't theory for me. It's personal.</p>
+      <p><a href="about.html" style="font-family:'Jost',sans-serif;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink);text-underline-offset:4px;">My full story &rarr;</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p class="footer-disclaimer">The Safer Sounds Club, LLC &nbsp;|&nbsp; The Safer Sounds Club is educational and is not a substitute for therapy.</p>
+  <div style="margin-bottom:8px;">
+    <a href="quiz.html" class="btn-painted btn-sage" style="padding:16px 48px;font-size:0.72rem;">
+      <span class="paint-bg-img" aria-hidden="true"><img src="images/brushstroke-sage.png" alt=""></span>
+      <span class="btn-label">Join the email list</span>
+    </a>
+  </div>
+  <div class="footer-links">
+    <a href="about.html">About</a>
+    <a href="products.html">Products</a>
+    <a href="quiz.html">Free Quiz</a>
+    <a href="faq.html">FAQ</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</footer>
+
+
+<!-- ── QUIZ POPUP ── -->
+<div id="quiz-popup" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(26,26,26,0.55);align-items:center;justify-content:center;padding:24px;">
+  <div style="background:var(--cream);max-width:480px;width:100%;padding:48px 40px;position:relative;text-align:center;">
+    <button onclick="document.getElementById('quiz-popup').style.display='none';sessionStorage.setItem('popup-dismissed','1');" aria-label="Close" style="position:absolute;top:16px;right:20px;background:none;border:none;font-size:1.3rem;cursor:pointer;opacity:0.4;font-family:'Courier Prime',monospace;">✕</button>
+    <p style="font-family:'Jost',sans-serif;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;opacity:0.5;margin-bottom:16px;">Free 2-Minute Quiz</p>
+    <h2 style="font-family:'Great Vibes',cursive;font-size:2.6rem;line-height:1.25;margin-bottom:20px;">It's about more than the sound.</h2>
+    <p style="font-size:0.97rem;line-height:1.8;margin-bottom:8px;">Underneath the panic and rage is a deeper feeling driving the whole reaction.</p>
+    <p style="font-size:0.97rem;line-height:1.8;margin-bottom:28px;">Two minutes to find yours — and a short guided mindfulness practice, specific to you, to keep.</p>
+    <a href="quiz.html" class="btn-painted btn-sage">
+      <span class="paint-bg-img" aria-hidden="true"><img src="images/brushstroke-sage.png" alt=""></span>
+      <span class="btn-label">See What's Underneath</span>
+    </a>
+    <p style="font-family:'Jost',sans-serif;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;opacity:0.4;margin-top:20px;cursor:pointer;" onclick="document.getElementById('quiz-popup').style.display='none';sessionStorage.setItem('popup-dismissed','1');">No thanks, I'll skip it</p>
+  </div>
+</div>
+<script>
+  // Show popup after 18 seconds, once per session
+  if (!sessionStorage.getItem('popup-dismissed')) {
+    setTimeout(function() {
+      var el = document.getElementById('quiz-popup');
+      el.style.display = 'flex';
+    }, 18000);
+  }
+  // Close on backdrop click
+  document.getElementById('quiz-popup').addEventListener('click', function(e) {
+    if (e.target === this) {
+      this.style.display = 'none';
+      sessionStorage.setItem('popup-dismissed', '1');
+    }
+  });
+</script>
+
+
+<script>
+  (function() {
+    var toggle = document.querySelector('.nav-toggle');
+    var nav = document.querySelector('nav');
+    if (!toggle || !nav) return;
+    toggle.addEventListener('click', function() { nav.classList.toggle('open'); });
+    document.querySelectorAll('.nav-links a').forEach(function(a) {
+      a.addEventListener('click', function() { nav.classList.remove('open'); });
+    });
+  })();
+</script>
+
+</body>
+</html>

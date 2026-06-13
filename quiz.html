@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What's Underneath Your Misophonia? — Free Quiz</title>
+  <meta name="description" content="Take the free misophonia quiz and find out which of five deeper feelings is underneath your sound sensitivity — plus a free guided practice written for your result.">
+  <meta name="keywords" content="misophonia quiz, misophonia test, what type of misophonia do I have, misophonia self-assessment, free misophonia resource">
+  <meta property="og:title" content="What's Underneath Your Misophonia? — Free Quiz">
+  <meta property="og:description" content="Find out which deeper feeling is underneath your misophonia reaction — and get a free guided practice written for your result.">
+  <meta property="og:type" content="website">
+  <meta name="robots" content="index, follow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --cream: #f5f0e8; --ink: #1a1a1a; --sage: #7a9e8a; --blue-slate: #7a95a8; }
+    body { background: var(--cream); color: var(--ink); font-family: 'Courier Prime', monospace; font-size: 17px; line-height: 1.7; min-height: 100vh; }
+    nav { position: sticky; top: 0; z-index: 100; background: var(--cream); border-bottom: 1px solid rgba(26,26,26,0.12); padding: 14px 40px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-brand { font-family: 'Great Vibes', cursive; font-size: 1.6rem; color: var(--ink); text-decoration: none; }
+    .nav-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
+    .nav-links a { font-family: 'Jost', sans-serif; font-size: 0.7rem; font-weight: 400; letter-spacing: 0.11em; text-transform: uppercase; text-decoration: none; color: var(--ink); opacity: 0.75; }
+    .nav-links a:hover { opacity: 1; }
+
+    #quiz-app { max-width: 680px; margin: 0 auto; padding: 64px 32px 96px; min-height: calc(100vh - 60px); }
+
+    .step { display: none; }
+    .step.active { display: block; }
+
+    /* INTRO */
+    .intro-title { font-family: 'Great Vibes', cursive; font-size: clamp(2.6rem, 7vw, 4.5rem); text-align: center; margin-bottom: 28px; line-height: 1.2; }
+    .intro-sub { font-family: 'Jost', sans-serif; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; text-align: center; opacity: 0.55; margin-bottom: 40px; }
+    .intro-copy { font-size: 1rem; line-height: 1.85; margin-bottom: 16px; }
+    .intro-copy p { margin-bottom: 14px; }
+    .intro-disclaimer { font-family: 'Jost', sans-serif; font-size: 0.75rem; font-style: italic; opacity: 0.6; line-height: 1.6; margin-top: 24px; margin-bottom: 36px; }
+    /* btn-start uses painted sage system */
+    .btn-start {
+      position: relative; display: inline-flex; align-items: center; justify-content: center;
+      font-family: 'Jost', sans-serif; font-size: 0.78rem; font-weight: 400;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      padding: 20px 64px; cursor: pointer; border: none; background: none; color: var(--ink);
+      margin: 0 auto;
+    }
+    .btn-start .paint-bg-start {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      border-radius: 4px 6px 5px 3px / 8px 4px 6px 5px;
+      transform: rotate(-0.3deg) scaleX(1.04);
+    }
+    .btn-start .paint-bg-start img {
+      width: 100%; height: 100%; object-fit: fill; opacity: 0.95;
+    }
+    .btn-start .paint-bg-start::before { display: none; }
+    .btn-start .paint-bg-start::after { display: none; }
+    .btn-start .start-label { position: relative; z-index: 2; }
+
+    /* PROGRESS */
+    .progress-wrap { margin-bottom: 40px; }
+    .progress-label { font-family: 'Jost', sans-serif; font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.45; margin-bottom: 8px; text-align: right; }
+    .progress-track { height: 2px; background: rgba(26,26,26,0.12); border-radius: 2px; }
+    .progress-fill { height: 100%; background: var(--sage); border-radius: 2px; transition: width 0.35s ease; }
+
+    /* QUESTIONS */
+    .question-text { font-size: 1.15rem; font-weight: 700; line-height: 1.5; margin-bottom: 28px; }
+    .options-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .option-btn {
+      display: block; width: 100%; text-align: left; padding: 15px 18px;
+      background: none; border: 1.5px solid rgba(26,26,26,0.22); border-radius: 2px;
+      font-family: 'Courier Prime', monospace; font-size: 0.95rem; line-height: 1.55;
+      cursor: pointer; color: var(--ink); transition: border-color 0.15s, background 0.15s;
+    }
+    .option-btn:hover { border-color: var(--sage); background: rgba(122,158,138,0.06); }
+    .option-btn.selected { border-color: var(--ink); background: rgba(26,26,26,0.05); }
+    .option-btn:focus { outline: 2px solid var(--sage); outline-offset: 2px; }
+    .quiz-nav { margin-top: 28px; display: flex; justify-content: flex-end; }
+    .btn-next {
+      font-family: 'Jost', sans-serif; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase;
+      padding: 14px 44px; border: 1.5px solid var(--ink); background: none; cursor: pointer; color: var(--ink);
+      transition: background 0.18s, color 0.18s;
+    }
+    .btn-next:hover:not(:disabled) { background: var(--ink); color: var(--cream); }
+    .btn-next:disabled { opacity: 0.3; cursor: not-allowed; }
+
+    /* EMAIL GATE */
+    .gate-heading { font-family: 'Great Vibes', cursive; font-size: clamp(2.2rem, 6vw, 3.6rem); text-align: center; margin-bottom: 20px; line-height: 1.2; }
+    .gate-body { font-size: 1rem; line-height: 1.85; margin-bottom: 8px; }
+    .gate-note { font-style: italic; font-size: 0.88rem; opacity: 0.7; margin-bottom: 36px; }
+    .email-form { max-width: 420px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+    .email-form input {
+      width: 100%; padding: 13px 16px; font-family: 'Courier Prime', monospace; font-size: 0.95rem;
+      background: none; border: 1.5px solid rgba(26,26,26,0.28); border-radius: 2px; color: var(--ink);
+    }
+    .email-form input:focus { outline: 2px solid var(--sage); outline-offset: 2px; border-color: var(--sage); }
+    .btn-submit {
+      position: relative; display: inline-flex; align-items: center; justify-content: center; align-self: center;
+      font-family: 'Jost', sans-serif; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase;
+      padding: 18px 52px; cursor: pointer; border: none; background: none; color: var(--ink);
+    }
+    .btn-submit .paint-bg { position: absolute; inset: 0; overflow: hidden; border-radius: 4px 6px 5px 3px / 8px 4px 6px 5px; transform: rotate(-0.3deg) scaleX(1.04); }
+    .btn-submit .paint-bg img { width: 100%; height: 100%; object-fit: fill; opacity: 0.95; }
+    .btn-submit .label { position: relative; z-index: 2; }
+    .privacy-note { text-align: center; font-size: 0.72rem; font-family: 'Jost', sans-serif; opacity: 0.45; }
+
+    /* RESULTS */
+    .result-emotion { font-family: 'Jost', sans-serif; font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.5; text-align: center; margin-bottom: 8px; }
+    .result-type { font-family: 'Great Vibes', cursive; font-size: clamp(3rem, 8vw, 5rem); text-align: center; margin-bottom: 8px; line-height: 1.15; }
+    .result-subtitle { font-family: 'Jost', sans-serif; font-size: 0.85rem; letter-spacing: 0.06em; text-align: center; opacity: 0.7; margin-bottom: 32px; font-style: italic; }
+    .result-body { font-size: 1rem; line-height: 1.85; margin-bottom: 20px; }
+    .result-body p { margin-bottom: 14px; }
+    .result-affirmation { border-left: 3px solid var(--sage); padding: 12px 20px; margin: 24px 0; font-size: 0.95rem; font-style: italic; line-height: 1.7; }
+    .result-next { margin-top: 32px; padding-top: 28px; border-top: 1.5px dashed rgba(26,26,26,0.2); }
+    .result-next-label { font-family: 'Jost', sans-serif; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.5; margin-bottom: 12px; }
+    .result-next p { font-size: 0.97rem; line-height: 1.8; margin-bottom: 24px; }
+    .btn-workshop {
+      position: relative; display: inline-flex; align-items: center; justify-content: center;
+      text-decoration: none; color: var(--ink); font-family: 'Jost', sans-serif; font-size: 0.78rem;
+      font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; padding: 18px 52px;
+      cursor: pointer; border: none; background: none;
+    }
+    .btn-workshop .bg-img { position: absolute; inset: 0; border-radius: 4px 6px 5px 3px / 8px 4px 6px 5px; overflow: hidden; transform: rotate(-0.3deg) scaleX(1.04); }
+    .btn-workshop .bg-img img { width: 100%; height: 100%; object-fit: fill; opacity: 0.95; }
+    .btn-workshop .label { position: relative; z-index: 2; }
+    .retake-link { display: block; margin-top: 28px; text-align: center; font-family: 'Jost', sans-serif; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); opacity: 0.4; cursor: pointer; text-decoration: underline; text-underline-offset: 4px; }
+    .retake-link:hover { opacity: 0.75; }
+
+    @media (max-width: 600px) {
+      nav { padding: 14px 20px; }
+      .nav-links { gap: 16px; }
+      #quiz-app { padding: 40px 20px 72px; }
+    }
+  
+    /* ── HAMBURGER NAV ── */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      flex-direction: column;
+      gap: 5px;
+      flex-shrink: 0;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--ink);
+      transition: transform 0.25s, opacity 0.2s;
+    }
+    nav.open .nav-toggle span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    nav.open .nav-toggle span:nth-child(2) { opacity: 0; }
+    nav.open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    @media (max-width: 720px) {
+      .nav-toggle { display: flex; }
+      nav { position: relative; flex-wrap: wrap; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--cream);
+        border-bottom: 1.5px solid rgba(26,26,26,0.15);
+        padding: 20px 24px 24px;
+        flex-direction: column;
+        gap: 18px;
+        z-index: 200;
+        box-shadow: 0 8px 24px rgba(26,26,26,0.06);
+      }
+      nav.open .nav-links { display: flex; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">the Safer Sounds Club</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="quiz.html">Free Quiz</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+</nav>
+
+<div id="quiz-app">
+
+  <!-- INTRO -->
+  <div class="step active" data-step="intro">
+    <h1 class="intro-title">Five Emotions Driving Your Misophonia: What's Yours?</h1>
+    <p class="intro-sub">Free 2-Minute Quiz</p>
+    <div class="intro-copy">
+      <p>The chewing, the breathing, the tapping — it feels like the sound is the problem, like if it just stopped, you'd be okay.</p>
+      <p>But to be honest, misophonia was never just about the sound. Somewhere along the way, a specific noise got bound to a feeling your body couldn't escape, and it's been sounding the alarm ever since — which means the thing that actually drives your reaction isn't in your ears at all. It's underneath.</p>
+      <p>In two minutes, you'll get a glimpse of what's underneath. Once you see it, the reaction you've judged yourself for will finally start to make sense.</p>
+      <p>Answer from your body, not your head — the first thing that feels true usually is. You'll leave with an affirmation written for you, and a short guided audio practice, specific to what you find.</p>
+    </div>
+    <p class="intro-disclaimer">You're safe here. This is gentle reflection, not diagnosis or therapy. If something stirs, there's no rush — go at your own pace, seek support if you need, and stop any time.</p>
+    <button class="btn-start" id="start-btn">
+      <span class="paint-bg-start" aria-hidden="true"><img src="images/brushstroke-sage.png" alt=""></span>
+      <span class="start-label">Begin →</span>
+    </button>
+  </div>
+
+  <!-- QUESTIONS RENDERED BY JS -->
+  <div id="questions-container"></div>
+
+  <!-- EMAIL GATE -->
+  <div class="step" data-step="gate">
+    <h2 class="gate-heading">This is the part where you stop being the only one who gets it.</h2>
+    <p class="gate-body">Your result is on the next screen.</p>
+    <p class="gate-body">Your email is simply how we stay in touch, so the understanding doesn't end when you close the tab.</p>
+    <p class="gate-note">No spam. Only what helps. Leave whenever you need to.</p>
+    <form class="email-form" id="email-form" novalidate>
+      <input type="text" id="fname" name="firstName" placeholder="First name" required autocomplete="given-name">
+      <input type="email" id="femail" name="email" placeholder="Email address" required autocomplete="email">
+      <button type="submit" class="btn-submit">
+        <span class="paint-bg"><img src="images/brushstroke-sage.png" alt=""></span>
+        <span class="label">See My Result →</span>
+      </button>
+      <p class="privacy-note">No spam. Only what helps. Leave whenever you need to.</p>
+    </form>
+  </div>
+
+  <!-- RESULT -->
+  <div class="step" data-step="result">
+    <p class="result-emotion">Your result</p>
+    <h2 class="result-type" id="result-type"></h2>
+    <p class="result-subtitle" id="result-subtitle"></p>
+    <div class="result-body" id="result-body"></div>
+    <div class="result-affirmation" id="result-affirmation"></div>
+    <div class="result-next">
+      <p class="result-next-label">What's next</p>
+      <p id="result-next-copy"></p>
+      <a href="https://the-safer-sounds-club.kit.com/products/the-safer-sounds-workshop" target="_blank" class="btn-workshop">
+        <span class="bg-img">
+          <img src="https://safersoundsclub.com/_assets/media/7b4e8e7951937c898ebff9e57a1e866f.png" alt="" aria-hidden="true">
+        </span>
+        <span class="label">Get the Workshop — $17</span>
+      </a>
+    </div>
+    <span class="retake-link" id="retake-btn">Retake the quiz</span>
+  </div>
+
+</div>
+
+<script>
+// ── QUIZ DATA (Megan's exact content) ───────────────────────────────
+// A = Overwhelm | B = Helplessness | C = Trapped | D = Swallowed No | E = Carrying It Alone
+
+const QUESTIONS = [
+  {
+    text: "When a trigger sound starts, the first wave is…",
+    options: [
+      { text: "A flood — too much, all at once, like the volume of everything turns up.", type: "A" },
+      { text: "A sinking helplessness — here it is again, and there's nothing I can do.", type: "B" },
+      { text: "A trapped, need-to-flee charge with nowhere to put it.", type: "C" },
+      { text: "A hot flare of stop — you can't do that to me.", type: "D" },
+      { text: "A lonely ache — I love these people. Why does being near them cost me this much?", type: "E" },
+    ]
+  },
+  {
+    text: "The hardest part isn't the sound itself. It's…",
+    options: [
+      { text: "How much everything gets to me — not just this.", type: "A" },
+      { text: "Feeling powerless over my own reaction.", type: "B" },
+      { text: "That I can't just leave the room.", type: "C" },
+      { text: "That I can never say what I actually need.", type: "D" },
+      { text: "Going through it without anyone really getting it.", type: "E" },
+    ]
+  },
+  {
+    text: "When it's happening, your body most wants to…",
+    options: [
+      { text: "Shut everything out — shrink how much is coming in.", type: "A" },
+      { text: "Freeze. Brace, and endure it.", type: "B" },
+      { text: "Bolt. Get out, now.", type: "C" },
+      { text: "Push it away — make it stop.", type: "D" },
+      { text: "Disappear quietly, so no one notices.", type: "E" },
+    ]
+  },
+  {
+    text: "It tends to be worst in places where…",
+    options: [
+      { text: "There's a lot going on at once.", type: "A" },
+      { text: "I have no control over what happens.", type: "B" },
+      { text: "I'm stuck and can't get out — the table, the car, the meeting.", type: "C" },
+      { text: "Someone's crossing into my space and I can't say so.", type: "D" },
+      { text: "I'm with the people closest to me.", type: "E" },
+    ]
+  },
+  {
+    text: "After a reaction, the thought that comes is…",
+    options: [
+      { text: "Why am I so sensitive to everything?", type: "A" },
+      { text: "There's nothing I can do about this.", type: "B" },
+      { text: "I can't keep doing this — I have to get out.", type: "C" },
+      { text: "I hate that I couldn't just say something.", type: "D" },
+      { text: "I've hurt them again, and now there's more distance between us.", type: "E" },
+    ]
+  },
+  {
+    text: "If you could say one true thing to the person making the sound, it would be…",
+    options: [
+      { text: "Everything is so loud to me right now.", type: "A" },
+      { text: "I don't know how to stop this happening to me.", type: "B" },
+      { text: "I need to be able to leave when I need to.", type: "C" },
+      { text: "I needed you to stop, and I never felt allowed to ask.", type: "D" },
+      { text: "I love you, and right now I don't know how to be near you.", type: "E" },
+    ]
+  },
+  {
+    text: "The thing you most wish someone understood is…",
+    options: [
+      { text: "I'm not difficult. I just feel everything more.", type: "A" },
+      { text: "This isn't a choice. It happens to me.", type: "B" },
+      { text: "I'm not being rude — I'm trying not to panic.", type: "C" },
+      { text: "I have needs too, and they are not too much.", type: "D" },
+      { text: "How alone this has been.", type: "E" },
+    ]
+  },
+];
+
+const RESULTS = {
+  A: {
+    type: "Overwhelm",
+    subtitle: "The world has always come in louder for you.",
+    body: `<p>You weren't built with a thinner skin by mistake. Some nervous systems take in more — more sound, more texture, more of the room — and yours is one of them. That sensitivity isn't the flaw the world made it out to be. It's the soil misophonia grew in, and it's also part of how much you notice, feel, and care.</p>
+<p>Here's what that means: the reaction isn't you being difficult. It's a finely tuned system doing exactly what it learned to do when too much had nowhere to go. Your body isn't broken — it's been brilliant, and it's been alone.</p>
+<p>Your nervous system learned this, which means it can learn something else. Not by toughening up, but by being met. A gentler place to begin is learning to turn the volume down from the inside, in the moments it spikes.</p>`,
+    affirmation: "\"My sensitivity isn't too much. It's how deeply I notice, feel, and care.\"",
+    next: "The Safer Sounds Workshop. In one gentle hour, we go beneath the sound to what's actually always been too much — and you begin learning to turn the volume down from the inside, instead of white-knuckling against a world that comes in loud. The softest possible place to start."
+  },
+  B: {
+    type: "Helplessness",
+    subtitle: "You learned there was nothing you could do.",
+    body: `<p>Underneath the reaction is an old, sinking helplessness — the sense that this is happening to you and there's no lever to pull. That feeling isn't weakness. At some point your system met a moment it couldn't escape and couldn't change, and it filed the sound under danger. Every trigger since has re-run that verdict.</p>
+<p>The cruelty of it is that the protective charge — the part of you that wants to do something — usually can't complete. You can't leave, you can't make it stop, so the activation just builds. That's not you failing to cope. That's a response that was never allowed to finish.</p>
+<p>It can finish. That's the heart of this work: letting the body do, safely, what it always needed to do — and registering, maybe for the first time, it's over, I did something, I'm not powerless here.</p>`,
+    affirmation: "\"I'm not always powerless. I can find something to do.\"",
+    next: "The Safer Sounds Workshop. It's the first place that stuck, helpless charge gets somewhere to go. In one hour we meet the feeling underneath the reaction — gently, in the body — so you can begin to feel something you may not have felt in a long time: that there is something you can do here."
+  },
+  C: {
+    type: "Trapped",
+    subtitle: "The worst of it lands in the rooms you can't walk out of.",
+    body: `<p>The dinner table, the car, the meeting, the bed. That's not a coincidence. When there's no exit, the system can't flee, so it braces instead — and it's been bracing for so long it may have forgotten it's bracing at all.</p>
+<p>This is why willpower never reaches it. You're not choosing to react; you're a body stuck in a room with no door, doing the only thing it knows how to do. The reaction isn't the problem — it's your body's solution to being trapped.</p>
+<p>What changes things isn't gritting through one more meal. It's having something to do inside the trapped feeling — a way to find an exit on the inside when there isn't one on the outside.</p>`,
+    affirmation: "\"My body learned to brace to keep me safe. It's allowed to soften with safe people now.\"",
+    next: "The Safer Sounds Workshop. In one hour we go beneath the sound to the braced, no-exit feeling under it — and you begin finding an exit on the inside, the one willpower could never reach. The gentlest first step out of the trapped room."
+  },
+  D: {
+    type: "The Swallowed No",
+    subtitle: "Underneath your reaction is a boundary that never got to be spoken.",
+    body: `<p>An impulse to say stop, that's too much, I need space — that couldn't come out, or came out once and was met with rejection. So you learned to hold the protest in. Misophonia, in part, is that swallowed "no" finally finding a body to live in.</p>
+<p>The rage that arrives now isn't you being unreasonable. It's a boundary, decades late, trying to complete itself. Your needs are not too much. They never were.</p>
+<p>Healing here looks like learning to feel that "no" and speak it — in your body first, then out loud, with the people who matter now. Not a wall thrown up in panic, but a boundary you can actually set and survive setting.</p>`,
+    affirmation: "\"My needs are not too much. They never were.\"",
+    next: "The Safer Sounds Workshop. There's more to learn about the \"no\" underneath this — and that's exactly where the workshop begins. In one hour we meet the boundary and needs underneath your reaction, gently, so it can finally start to move."
+  },
+  E: {
+    type: "Carrying It Alone",
+    subtitle: "The sound that hurts most is almost always made by the people you're closest to.",
+    body: `<p>And that's the cruelest part. You feel invaded by someone you love and can't leave, and you've mostly gone through it in private: hiding it, apologizing afterward, managing it so no one else has to. The hiding became its own exhausting second job.</p>
+<p>That isolation isn't a character flaw, and it isn't permanent. Misophonia binds hardest to the people our system watches most carefully — which means your reaction is, underneath everything, about love and closeness, not about wanting distance from them.</p>
+<p>This is the part that eases most when you stop carrying it alone — when the people around you finally understand what this actually is, and when you find others who already do.</p>`,
+    affirmation: "\"I don't have to carry this alone. I can let others in.\"",
+    next: "The Safer Sounds Workshop. The first hour you don't have to spend alone with this. We go beneath the sound together to what's actually underneath — and for once, someone who understands is right there with you while you do it."
+  }
+};
+
+// ── STATE ────────────────────────────────────────────────────────────
+let currentQ = 0;
+let answers = { A: 0, B: 0, C: 0, D: 0, E: 0 };
+let selectedOption = null;
+
+// ── HELPERS ─────────────────────────────────────────────────────────
+function showStep(name) {
+  document.querySelectorAll('.step').forEach(el => el.classList.remove('active'));
+  const el = document.querySelector(`[data-step="${name}"]`);
+  if (el) el.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function computeResult() {
+  let max = 0, winner = 'A';
+  Object.entries(answers).forEach(([k, v]) => { if (v > max) { max = v; winner = k; } });
+  return winner;
+}
+
+// ── RENDER QUESTION ──────────────────────────────────────────────────
+function renderQuestion(index) {
+  const container = document.getElementById('questions-container');
+  container.innerHTML = '';
+  selectedOption = null;
+
+  const q = QUESTIONS[index];
+  const pct = Math.round((index / QUESTIONS.length) * 100);
+  const isLast = index === QUESTIONS.length - 1;
+
+  const div = document.createElement('div');
+  div.className = 'step active';
+  div.dataset.step = 'question';
+  div.innerHTML = `
+    <div class="progress-wrap">
+      <p class="progress-label">${index + 1} / ${QUESTIONS.length}</p>
+      <div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div>
+    </div>
+    <p class="question-text">${q.text}</p>
+    <ul class="options-list">
+      ${q.options.map((o) => `<button class="option-btn" data-type="${o.type}">${o.text}</button>`).join('')}
+    </ul>
+    <div class="quiz-nav">
+      <button class="btn-next" id="next-btn" disabled>${isLast ? 'See my result →' : 'Next →'}</button>
+    </div>
+  `;
+  container.appendChild(div);
+
+  // hide other non-question steps
+  ['intro','gate','result'].forEach(s => {
+    const el = document.querySelector(`[data-step="${s}"]`);
+    if (el) el.classList.remove('active');
+  });
+
+  div.querySelectorAll('.option-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      div.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      selectedOption = btn.dataset.type;
+      document.getElementById('next-btn').disabled = false;
+    });
+  });
+
+  document.getElementById('next-btn').addEventListener('click', () => {
+    if (!selectedOption) return;
+    answers[selectedOption]++;
+    currentQ++;
+    if (currentQ < QUESTIONS.length) {
+      renderQuestion(currentQ);
+    } else {
+      container.innerHTML = '';
+      showStep('gate');
+    }
+  });
+}
+
+// ── SHOW RESULT ──────────────────────────────────────────────────────
+function showResult() {
+  const key = computeResult();
+  const r = RESULTS[key];
+  document.getElementById('result-type').textContent = r.type;
+  document.getElementById('result-subtitle').textContent = r.subtitle;
+  document.getElementById('result-body').innerHTML = r.body;
+  document.getElementById('result-affirmation').innerHTML = `<strong>An affirmation:</strong> ${r.affirmation}`;
+  document.getElementById('result-next-copy').innerHTML = `<strong><em>The Safer Sounds Workshop.</em></strong> ${r.next}`;
+  showStep('result');
+}
+
+// ── EMAIL FORM ───────────────────────────────────────────────────────
+// Set FORMSPREE_ENDPOINT to your Formspree URL, e.g. "https://formspree.io/f/abcdefgh"
+// Or swap for a Kit/ConvertKit form embed
+const FORMSPREE_ENDPOINT = 'YOUR_FORMSPREE_ENDPOINT';
+
+document.getElementById('email-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const fname = document.getElementById('fname').value.trim();
+  const femail = document.getElementById('femail').value.trim();
+  if (!fname || !femail) { alert('Please enter your name and email.'); return; }
+
+  const btn = e.target.querySelector('.btn-submit .label');
+  btn.textContent = 'One moment…';
+
+  if (FORMSPREE_ENDPOINT === 'YOUR_FORMSPREE_ENDPOINT') {
+    // No endpoint configured — show result directly (for testing)
+    showResult(); return;
+  }
+
+  try {
+    const res = await fetch(FORMSPREE_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({ firstName: fname, email: femail, quizResult: computeResult() })
+    });
+    if (res.ok) { showResult(); }
+    else { btn.textContent = 'Try again →'; alert('Something went wrong — please try again.'); }
+  } catch { showResult(); } // fallback on network error
+});
+
+// ── INIT ─────────────────────────────────────────────────────────────
+document.getElementById('start-btn').addEventListener('click', () => {
+  document.querySelector('[data-step="intro"]').classList.remove('active');
+  currentQ = 0;
+  answers = { A: 0, B: 0, C: 0, D: 0, E: 0 };
+  renderQuestion(0);
+});
+
+document.getElementById('retake-btn').addEventListener('click', () => {
+  currentQ = 0;
+  answers = { A: 0, B: 0, C: 0, D: 0, E: 0 };
+  renderQuestion(0);
+});
+</script>
+
+
+<script>
+  (function() {
+    var toggle = document.querySelector('.nav-toggle');
+    var nav = document.querySelector('nav');
+    if (!toggle || !nav) return;
+    toggle.addEventListener('click', function() { nav.classList.toggle('open'); });
+    document.querySelectorAll('.nav-links a').forEach(function(a) {
+      a.addEventListener('click', function() { nav.classList.remove('open'); });
+    });
+  })();
+</script>
+
+</body>
+</html>

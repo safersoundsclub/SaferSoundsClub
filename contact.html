@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | The Safer Sounds Club</title>
+  <meta name="description" content="Get in touch with Megan at the Safer Sounds Club. Questions about misophonia resources, the workshop, the workbook, or therapist training — we'd love to hear from you.">
+  <meta property="og:title" content="Contact | The Safer Sounds Club">
+  <meta property="og:type" content="website">
+  <meta name="robots" content="index, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --cream: #f5f0e8; --ink: #1a1a1a; --sage: #7a9e8a; --blue-slate: #7a95a8; --max-w: 1100px; }
+    body { background: var(--cream); color: var(--ink); font-family: 'Courier Prime', monospace; font-size: 17px; line-height: 1.7; overflow-x: hidden; }
+
+    nav { position: sticky; top: 0; z-index: 100; background: var(--cream); border-bottom: 1px solid rgba(26,26,26,0.12); padding: 14px 40px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-brand { font-family: 'Great Vibes', cursive; font-size: 1.6rem; color: var(--ink); text-decoration: none; }
+    .nav-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
+    .nav-links a { font-family: 'Jost', sans-serif; font-size: 0.7rem; font-weight: 400; letter-spacing: 0.11em; text-transform: uppercase; text-decoration: none; color: var(--ink); opacity: 0.65; transition: opacity 0.2s; }
+    .nav-links a:hover { opacity: 1; }
+
+    .btn-painted {
+      position: relative; display: inline-flex; align-items: center; justify-content: center;
+      text-decoration: none; color: var(--ink); font-family: 'Jost', sans-serif;
+      font-size: 0.78rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase;
+      padding: 20px 56px; cursor: pointer; border: none; background: none;
+    }
+    .btn-sage .paint-bg { display: none; }
+    .paint-bg-img { position: absolute; inset: 0; overflow: visible; transform: scaleX(1.1) scaleY(1.15); }
+    .paint-bg-img img { width: 100%; height: 100%; object-fit: fill; opacity: 0.95; }
+    .btn-painted {
+      transition: transform 0.18s ease, opacity 0.18s ease;
+    }
+    .btn-painted:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+    .btn-label { position: relative; z-index: 2; }
+
+    .full-dashes { border: none; border-top: 1.5px dashed rgba(26,26,26,0.25); margin: 0; }
+
+    .page-hero { text-align: center; padding: 72px 32px 48px; }
+    .page-hero h1 { font-family: 'Great Vibes', cursive; font-size: clamp(3rem, 8vw, 5.5rem); margin-bottom: 12px; }
+    .page-hero p { font-family: 'Jost', sans-serif; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.55; max-width: 600px; margin: 0 auto; }
+
+    .contact-layout { max-width: 900px; margin: 0 auto; padding: 64px 32px 88px; display: grid; grid-template-columns: 1fr 340px; gap: 72px; align-items: start; }
+
+    /* FORM */
+    .form-title { font-family: 'Great Vibes', cursive; font-size: 2.4rem; margin-bottom: 8px; }
+    .form-sub { font-family: 'Jost', sans-serif; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.5; margin-bottom: 36px; }
+
+    .form-row { margin-bottom: 28px; }
+    .form-label {
+      display: block; font-family: 'Jost', sans-serif; font-size: 0.68rem;
+      font-weight: 300; letter-spacing: 0.16em; text-transform: uppercase;
+      opacity: 0.6; margin-bottom: 8px;
+    }
+    .form-input, .form-select, .form-textarea {
+      width: 100%; background: transparent; border: none; border-bottom: 1.5px solid rgba(26,26,26,0.3);
+      padding: 10px 0; font-family: 'Courier Prime', monospace; font-size: 1rem; color: var(--ink);
+      outline: none; transition: border-color 0.2s; border-radius: 0; -webkit-appearance: none;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { border-bottom-color: var(--sage); }
+    .form-select { cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%231a1a1a' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 4px center; padding-right: 24px; }
+    .form-textarea { resize: vertical; min-height: 120px; padding-top: 10px; border: none; border-bottom: 1.5px solid rgba(26,26,26,0.3); }
+    .form-textarea:focus { border-bottom-color: var(--sage); }
+
+    .form-submit { margin-top: 12px; }
+    .form-submit .btn-painted { font-size: 0.78rem; }
+
+    .form-status { margin-top: 20px; font-family: 'Jost', sans-serif; font-size: 0.8rem; letter-spacing: 0.1em; display: none; }
+    .form-status.success { color: var(--sage); }
+    .form-status.error { color: #a86060; }
+
+    /* SIDEBAR */
+    .contact-sidebar { padding-top: 4px; }
+    .sidebar-block { margin-bottom: 36px; padding-bottom: 36px; border-bottom: 1px dashed rgba(26,26,26,0.2); }
+    .sidebar-block:last-child { border-bottom: none; margin-bottom: 0; }
+    .sidebar-label { font-family: 'Jost', sans-serif; font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.45; margin-bottom: 12px; display: block; }
+    .sidebar-heading { font-family: 'Courier Prime', monospace; font-weight: 700; font-size: 1rem; margin-bottom: 10px; }
+    .sidebar-body { font-size: 0.93rem; line-height: 1.8; opacity: 0.8; }
+
+    /* LINE ART */
+    .line-art-divider { text-align: center; padding: 32px 0; }
+    .line-art-divider img { height: 48px; opacity: 0.22; mix-blend-mode: multiply; }
+
+    footer { text-align: center; padding: 32px 32px 48px; border-top: 1.5px solid rgba(26,26,26,0.12); }
+    .footer-disclaimer { font-size: 0.75rem; font-family: 'Courier Prime', monospace; opacity: 0.5; margin-bottom: 24px; }
+    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; font-family: 'Jost', sans-serif; font-size: 0.7rem; letter-spacing: 0.1em; margin-top: 16px; }
+    .footer-links a { text-decoration: none; color: var(--ink); opacity: 0.5; }
+    .footer-links a:hover { opacity: 0.9; }
+
+    @media (max-width: 768px) {
+      nav { padding: 14px 20px; }
+      .nav-links { gap: 12px; }
+      .contact-layout { grid-template-columns: 1fr; gap: 40px; padding: 40px 20px 64px; }
+      .contact-sidebar { border-top: 1.5px dashed rgba(26,26,26,0.2); padding-top: 36px; }
+    }
+    @media (max-width: 480px) { nav { padding: 12px 16px; } .btn-painted { padding: 18px 36px; } }
+  
+    /* ── HAMBURGER NAV ── */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      flex-direction: column;
+      gap: 5px;
+      flex-shrink: 0;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--ink);
+      transition: transform 0.25s, opacity 0.2s;
+    }
+    nav.open .nav-toggle span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    nav.open .nav-toggle span:nth-child(2) { opacity: 0; }
+    nav.open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    @media (max-width: 720px) {
+      .nav-toggle { display: flex; }
+      nav { position: relative; flex-wrap: wrap; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--cream);
+        border-bottom: 1.5px solid rgba(26,26,26,0.15);
+        padding: 20px 24px 24px;
+        flex-direction: column;
+        gap: 18px;
+        z-index: 200;
+        box-shadow: 0 8px 24px rgba(26,26,26,0.06);
+      }
+      nav.open .nav-links { display: flex; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">the Safer Sounds Club</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="quiz.html">Free Quiz</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+</nav>
+
+<section class="page-hero">
+  <h1>Say hello.</h1>
+  <p>Questions, feedback, or just wanting to connect</p>
+</section>
+
+<hr class="full-dashes">
+
+<div class="contact-layout">
+
+  <!-- FORM -->
+  <div>
+    <h2 class="form-title">Send a note.</h2>
+    <p class="form-sub">We read every message — usually within a few days</p>
+
+    <form id="contactForm" novalidate>
+      <div class="form-row">
+        <label class="form-label" for="name">Your name</label>
+        <input class="form-input" type="text" id="name" name="name" required autocomplete="name">
+      </div>
+
+      <div class="form-row">
+        <label class="form-label" for="email">Email address</label>
+        <input class="form-input" type="email" id="email" name="email" required autocomplete="email">
+      </div>
+
+      <div class="form-row">
+        <label class="form-label" for="role">I am a&hellip;</label>
+        <select class="form-select" id="role" name="role">
+          <option value="">Select one</option>
+          <option value="person-with-misophonia">Person with misophonia</option>
+          <option value="parent">Parent of someone with misophonia</option>
+          <option value="therapist">Therapist or clinician</option>
+          <option value="other">Other / Just curious</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label class="form-label" for="subject">What's this about?</label>
+        <select class="form-select" id="subject" name="subject">
+          <option value="">Select one</option>
+          <option value="workshop">The Misophonia Workshop</option>
+          <option value="workbook">The Relief Map Workbook</option>
+          <option value="therapist-training">Therapist training</option>
+          <option value="quiz">The free quiz</option>
+          <option value="general">General question</option>
+          <option value="press">Press / media</option>
+          <option value="other">Something else</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label class="form-label" for="message">Your message</label>
+        <textarea class="form-textarea" id="message" name="message" required placeholder="What's on your mind?"></textarea>
+      </div>
+
+      <div class="form-submit">
+        <button type="submit" class="btn-painted btn-sage">
+          <span class="paint-bg-img" aria-hidden="true"><img src="images/brushstroke-sage.png" alt=""></span>
+          <span class="btn-label" id="submitLabel">Send Message</span>
+        </button>
+      </div>
+      <div class="form-status" id="formStatus"></div>
+    </form>
+  </div>
+
+  <!-- SIDEBAR -->
+  <aside class="contact-sidebar">
+    <div class="sidebar-block">
+      <span class="sidebar-label">Response time</span>
+      <p class="sidebar-body">Messages are typically answered within two to three business days. For urgent matters, note that in your message.</p>
+    </div>
+
+    <div class="sidebar-block">
+      <span class="sidebar-label">For therapists</span>
+      <p class="sidebar-heading">Interested in training?</p>
+      <p class="sidebar-body">Select "Therapist training" in the dropdown and let us know about your practice. We'll add you to the early-access list for the upcoming therapist curriculum.</p>
+    </div>
+
+    <div class="sidebar-block">
+      <span class="sidebar-label">Not a substitute for therapy</span>
+      <p class="sidebar-body">The Safer Sounds Club is an educational resource, not a mental health treatment. If you're in crisis or need immediate support, please reach out to a licensed mental health professional.</p>
+    </div>
+
+    <div class="sidebar-block">
+      <span class="sidebar-label">Elsewhere</span>
+      <p class="sidebar-body">We share misophonia research, practice prompts, and community updates regularly. Find us where you spend time online — or start with the <a href="quiz.html" style="color:var(--ink);text-decoration:underline;text-underline-offset:3px;">free quiz</a>.</p>
+    </div>
+  </aside>
+</div>
+
+<div style="width:100%;height:240px;overflow:hidden;margin-top:48px;">
+  <img src="images/Wave.png" alt="" aria-hidden="true" style="width:100%;height:100%;object-fit:cover;object-position:top center;mix-blend-mode:multiply;opacity:0.78;display:block;">
+</div>
+
+<footer>
+  <p class="footer-disclaimer">The Safer Sounds Club, LLC &nbsp;|&nbsp; Educational only — not a substitute for therapy.</p>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html">Products</a>
+    <a href="quiz.html">Free Quiz</a>
+    <a href="faq.html">FAQ</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</footer>
+
+<script>
+  // ─── EmailJS Configuration ───────────────────────────────────────────
+  // MEGAN: Replace these three placeholders with your actual EmailJS values.
+  // Sign up at https://www.emailjs.com → Dashboard → Email Services + Email Templates
+  const EMAILJS_PUBLIC_KEY  = 'YOUR_EMAILJS_PUBLIC_KEY';   // Account → API Keys
+  const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';           // Email Services → Service ID
+  const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';          // Email Templates → Template ID
+
+  emailjs.init(EMAILJS_PUBLIC_KEY);
+
+  const form       = document.getElementById('contactForm');
+  const submitBtn  = form.querySelector('button[type="submit"]');
+  const submitLabel = document.getElementById('submitLabel');
+  const status     = document.getElementById('formStatus');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Basic validation
+    const name    = form.name.value.trim();
+    const email   = form.email.value.trim();
+    const message = form.message.value.trim();
+
+    if (!name || !email || !message) {
+      status.textContent = 'Please fill in your name, email, and message.';
+      status.className = 'form-status error';
+      status.style.display = 'block';
+      return;
+    }
+
+    submitLabel.textContent = 'Sending…';
+    submitBtn.style.opacity = '0.65';
+    submitBtn.disabled = true;
+    status.style.display = 'none';
+
+    const templateParams = {
+      from_name:    name,
+      from_email:   email,
+      role:         form.role.value || 'Not specified',
+      subject:      form.subject.value || 'Not specified',
+      message:      message,
+      reply_to:     email,
+    };
+
+    try {
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
+      status.textContent = 'Message sent — thank you. We\'ll be in touch within a few days.';
+      status.className = 'form-status success';
+      status.style.display = 'block';
+      form.reset();
+    } catch (err) {
+      console.error('EmailJS error:', err);
+      status.textContent = 'Something went wrong. Please try again or email us directly.';
+      status.className = 'form-status error';
+      status.style.display = 'block';
+    } finally {
+      submitLabel.textContent = 'Send Message';
+      submitBtn.style.opacity = '1';
+      submitBtn.disabled = false;
+    }
+  });
+</script>
+
+<script>
+  (function() {
+    var toggle = document.querySelector('.nav-toggle');
+    var nav = document.querySelector('nav');
+    if (!toggle || !nav) return;
+    toggle.addEventListener('click', function() { nav.classList.toggle('open'); });
+    document.querySelectorAll('.nav-links a').forEach(function(a) {
+      a.addEventListener('click', function() { nav.classList.remove('open'); });
+    });
+  })();
+</script>
+
+</body>
+</html>
