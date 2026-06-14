@@ -24,10 +24,25 @@
     .nav-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
     .nav-links a { font-family: 'Jost', sans-serif; font-size: 0.7rem; font-weight: 400; letter-spacing: 0.11em; text-transform: uppercase; text-decoration: none; color: var(--ink); opacity: 0.75; }
     .nav-links a:hover { opacity: 1; }
+    .nav-links a.active { color: var(--sage); opacity: 1; }
     .page-hero { text-align: center; padding: 72px 32px 48px; }
     .page-hero h1 { font-family: 'Great Vibes', cursive; font-size: clamp(3rem, 8vw, 5.5rem); margin-bottom: 12px; }
     .page-hero p { font-family: 'Jost', sans-serif; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.6; }
     .full-dashes { border: none; border-top: 1.5px dashed rgba(26,26,26,0.25); }
+
+    /* ── FEATURED POST ── */
+    .featured-post { max-width: 1100px; margin: 0 auto; padding: 56px 32px 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+    .featured-post-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; mix-blend-mode: multiply; background: var(--cream); display: block; }
+    .featured-eyebrow { font-family: 'Jost', sans-serif; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sage); opacity: 0.9; margin-bottom: 16px; }
+    .featured-post-title { font-family: 'Courier Prime', monospace; font-size: clamp(1.3rem, 2.5vw, 1.9rem); font-weight: 700; line-height: 1.35; margin-bottom: 20px; }
+    .featured-post-excerpt { font-size: 0.97rem; line-height: 1.85; opacity: 0.82; margin-bottom: 28px; }
+    .featured-post-date { font-family: 'Jost', sans-serif; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage); opacity: 0.9; margin-bottom: 12px; }
+    .featured-post a { text-decoration: none; color: var(--ink); }
+    .featured-post a:hover .featured-post-title { opacity: 0.7; }
+    @media (max-width: 720px) {
+      .featured-post { grid-template-columns: 1fr; gap: 24px; padding: 40px 20px 32px; }
+    }
+
     .blog-grid { max-width: 1100px; margin: 0 auto; padding: 64px 32px 96px; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 48px; }
     .post-card { display: flex; flex-direction: column; }
     .post-card a { text-decoration: none; color: var(--ink); }
@@ -130,6 +145,24 @@
 
 <hr class="full-dashes">
 
+<!-- ── FEATURED POST ── -->
+<div class="featured-post">
+  <a href="blog/why-does-the-sound-of-breathing-bother-me.html">
+    <img class="featured-post-img" src="images/Beach.png" alt="Why Does The Sound of Breathing Bother Me?">
+  </a>
+  <div class="featured-post-body">
+    <a href="blog/why-does-the-sound-of-breathing-bother-me.html">
+      <p class="featured-eyebrow">Latest post</p>
+      <p class="featured-post-date">May 5, 2026</p>
+      <h2 class="featured-post-title">Why Does The Sound of Breathing Bother Me?</h2>
+      <p class="featured-post-excerpt">The slight catch in someone's inhale. The rhythm of their exhale. The particular quality of their breathing that, to everyone else in the room, registers as nothing at all — and to you, registers as something you cannot stop tracking.</p>
+      <span class="read-more">Read full post →</span>
+    </a>
+  </div>
+</div>
+
+<hr class="full-dashes">
+
 <div class="blog-grid">
 
   <article class="post-card">
@@ -224,6 +257,14 @@
 </footer>
 
 
+<script>
+  (function() {
+    var page = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-links a').forEach(function(a) {
+      if (a.getAttribute('href') === page) a.classList.add('active');
+    });
+  })();
+</script>
 <script>
   (function() {
     var toggle = document.querySelector('.nav-toggle');

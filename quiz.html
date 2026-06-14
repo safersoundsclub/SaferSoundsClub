@@ -24,6 +24,7 @@
     .nav-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
     .nav-links a { font-family: 'Jost', sans-serif; font-size: 0.7rem; font-weight: 400; letter-spacing: 0.11em; text-transform: uppercase; text-decoration: none; color: var(--ink); opacity: 0.75; }
     .nav-links a:hover { opacity: 1; }
+    .nav-links a.active { color: var(--sage); opacity: 1; }
 
     #quiz-app { max-width: 680px; margin: 0 auto; padding: 64px 32px 96px; min-height: calc(100vh - 60px); }
 
@@ -539,6 +540,14 @@ document.getElementById('retake-btn').addEventListener('click', () => {
     toggle.addEventListener('click', function() { nav.classList.toggle('open'); });
     document.querySelectorAll('.nav-links a').forEach(function(a) {
       a.addEventListener('click', function() { nav.classList.remove('open'); });
+    });
+  })();
+</script>
+<script>
+  (function() {
+    var page = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-links a').forEach(function(a) {
+      if (a.getAttribute('href') === page) a.classList.add('active');
     });
   })();
 </script>

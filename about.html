@@ -38,6 +38,7 @@
     .nav-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
     .nav-links a { font-family: 'Jost', sans-serif; font-size: 0.7rem; font-weight: 400; letter-spacing: 0.11em; text-transform: uppercase; text-decoration: none; color: var(--ink); opacity: 0.65; transition: opacity 0.2s; }
     .nav-links a:hover { opacity: 1; }
+    .nav-links a.active { color: var(--sage); opacity: 1; }
 
     .btn-painted {
       position: relative; display: inline-flex; align-items: center; justify-content: center;
@@ -361,6 +362,14 @@
 </footer>
 
 
+<script>
+  (function() {
+    var page = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-links a').forEach(function(a) {
+      if (a.getAttribute('href') === page) a.classList.add('active');
+    });
+  })();
+</script>
 <script>
   (function() {
     var toggle = document.querySelector('.nav-toggle');
