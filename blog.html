@@ -73,11 +73,15 @@
     @media (max-width: 600px) {
       nav { padding: 14px 20px; }
       .nav-links { gap: 16px; }
-      .blog-grid { grid-template-columns: 1fr; gap: 0; padding: 40px 20px 64px; }
-      .post-card { flex-direction: row; align-items: flex-start; gap: 16px; padding: 20px 0; border-bottom: 1.5px dashed rgba(26,26,26,0.2); }
+      .page-hero { padding: 48px 20px 32px; }
+      .blog-grid { display: block; padding: 8px 24px 64px; }
+      .post-card { display: block; padding: 28px 0; border-bottom: 1.5px dashed rgba(26,26,26,0.18); }
       .post-card:last-child { border-bottom: none; }
-      .post-thumb { width: 80px; height: 80px; aspect-ratio: 1/1; flex-shrink: 0; margin-bottom: 0; }
+      .post-thumb { display: none; }
       .post-excerpt { display: none; }
+      .post-date { margin-bottom: 6px; }
+      .post-title { font-size: 1rem; line-height: 1.4; margin-bottom: 10px; }
+      .read-more { font-size: 0.68rem; }
     }
   
     /* ── HAMBURGER NAV ── */

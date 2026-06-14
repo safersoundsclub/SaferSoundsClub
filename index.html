@@ -145,7 +145,7 @@
     .hero-title {
       font-family: 'Great Vibes', cursive;
       font-size: clamp(3.5rem, 10vw, 7rem);
-      line-height: 1.1;
+      line-height: 1.2;
       margin-bottom: 32px;
     }
 
@@ -544,7 +544,12 @@
       nav { padding: 14px 20px; }
       .nav-links { gap: 16px; }
       .nav-links li:first-child { display: none; } /* hide "Home" on mobile */
-      .hero { padding: 40px 20px 0; }
+      .hero { padding: 32px 20px 0; }
+      .tagline-section { padding: 32px 20px 24px; }
+      .bridge-section { padding: 40px 20px; }
+      .product-teaser { padding: 16px 20px 40px; }
+      .closing-section { padding: 40px 20px 36px; }
+      .wyg-section { padding: 24px 20px 40px; }
       .hero-chair-row { gap: 16px; }
       .hero-side { flex: 0 0 80px; }
       .hero-side .caps-label { font-size: 0.62rem; }
@@ -552,15 +557,16 @@
       .problem-text { padding: 40px 24px; }
       .problem-img-col { display: none; }
       .starfish-mid-1 { display: none; }
-      .narrative-section { grid-template-columns: 1fr 110px; gap: 20px; padding: 32px 20px; }
-      .narrative-img { max-width: 110px; margin: 0; order: 2; }
-      .narrative-body { order: 1; }
+      .narrative-section { display: block; padding: 32px 20px; overflow: hidden; }
+      .narrative-img { float: right; width: 88px; margin: 4px 0 16px 20px; }
+      .narrative-body { display: block; }
       .wyg-inner { padding: 40px 24px; }
       .bio-inner { grid-template-columns: 1fr; max-width: var(--max-w); margin: 0 auto; }
       .bio-photo { margin: 0 auto; }
       .btn-painted { padding: 18px 40px; }
     }
     @media (max-width: 480px) {
+      .hero-title { font-size: 2.6rem; line-height: 1.3; margin-bottom: 20px; }
       .hero-chair-row { flex-direction: column; gap: 24px; align-items: center; }
       .hero-side { text-align: center; flex: none; width: 100%; }
       .hero-chair-img { max-width: 52%; margin: 0 auto; display: block; }
@@ -651,7 +657,7 @@
 </section>
 
 <!-- ── MOBILE HERO CTA ── -->
-<div class="hero-mobile-cta-hidden hero-mobile-cta">
+<div class="hero-mobile-cta">
   <a href="quiz.html" class="btn-painted btn-sage" style="padding:14px 44px;font-size:0.72rem;">
     <span class="paint-bg-img" aria-hidden="true"><img src="images/brushstroke-sage.png" alt=""></span>
     <span class="btn-label">Take the Free Quiz</span>
