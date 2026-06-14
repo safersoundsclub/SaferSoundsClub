@@ -89,7 +89,8 @@
 
     .full-dashes { border: none; border-top: 1.5px dashed rgba(26,26,26,0.25); margin: 0; }
 
-    .featured-section { max-width: var(--max-w); margin: 0 auto; padding: 64px 32px 56px; }
+    .featured-section { max-width: 100%; padding: 64px 32px 56px; background: rgba(122,158,138,0.06); border-bottom: 1.5px dashed rgba(122,158,138,0.3); }
+    .featured-section-inner { max-width: var(--max-w); margin: 0 auto; }
     .featured-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
 
     .product-img-wrap {
@@ -121,7 +122,7 @@
     .section-label p { font-family: 'Jost', sans-serif; font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.4; }
 
     .secondary-grid { max-width: var(--max-w); margin: 0 auto; padding: 24px 32px 56px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
-    .secondary-card { border: 1.5px dashed rgba(26,26,26,0.22); padding: 32px 28px; }
+    .secondary-card { border: 1.5px dashed rgba(122,149,168,0.4); padding: 32px 28px; background: rgba(122,149,168,0.05); }
     .secondary-label { font-family: 'Jost', sans-serif; font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.4; margin-bottom: 10px; }
     .secondary-title { font-family: 'Courier Prime', monospace; font-size: 1.05rem; font-weight: 700; line-height: 1.4; margin-bottom: 8px; }
     .secondary-price { font-family: 'Jost', sans-serif; font-size: 0.8rem; letter-spacing: 0.06em; margin-bottom: 14px; opacity: 0.65; }
@@ -129,6 +130,7 @@
     .secondary-card.coming-soon { opacity: 0.55; }
     .coming-soon-tag { font-family: 'Jost', sans-serif; font-size: 0.63rem; letter-spacing: 0.18em; text-transform: uppercase; border: 1px solid rgba(26,26,26,0.4); display: inline-block; padding: 3px 10px; margin-bottom: 14px; }
 
+    .quiz-cta-wrap { background: rgba(122,158,138,0.08); border-top: 1.5px dashed rgba(122,158,138,0.35); }
     .quiz-cta { text-align: center; padding: 56px 32px 80px; max-width: 640px; margin: 0 auto; }
     .quiz-cta h2 { font-family: 'Great Vibes', cursive; font-size: clamp(2.4rem, 5vw, 3.2rem); margin-bottom: 16px; }
     .quiz-cta p { font-size: 0.97rem; line-height: 1.85; margin-bottom: 32px; }
@@ -217,6 +219,7 @@
 
 <!-- FEATURED PRODUCTS -->
 <div class="featured-section">
+  <div class="featured-section-inner">
   <div class="featured-grid">
 
     <!-- WORKSHOP -->
@@ -272,6 +275,7 @@
     </article>
 
   </div>
+  </div><!-- /featured-section-inner -->
 </div>
 
 <hr class="full-dashes">
@@ -309,8 +313,7 @@
 
 </div>
 
-<hr class="full-dashes">
-
+<div class="quiz-cta-wrap">
 <div class="quiz-cta">
   <h2>Not sure where to start?</h2>
   <p>Take the free 2-minute quiz. It identifies which of five deeper feelings is underneath your misophonia — and what your nervous system actually needs. You'll leave with a free guided mindfulness practice written for your result.</p>
@@ -318,6 +321,7 @@
     <span class="paint-bg-img" aria-hidden="true"><img src="images/brushstroke-sage.png" alt=""></span>
     <span class="btn-label">Take the Free Quiz</span>
   </a>
+</div>
 </div>
 
 <footer>
