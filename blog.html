@@ -33,16 +33,37 @@
     .post-card a { text-decoration: none; color: var(--ink); }
     .post-thumb { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; margin-bottom: 20px; transition: opacity 0.2s; background: var(--cream); mix-blend-mode: multiply; }
     .post-card:hover .post-thumb { opacity: 0.85; }
-    .post-date { font-family: 'Jost', sans-serif; font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.5; margin-bottom: 8px; }
+    .post-date { font-family: 'Jost', sans-serif; font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sage); opacity: 0.9; margin-bottom: 8px; }
     .post-title { font-family: 'Courier Prime', monospace; font-size: 1.05rem; font-weight: 700; line-height: 1.45; margin-bottom: 12px; transition: opacity 0.2s; }
     .post-card:hover .post-title { opacity: 0.7; }
     .post-excerpt { font-size: 0.9rem; line-height: 1.75; opacity: 0.8; margin-bottom: 16px; }
-    .read-more { font-family: 'Jost', sans-serif; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: underline; text-underline-offset: 4px; color: var(--ink); opacity: 0.55; transition: opacity 0.2s; }
+    .read-more { font-family: 'Jost', sans-serif; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: underline; text-underline-offset: 4px; color: var(--sage); opacity: 0.85; transition: opacity 0.2s; }
     .post-card:hover .read-more { opacity: 1; }
     footer { text-align: center; padding: 32px 32px 48px; border-top: 1.5px solid rgba(26,26,26,0.12); }
-    .footer-links { display: flex; gap: 24px; justify-content: center; font-family: 'Jost', sans-serif; font-size: 0.72rem; letter-spacing: 0.12em; margin-top: 12px; }
+    .footer-disclaimer { font-size: 0.75rem; font-family: 'Courier Prime', monospace; opacity: 0.5; margin-bottom: 24px; }
+    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; font-family: 'Jost', sans-serif; font-size: 0.7rem; letter-spacing: 0.1em; margin-top: 16px; }
     .footer-links a { text-decoration: none; color: var(--ink); opacity: 0.5; }
-    @media (max-width: 600px) { nav { padding: 14px 20px; } .nav-links { gap: 16px; } .blog-grid { grid-template-columns: 1fr; gap: 40px; } }
+    .footer-links a:hover { opacity: 0.9; }
+    .btn-painted {
+      position: relative; display: inline-flex; align-items: center; justify-content: center;
+      text-decoration: none; color: var(--ink); font-family: 'Jost', sans-serif;
+      font-size: 0.78rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase;
+      padding: 20px 56px; cursor: pointer; border: none; background: none;
+      transition: transform 0.18s ease, opacity 0.18s ease;
+    }
+    .btn-painted:hover { transform: translateY(-2px); opacity: 0.9; }
+    .paint-bg-img { position: absolute; inset: 0; overflow: visible; transform: scaleX(1.1) scaleY(1.15); }
+    .paint-bg-img img { width: 100%; height: 100%; object-fit: fill; opacity: 0.95; }
+    .btn-label { position: relative; z-index: 2; }
+    @media (max-width: 600px) {
+      nav { padding: 14px 20px; }
+      .nav-links { gap: 16px; }
+      .blog-grid { grid-template-columns: 1fr; gap: 0; padding: 40px 20px 64px; }
+      .post-card { flex-direction: row; align-items: flex-start; gap: 16px; padding: 20px 0; border-bottom: 1.5px dashed rgba(26,26,26,0.2); }
+      .post-card:last-child { border-bottom: none; }
+      .post-thumb { width: 80px; height: 80px; aspect-ratio: 1/1; flex-shrink: 0; margin-bottom: 0; }
+      .post-excerpt { display: none; }
+    }
   
     /* ── HAMBURGER NAV ── */
     .nav-toggle {
@@ -184,7 +205,13 @@
 </div>
 
 <footer>
-  <p style="font-size:0.78rem;font-family:'Courier Prime',monospace;opacity:0.6;margin-bottom:12px;">The Safer Sounds Club, LLC &nbsp;|&nbsp; Educational only — not a substitute for therapy.</p>
+  <p class="footer-disclaimer">The Safer Sounds Club, LLC &nbsp;|&nbsp; The Safer Sounds Club is educational and is not a substitute for therapy.</p>
+  <div style="margin-bottom:8px;">
+    <a href="quiz.html" class="btn-painted btn-sage" style="padding:14px 44px;font-size:0.72rem;">
+      <span class="paint-bg-img" aria-hidden="true"><img src="images/brushstroke-sage.png" alt=""></span>
+      <span class="btn-label">Join the email list</span>
+    </a>
+  </div>
   <div class="footer-links">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>

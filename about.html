@@ -92,7 +92,7 @@
     /* AUDIENCE SECTIONS */
     .audience-section { max-width: var(--max-w); margin: 0 auto; padding: 72px 32px; }
     .audience-section h2 { font-family: 'Great Vibes', cursive; font-size: clamp(2.2rem, 4vw, 3.2rem); margin-bottom: 8px; }
-    .audience-label { font-family: 'Jost', sans-serif; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.5; margin-bottom: 28px; display: block; }
+    .audience-label { font-family: 'Jost', sans-serif; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage); opacity: 0.9; margin-bottom: 28px; display: block; }
     .audience-section p { font-size: 1rem; line-height: 1.85; margin-bottom: 1rem; max-width: 740px; }
     .audience-section ul { padding-left: 24px; margin: 12px 0 24px; }
     .audience-section li { font-size: 0.97rem; line-height: 1.75; margin-bottom: 10px; }
@@ -122,6 +122,7 @@
       .bio-inner { grid-template-columns: 1fr; }
       .bio-photo { margin: 0 auto; }
       .audience-grid { grid-template-columns: 1fr; gap: 28px; }
+      .palm-deco { display: none; }
     }
     @media (max-width: 480px) {
       .btn-painted { padding: 18px 36px; }
@@ -241,7 +242,7 @@
 
 <!-- FOR PEOPLE WITH MISOPHONIA -->
 <div style="position:relative;overflow:hidden;">
-  <img src="images/Palm.png" alt="" aria-hidden="true" style="position:absolute;right:-10px;top:50%;transform:translateY(-50%);width:280px;mix-blend-mode:multiply;opacity:1;pointer-events:none;">
+  <img src="images/Palm.png" alt="" aria-hidden="true" class="palm-deco" style="position:absolute;right:-10px;top:50%;transform:translateY(-50%);width:280px;mix-blend-mode:multiply;opacity:1;pointer-events:none;">
 <section class="audience-section">
   <span class="audience-label">For the person with misophonia</span>
   <h2>You are not overreacting.</h2>
@@ -341,7 +342,13 @@
 </section>
 
 <footer>
-  <p class="footer-disclaimer">The Safer Sounds Club, LLC &nbsp;|&nbsp; Educational only — not a substitute for therapy.</p>
+  <p class="footer-disclaimer">The Safer Sounds Club, LLC &nbsp;|&nbsp; The Safer Sounds Club is educational and is not a substitute for therapy.</p>
+  <div style="margin-bottom:8px;">
+    <a href="quiz.html" class="btn-painted btn-sage" style="padding:14px 44px;font-size:0.72rem;">
+      <span class="paint-bg-img" aria-hidden="true"><img src="images/brushstroke-sage.png" alt=""></span>
+      <span class="btn-label">Join the email list</span>
+    </a>
+  </div>
   <div class="footer-links">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>

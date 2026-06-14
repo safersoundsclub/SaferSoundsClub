@@ -362,9 +362,9 @@
     .wyg-inner {
       position: relative;
       padding: 48px 64px;
-      border: 2px solid rgba(26,26,26,0.18);
+      border: 2px solid rgba(122,158,138,0.35);
       border-radius: 2px;
-      background: none;
+      background: rgba(122,158,138,0.04);
     }
     .wyg-inner::before {
       content: '';
@@ -486,7 +486,8 @@
       font-size: 0.75rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      opacity: 0.7;
+      color: var(--sage);
+      opacity: 0.9;
       margin-bottom: 20px;
     }
     .bio-body p {
@@ -547,11 +548,12 @@
       .btn-painted { padding: 18px 40px; }
     }
     @media (max-width: 480px) {
-      .hero-chair-row { flex-direction: column; gap: 8px; }
-      .hero-side { text-align: center; flex: none; }
-      .hero-chair-img { max-width: 100%; }
+      .hero-chair-row { flex-direction: column; gap: 4px; align-items: center; }
+      .hero-side { text-align: center; flex: none; width: 100%; }
+      .hero-chair-img { max-width: 62%; margin: 0 auto; display: block; }
       nav { padding: 12px 16px; }
       .nav-links { gap: 12px; }
+      .bio-script-h3 { font-size: 3.6rem; }
     }
   
     /* ── HAMBURGER NAV ── */
@@ -785,6 +787,7 @@
     </a>
   </div>
   <div class="footer-links">
+    <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="products.html">Products</a>
     <a href="quiz.html">Free Quiz</a>
