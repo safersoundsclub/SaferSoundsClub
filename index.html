@@ -290,9 +290,17 @@
       margin: 0 auto;
       display: grid;
       grid-template-columns: 440px 1fr;
-      gap: 56px;
+      grid-template-rows: auto 1fr;
+      column-gap: 56px;
+      row-gap: 0;
       align-items: start;
     }
+    .narrative-img { grid-column: 1; grid-row: 1 / span 2; }
+    .narrative-intro {
+      grid-column: 2; grid-row: 1;
+      font-style: italic; font-size: 1.05rem; font-weight: 700; margin-bottom: 20px;
+    }
+    .narrative-body { grid-column: 2; grid-row: 2; }
     .narrative-img img {
       width: 100%;
       mix-blend-mode: multiply;
@@ -557,9 +565,10 @@
       .problem-text { padding: 40px 24px; }
       .problem-img-col { display: none; }
       .starfish-mid-1 { display: none; }
-      .narrative-section { display: block; padding: 32px 20px; overflow: hidden; }
-      .narrative-img { float: right; width: 88px; margin: 4px 0 16px 20px; }
-      .narrative-body { display: block; }
+      .narrative-section { grid-template-columns: 1fr 80px; grid-template-rows: auto auto; column-gap: 16px; row-gap: 20px; padding: 32px 20px; }
+      .narrative-img { grid-column: 2; grid-row: 1; }
+      .narrative-intro { grid-column: 1; grid-row: 1; align-self: center; margin-bottom: 0; }
+      .narrative-body { grid-column: 1 / span 2; grid-row: 2; }
       .wyg-inner { padding: 40px 24px; }
       .bio-inner { grid-template-columns: 1fr; max-width: var(--max-w); margin: 0 auto; }
       .bio-photo { margin: 0 auto; }
@@ -697,8 +706,8 @@
   <div class="narrative-img">
     <img src="images/Umbrella.png" alt="Beach umbrella line art" style="mix-blend-mode:multiply;width:100%;">
   </div>
+  <p class="narrative-intro">If this is your life:</p>
   <div class="narrative-body">
-    <p style="font-style:italic;font-size:1.05rem;font-weight:700;margin-bottom:20px;">If this is your life:</p>
     <p>You ate lunch at your desk alone again. Not because you're busy. Because the office kitchen is a minefield of chewing sounds and you learned a long time ago that it's just easier this way.</p>
     <hr class="narrative-divider">
     <p>You can hear the bass from your neighbor's car from three houses away and your whole body has already tensed before you've even looked up from what you're doing.</p>
