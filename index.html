@@ -140,23 +140,15 @@
     }
 
     /* ── HERO DOT CIRCLES ── */
-    .hero-dot-divider {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      padding: 20px 0 4px;
+    .hero-dot-row {
+      width: 100%;
+      height: 40px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='40'%3E%3Ccircle cx='22' cy='20' r='8' fill='none' stroke='%231a1a1a' stroke-width='1' opacity='0.2'/%3E%3C/svg%3E");
+      background-size: 44px 40px;
+      background-repeat: repeat-x;
+      background-position: center;
+      margin: 20px 0 4px;
     }
-    .hero-dot-divider span {
-      display: block;
-      border-radius: 50%;
-      background: var(--ink);
-    }
-    .hero-dot-divider span:nth-child(1),
-    .hero-dot-divider span:nth-child(5) { width: 5px; height: 5px; opacity: 0.12; }
-    .hero-dot-divider span:nth-child(2),
-    .hero-dot-divider span:nth-child(4) { width: 6px; height: 6px; opacity: 0.2; }
-    .hero-dot-divider span:nth-child(3) { width: 8px; height: 8px; opacity: 0.32; }
 
     .hero-title {
       font-family: 'Great Vibes', cursive;
@@ -664,14 +656,14 @@
 <section class="hero">
   <div class="welcome-badge">
     <span class="deco" aria-hidden="true">
-      <svg width="82" height="18" viewBox="0 0 82 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M78 9 L22 9 C15 9 10 6.5 7 6 C4.5 5.5 3 7 3.8 8.5 C4.6 10 7 10.5 9.5 9.5 C12 8.5 11.5 6.5 9.5 6" stroke="currentColor" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
+      <svg width="100" height="22" viewBox="0 0 100 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M98 11 C78 11 52 11 30 11 C20 11 13 9.5 9 8 C6 6.8 4 8 4.5 10 C5 12 8.5 13 12 11.8 C15 10.8 14.5 8.8 12 8.2" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </span>
     WELCOME TO
     <span class="deco deco-r" aria-hidden="true">
-      <svg width="82" height="18" viewBox="0 0 82 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M78 9 L22 9 C15 9 10 6.5 7 6 C4.5 5.5 3 7 3.8 8.5 C4.6 10 7 10.5 9.5 9.5 C12 8.5 11.5 6.5 9.5 6" stroke="currentColor" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
+      <svg width="100" height="22" viewBox="0 0 100 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M98 11 C78 11 52 11 30 11 C20 11 13 9.5 9 8 C6 6.8 4 8 4.5 10 C5 12 8.5 13 12 11.8 C15 10.8 14.5 8.8 12 8.2" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </span>
   </div>
@@ -689,9 +681,7 @@
   </div>
 </section>
 
-<div class="hero-dot-divider" aria-hidden="true">
-  <span></span><span></span><span></span><span></span><span></span>
-</div>
+<div class="hero-dot-row" aria-hidden="true"></div>
 
 <!-- ── MOBILE HERO CTA ── -->
 <div class="hero-mobile-cta">
