@@ -132,8 +132,6 @@
     .welcome-badge .deco {
       display: flex;
       align-items: center;
-      opacity: 0.55;
-      color: var(--ink);
     }
     .welcome-badge .deco-r {
       transform: scaleX(-1);
@@ -142,11 +140,8 @@
     /* ── HERO DOT CIRCLES ── */
     .hero-dot-row {
       width: 100%;
-      height: 40px;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='40'%3E%3Ccircle cx='22' cy='20' r='8' fill='none' stroke='%231a1a1a' stroke-width='1' opacity='0.2'/%3E%3C/svg%3E");
-      background-size: 44px 40px;
-      background-repeat: repeat-x;
-      background-position: center;
+      display: block;
+      mix-blend-mode: multiply;
       margin: 20px 0 4px;
     }
 
@@ -656,15 +651,11 @@
 <section class="hero">
   <div class="welcome-badge">
     <span class="deco" aria-hidden="true">
-      <svg width="100" height="22" viewBox="0 0 100 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M98 11 C78 11 52 11 30 11 C20 11 13 9.5 9 8 C6 6.8 4 8 4.5 10 C5 12 8.5 13 12 11.8 C15 10.8 14.5 8.8 12 8.2" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
+      <img src="images/welcome-swirl.png" alt="" width="200" style="mix-blend-mode:multiply;opacity:0.7;" loading="lazy" decoding="async">
     </span>
     WELCOME TO
     <span class="deco deco-r" aria-hidden="true">
-      <svg width="100" height="22" viewBox="0 0 100 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M98 11 C78 11 52 11 30 11 C20 11 13 9.5 9 8 C6 6.8 4 8 4.5 10 C5 12 8.5 13 12 11.8 C15 10.8 14.5 8.8 12 8.2" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
+      <img src="images/welcome-swirl.png" alt="" width="200" style="mix-blend-mode:multiply;opacity:0.7;" loading="lazy" decoding="async">
     </span>
   </div>
   <h1 class="hero-title">the Safer Sounds Club</h1>
@@ -681,7 +672,7 @@
   </div>
 </section>
 
-<div class="hero-dot-row" aria-hidden="true"></div>
+<img src="images/dots-row.png" class="hero-dot-row" aria-hidden="true" alt="" loading="lazy" decoding="async">
 
 <!-- ── MOBILE HERO CTA ── -->
 <div class="hero-mobile-cta">
