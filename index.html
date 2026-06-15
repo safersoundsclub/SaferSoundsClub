@@ -133,16 +133,22 @@
       display: flex;
       align-items: center;
     }
+    .welcome-badge .deco img {
+      width: clamp(100px, 12vw, 180px);
+      display: block;
+      mix-blend-mode: multiply;
+    }
     .welcome-badge .deco-r {
       transform: scaleX(-1);
     }
 
     /* ── HERO DOT CIRCLES ── */
     .hero-dot-row {
-      width: 100%;
       display: block;
+      max-width: 680px;
+      width: 50%;
+      margin: 20px auto 4px;
       mix-blend-mode: multiply;
-      margin: 20px 0 4px;
     }
 
     .hero-title {
@@ -651,11 +657,11 @@
 <section class="hero">
   <div class="welcome-badge">
     <span class="deco" aria-hidden="true">
-      <img src="images/welcome-swirl.png" alt="" style="mix-blend-mode:multiply;opacity:0.7;" loading="lazy" decoding="async">
+      <img src="images/welcome-swirl.png" alt="" loading="lazy" decoding="async">
     </span>
     WELCOME TO
     <span class="deco deco-r" aria-hidden="true">
-      <img src="images/welcome-swirl.png" alt="" style="mix-blend-mode:multiply;opacity:0.7;" loading="lazy" decoding="async">
+      <img src="images/welcome-swirl.png" alt="" loading="lazy" decoding="async">
     </span>
   </div>
   <h1 class="hero-title">the Safer Sounds Club</h1>
