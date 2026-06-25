@@ -486,30 +486,25 @@ function showResult() {
   showStep('result');
 }
 
-// ── EMAIL FORM — Kit API ─────────────────────────────────────────────
-const KIT_API_KEY = 'kit_21fae946747ea3e40cd9306a0469e6f1';
+// ── EMAIL FORM — Kit V3 tag subscribe ───────────────────────────────
+const KIT_API_KEY = 'aKA9MO5x22X-Yx6_y0eKNw';
+const KIT_TAG_ID  = 20633468; // "quiz-lead"
 
-document.getElementById('email-form').addEventListener('submit', async (e) => {
+document.getElementById('email-form').addEventListener('submit', function(e) {
   e.preventDefault();
-  const fname = document.getElementById('fname').value.trim();
-  const femail = document.getElementById('femail').value.trim();
+  var fname = document.getElementById('fname').value.trim();
+  var femail = document.getElementById('femail').value.trim();
   if (!fname || !femail) { alert('Please enter your name and email.'); return; }
 
-  const btn = e.target.querySelector('.btn-submit .label');
+  var btn = e.target.querySelector('.btn-submit .label');
   btn.textContent = 'One moment…';
 
   // Fire-and-forget — result always shows regardless of API response
-  try {
-    await fetch('https://api.kit.com/v4/subscribers', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${KIT_API_KEY}`
-      },
-      body: JSON.stringify({ email_address: femail, first_name: fname })
-    });
-  } catch (_) {}
-  showResult();
+  fetch('https://api.convertkit.com/v3/tags/' + KIT_TAG_ID + '/subscribe', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ api_key: KIT_API_KEY, first_name: fname, email: femail })
+  }).catch(function() {}).finally(function() { showResult(); });
 });
 
 // ── INIT ─────────────────────────────────────────────────────────────
