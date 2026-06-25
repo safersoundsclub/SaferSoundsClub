@@ -486,10 +486,8 @@ function showResult() {
   showStep('result');
 }
 
-// ── EMAIL FORM ───────────────────────────────────────────────────────
-// Set FORMSPREE_ENDPOINT to your Formspree URL, e.g. "https://formspree.io/f/abcdefgh"
-// Or swap for a Kit/ConvertKit form embed
-const FORMSPREE_ENDPOINT = 'YOUR_FORMSPREE_ENDPOINT';
+// ── EMAIL FORM — Kit API ─────────────────────────────────────────────
+const KIT_API_KEY = 'kit_21fae946747ea3e40cd9306a0469e6f1';
 
 document.getElementById('email-form').addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -500,20 +498,18 @@ document.getElementById('email-form').addEventListener('submit', async (e) => {
   const btn = e.target.querySelector('.btn-submit .label');
   btn.textContent = 'One moment…';
 
-  if (FORMSPREE_ENDPOINT === 'YOUR_FORMSPREE_ENDPOINT') {
-    // No endpoint configured — show result directly (for testing)
-    showResult(); return;
-  }
-
+  // Fire-and-forget — result always shows regardless of API response
   try {
-    const res = await fetch(FORMSPREE_ENDPOINT, {
+    await fetch('https://api.kit.com/v4/subscribers', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify({ firstName: fname, email: femail, quizResult: computeResult() })
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${KIT_API_KEY}`
+      },
+      body: JSON.stringify({ email_address: femail, first_name: fname })
     });
-    if (res.ok) { showResult(); }
-    else { btn.textContent = 'Try again →'; alert('Something went wrong — please try again.'); }
-  } catch { showResult(); } // fallback on network error
+  } catch (_) {}
+  showResult();
 });
 
 // ── INIT ─────────────────────────────────────────────────────────────
