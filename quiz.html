@@ -487,8 +487,10 @@ function showResult() {
 }
 
 // ── EMAIL FORM — Kit V3 tag subscribe ───────────────────────────────
-const KIT_API_KEY = 'aKA9MO5x22X-Yx6_y0eKNw';
-const KIT_TAG_ID  = 20633468; // "quiz-lead"
+var KIT_API_KEY   = 'aKA9MO5x22X-Yx6_y0eKNw';
+var KIT_TAG_LEAD  = 20633468; // "quiz-lead"
+var KIT_RESULT_TAGS = { A: 20633540, B: 20633543, C: 20633541, D: 20633542, E: 20633544 };
+// A=overwhelm B=helplessness C=trapped D=swallowed-no E=carrying-alone
 
 document.getElementById('email-form').addEventListener('submit', function(e) {
   e.preventDefault();
@@ -499,12 +501,15 @@ document.getElementById('email-form').addEventListener('submit', function(e) {
   var btn = e.target.querySelector('.btn-submit .label');
   btn.textContent = 'One moment…';
 
-  // Fire-and-forget — result always shows regardless of API response
-  fetch('https://api.convertkit.com/v3/tags/' + KIT_TAG_ID + '/subscribe', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ api_key: KIT_API_KEY, first_name: fname, email: femail })
-  }).catch(function() {}).finally(function() { showResult(); });
+  var result = computeResult();
+  var resultTagId = KIT_RESULT_TAGS[result];
+  var payload = JSON.stringify({ api_key: KIT_API_KEY, first_name: fname, email: femail });
+
+  // Subscribe to quiz-lead tag + result-specific tag, then show result
+  Promise.all([
+    fetch('https://api.convertkit.com/v3/tags/' + KIT_TAG_LEAD + '/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: payload }),
+    fetch('https://api.convertkit.com/v3/tags/' + resultTagId + '/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: payload })
+  ]).catch(function() {}).finally(function() { showResult(); });
 });
 
 // ── INIT ─────────────────────────────────────────────────────────────
