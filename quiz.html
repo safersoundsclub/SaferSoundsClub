@@ -5,194 +5,155 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>What's Underneath Your Misophonia? — Free Quiz</title>
-  <meta name="description" content="Take the free misophonia quiz and find out which of five deeper feelings is underneath your sound sensitivity — plus a free guided practice written for your result.">
+  <meta name="description" content="Walk through a family dinner and find out what your nervous system has been trying to tell you. Free misophonia quiz from the Safer Sounds Club.">
   <meta name="keywords" content="misophonia quiz, misophonia test, what type of misophonia do I have, misophonia self-assessment, free misophonia resource">
   <meta property="og:title" content="What's Underneath Your Misophonia? — Free Quiz">
-  <meta property="og:description" content="Find out which deeper feeling is underneath your misophonia reaction — and get a free guided practice written for your result.">
+  <meta property="og:description" content="Walk through a family dinner and discover what's really underneath your misophonia reaction.">
   <meta property="og:type" content="website">
   <meta name="robots" content="index, follow">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
   <style>
+    @font-face {
+      font-family: 'CoreBandiFace';
+      src: url('fonts/CoreBandiFace.woff2') format('woff2'),
+           url('fonts/CoreBandiFace.woff') format('woff'),
+           url('fonts/CoreBandiFace.ttf') format('truetype');
+      font-weight: normal; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'MeowScript';
+      src: url('fonts/MeowScript.ttf') format('truetype');
+      font-weight: normal; font-style: normal; font-display: swap;
+    }
+    html { font-size: 18px; }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root { --cream: #f5f0e8; --ink: #1a1a1a; --sage: #7a9e8a; --blue-slate: #7a95a8; }
-    body { background: var(--cream); color: var(--ink); font-family: 'Courier Prime', monospace; font-size: 17px; line-height: 1.7; min-height: 100vh; }
+    body { background: var(--cream); color: var(--ink); font-family: 'CoreBandiFace', cursive; font-size: 21px; line-height: 1.75; min-height: 100vh; }
+
+    /* NAV */
     nav { position: sticky; top: 0; z-index: 100; background: var(--cream); border-bottom: 1px solid rgba(26,26,26,0.12); padding: 14px 40px; display: flex; align-items: center; justify-content: space-between; }
-    .nav-brand { font-family: 'Great Vibes', cursive; font-size: 1.6rem; color: var(--ink); text-decoration: none; }
+    .nav-brand { font-family: 'MeowScript', cursive; font-weight: 400; font-size: 1.6rem; color: var(--ink); text-decoration: none; }
     .nav-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
-    .nav-links a { font-family: 'Jost', sans-serif; font-size: 0.7rem; font-weight: 400; letter-spacing: 0.11em; text-transform: uppercase; text-decoration: none; color: var(--ink); opacity: 0.75; }
+    .nav-links a { font-family: 'CoreBandiFace', cursive; font-size: 1.1rem; font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; color: var(--ink); opacity: 0.75; }
     .nav-links a:hover { opacity: 1; }
     .nav-links a.active { color: var(--sage); opacity: 1; }
 
-    #quiz-app { max-width: 680px; margin: 0 auto; padding: 64px 32px 96px; min-height: calc(100vh - 60px); }
-
+    /* QUIZ WRAPPER */
+    #quiz-app { max-width: 700px; margin: 0 auto; padding: 64px 32px 96px; min-height: calc(100vh - 60px); }
     .step { display: none; }
     .step.active { display: block; }
 
     /* INTRO */
-    .intro-title { font-family: 'Great Vibes', cursive; font-size: clamp(2.6rem, 7vw, 4.5rem); text-align: center; margin-bottom: 28px; line-height: 1.2; }
-    .intro-sub { font-family: 'Jost', sans-serif; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; text-align: center; opacity: 0.55; margin-bottom: 40px; }
-    .intro-copy { font-size: 1rem; line-height: 1.85; margin-bottom: 16px; }
-    .intro-copy p { margin-bottom: 14px; }
-    .intro-disclaimer { font-family: 'Jost', sans-serif; font-size: 0.75rem; font-style: italic; opacity: 0.6; line-height: 1.6; margin-top: 24px; margin-bottom: 36px; }
-    /* btn-start uses painted sage system */
+    .intro-eyebrow { font-family: 'CoreBandiFace', cursive; font-size: 0.85rem; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.5; text-align: center; margin-bottom: 18px; }
+    .intro-title { font-family: 'CoreBandiFace', cursive; font-weight: 700; font-size: clamp(1.5rem, 3.2vw, 2.2rem); text-align: center; margin-bottom: 36px; line-height: 1.3; letter-spacing: -0.01em; }
+    .intro-copy p { font-size: 1rem; line-height: 1.85; margin-bottom: 16px; }
+    .intro-list { list-style: none; margin: 12px 0 20px 0; padding: 0; }
+    .intro-list li { font-size: 1rem; line-height: 1.8; padding-left: 20px; position: relative; margin-bottom: 6px; }
+    .intro-list li::before { content: "•"; position: absolute; left: 0; color: var(--sage); }
+    .intro-cta-note { font-size: 1rem; line-height: 1.85; font-style: italic; opacity: 0.75; margin: 24px 0 36px; }
+    .intro-disclaimer { font-family: 'CoreBandiFace', cursive; font-size: 0.75rem; font-style: italic; opacity: 0.5; line-height: 1.6; margin-bottom: 36px; }
+    .btn-start-wrap { text-align: center; }
     .btn-start {
       position: relative; display: inline-flex; align-items: center; justify-content: center;
-      font-family: 'Jost', sans-serif; font-size: 0.78rem; font-weight: 400;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      padding: 20px 64px; cursor: pointer; border: none; background: none; color: var(--ink);
-      margin: 0 auto;
+      font-family: 'CoreBandiFace', cursive; font-size: 1rem; font-weight: 400;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 22px 72px; cursor: pointer; border: none; background: none; color: var(--ink);
     }
-    .btn-start .paint-bg-start {
-      position: absolute;
-      inset: 0;
-      overflow: hidden;
-      border-radius: 4px 6px 5px 3px / 8px 4px 6px 5px;
-      transform: rotate(-0.3deg) scaleX(1.04);
-    }
-    .btn-start .paint-bg-start img {
-      width: 100%; height: 100%; object-fit: fill; opacity: 0.95;
-    }
-    .btn-start .paint-bg-start::before { display: none; }
-    .btn-start .paint-bg-start::after { display: none; }
+    .btn-start .paint-bg-start { position: absolute; inset: 0; overflow: visible; transform: scaleX(1.1) scaleY(1.15); }
+    .btn-start .paint-bg-start img { width: 100%; height: 100%; object-fit: fill; opacity: 0.95; }
     .btn-start .start-label { position: relative; z-index: 2; }
 
     /* PROGRESS */
-    .progress-wrap { margin-bottom: 40px; }
-    .progress-label { font-family: 'Jost', sans-serif; font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.45; margin-bottom: 8px; text-align: right; }
+    .progress-wrap { margin-bottom: 44px; }
+    .progress-label { font-family: 'CoreBandiFace', cursive; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.4; margin-bottom: 10px; text-align: right; }
     .progress-track { height: 2px; background: rgba(26,26,26,0.12); border-radius: 2px; }
     .progress-fill { height: 100%; background: var(--sage); border-radius: 2px; transition: width 0.35s ease; }
 
-    /* QUESTIONS */
-    .question-text { font-size: 1.15rem; font-weight: 700; line-height: 1.5; margin-bottom: 28px; }
+    /* QUESTION */
+    .question-narrative { font-size: 1rem; line-height: 1.85; margin-bottom: 28px; opacity: 0.85; }
+    .question-narrative p { margin-bottom: 14px; }
+    .question-narrative p:last-child { margin-bottom: 0; }
+    .question-stem { font-size: 1.1rem; font-weight: 700; line-height: 1.5; margin-bottom: 24px; }
     .options-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
     .option-btn {
-      display: block; width: 100%; text-align: left; padding: 15px 18px;
+      display: block; width: 100%; text-align: left; padding: 16px 20px;
       background: none; border: 1.5px solid rgba(26,26,26,0.22); border-radius: 2px;
-      font-family: 'Courier Prime', monospace; font-size: 0.95rem; line-height: 1.55;
+      font-family: 'CoreBandiFace', cursive; font-size: 0.95rem; line-height: 1.6;
       cursor: pointer; color: var(--ink); transition: border-color 0.15s, background 0.15s;
     }
-    .option-btn:hover { border-color: var(--sage); background: rgba(122,158,138,0.06); }
+    .option-btn:hover:not(:disabled) { border-color: var(--sage); background: rgba(122,158,138,0.06); }
     .option-btn.selected { border-color: var(--ink); background: rgba(26,26,26,0.05); }
+    .option-btn:disabled { cursor: default; }
     .option-btn:focus { outline: 2px solid var(--sage); outline-offset: 2px; }
-    .quiz-nav { margin-top: 28px; display: flex; justify-content: flex-end; }
-    .btn-next {
-      font-family: 'Jost', sans-serif; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase;
-      padding: 14px 44px; border: 1.5px solid var(--ink); background: none; cursor: pointer; color: var(--ink);
-      transition: background 0.18s, color 0.18s;
-    }
-    .btn-next:hover:not(:disabled) { background: var(--ink); color: var(--cream); }
-    .btn-next:disabled { opacity: 0.3; cursor: not-allowed; }
 
     /* EMAIL GATE */
-    .gate-heading { font-family: 'Great Vibes', cursive; font-size: clamp(2.2rem, 6vw, 3.6rem); text-align: center; margin-bottom: 20px; line-height: 1.2; }
+    .gate-heading { font-family: 'MeowScript', cursive; font-weight: 400; font-size: clamp(2rem, 5vw, 3.2rem); text-align: center; margin-bottom: 20px; line-height: 1.2; }
     .gate-body { font-size: 1rem; line-height: 1.85; margin-bottom: 8px; }
-    .gate-note { font-style: italic; font-size: 0.88rem; opacity: 0.7; margin-bottom: 36px; }
+    .gate-note { font-style: italic; font-size: 0.9rem; opacity: 0.65; margin-bottom: 36px; }
     .email-form { max-width: 420px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
     .email-form input {
-      width: 100%; padding: 13px 16px; font-family: 'Courier Prime', monospace; font-size: 0.95rem;
+      width: 100%; padding: 14px 16px; font-family: 'CoreBandiFace', cursive; font-size: 1rem;
       background: none; border: 1.5px solid rgba(26,26,26,0.28); border-radius: 2px; color: var(--ink);
     }
     .email-form input:focus { outline: 2px solid var(--sage); outline-offset: 2px; border-color: var(--sage); }
     .btn-submit {
       position: relative; display: inline-flex; align-items: center; justify-content: center; align-self: center;
-      font-family: 'Jost', sans-serif; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase;
-      padding: 18px 52px; cursor: pointer; border: none; background: none; color: var(--ink);
+      font-family: 'CoreBandiFace', cursive; font-size: 0.9rem; letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 20px 56px; cursor: pointer; border: none; background: none; color: var(--ink);
     }
-    .btn-submit .paint-bg { position: absolute; inset: 0; overflow: hidden; border-radius: 4px 6px 5px 3px / 8px 4px 6px 5px; transform: rotate(-0.3deg) scaleX(1.04); }
+    .btn-submit .paint-bg { position: absolute; inset: 0; overflow: visible; transform: scaleX(1.1) scaleY(1.15); }
     .btn-submit .paint-bg img { width: 100%; height: 100%; object-fit: fill; opacity: 0.95; }
     .btn-submit .label { position: relative; z-index: 2; }
-    .privacy-note { text-align: center; font-size: 0.72rem; font-family: 'Jost', sans-serif; opacity: 0.45; }
+    .privacy-note { text-align: center; font-size: 0.78rem; font-family: 'CoreBandiFace', cursive; opacity: 0.4; }
 
     /* RESULTS */
-    .result-emotion { font-family: 'Jost', sans-serif; font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.5; text-align: center; margin-bottom: 8px; }
-    .result-type { font-family: 'Great Vibes', cursive; font-size: clamp(3rem, 8vw, 5rem); text-align: center; margin-bottom: 8px; line-height: 1.15; }
-    .result-subtitle { font-family: 'Jost', sans-serif; font-size: 0.85rem; letter-spacing: 0.06em; text-align: center; opacity: 0.7; margin-bottom: 32px; font-style: italic; }
+    .result-label { font-family: 'CoreBandiFace', cursive; font-size: 0.8rem; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.45; text-align: center; margin-bottom: 10px; }
+    .result-type { font-family: 'MeowScript', cursive; font-weight: 400; font-size: clamp(2.6rem, 7vw, 4.5rem); text-align: center; margin-bottom: 12px; line-height: 1.15; }
+    .result-subtitle { font-family: 'CoreBandiFace', cursive; font-size: 1rem; letter-spacing: 0.02em; text-align: center; opacity: 0.75; margin-bottom: 8px; font-style: italic; line-height: 1.6; }
+    .result-lede { font-family: 'CoreBandiFace', cursive; font-size: 1rem; letter-spacing: 0.02em; text-align: center; opacity: 0.7; margin-bottom: 32px; font-style: italic; line-height: 1.6; }
     .result-body { font-size: 1rem; line-height: 1.85; margin-bottom: 20px; }
-    .result-body p { margin-bottom: 14px; }
-    .result-affirmation { border-left: 3px solid var(--sage); padding: 12px 20px; margin: 24px 0; font-size: 0.95rem; font-style: italic; line-height: 1.7; }
-    .result-next { margin-top: 32px; padding-top: 28px; border-top: 1.5px dashed rgba(26,26,26,0.2); }
-    .result-next-label { font-family: 'Jost', sans-serif; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.5; margin-bottom: 12px; }
-    .result-next p { font-size: 0.97rem; line-height: 1.8; margin-bottom: 24px; }
+    .result-body p { margin-bottom: 16px; }
+    .result-affirmation { border-left: 3px solid var(--sage); padding: 14px 22px; margin: 28px 0; font-size: 1rem; font-style: italic; line-height: 1.75; }
+    .result-next { margin-top: 36px; padding-top: 28px; border-top: 1.5px dashed rgba(26,26,26,0.2); }
+    .result-next-label { font-family: 'CoreBandiFace', cursive; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.45; margin-bottom: 14px; }
+    .result-next-copy { font-size: 1rem; line-height: 1.85; margin-bottom: 28px; }
     .btn-workshop {
       position: relative; display: inline-flex; align-items: center; justify-content: center;
-      text-decoration: none; color: var(--ink); font-family: 'Jost', sans-serif; font-size: 0.78rem;
-      font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; padding: 18px 52px;
+      text-decoration: none; color: var(--ink); font-family: 'CoreBandiFace', cursive; font-size: 1rem;
+      font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; padding: 20px 56px;
       cursor: pointer; border: none; background: none;
     }
-    .btn-workshop .bg-img { position: absolute; inset: 0; border-radius: 4px 6px 5px 3px / 8px 4px 6px 5px; overflow: hidden; transform: rotate(-0.3deg) scaleX(1.04); }
+    .btn-workshop .bg-img { position: absolute; inset: 0; overflow: visible; transform: scaleX(1.1) scaleY(1.15); }
     .btn-workshop .bg-img img { width: 100%; height: 100%; object-fit: fill; opacity: 0.95; }
     .btn-workshop .label { position: relative; z-index: 2; }
-    .retake-link { display: block; margin-top: 28px; text-align: center; font-family: 'Jost', sans-serif; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); opacity: 0.4; cursor: pointer; text-decoration: underline; text-underline-offset: 4px; }
-    .retake-link:hover { opacity: 0.75; }
+    .retake-link { display: block; margin-top: 32px; text-align: center; font-family: 'CoreBandiFace', cursive; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); opacity: 0.35; cursor: pointer; text-decoration: underline; text-underline-offset: 4px; }
+    .retake-link:hover { opacity: 0.7; }
 
-    @media (max-width: 600px) {
-      nav { padding: 14px 20px; }
-      .nav-links { gap: 16px; }
-      #quiz-app { padding: 40px 20px 72px; }
-    }
-  
-    /* ── HAMBURGER NAV ── */
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 4px;
-      flex-direction: column;
-      gap: 5px;
-      flex-shrink: 0;
-    }
-    .nav-toggle span {
-      display: block;
-      width: 22px;
-      height: 1.5px;
-      background: var(--ink);
-      transition: transform 0.25s, opacity 0.2s;
-    }
+    /* HAMBURGER NAV */
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; flex-direction: column; gap: 5px; flex-shrink: 0; }
+    .nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--ink); transition: transform 0.25s, opacity 0.2s; }
     nav.open .nav-toggle span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
     nav.open .nav-toggle span:nth-child(2) { opacity: 0; }
     nav.open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
     @media (max-width: 720px) {
       .nav-toggle { display: flex; }
       nav { position: relative; flex-wrap: wrap; }
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: var(--cream);
-        border-bottom: 1.5px solid rgba(26,26,26,0.15);
-        padding: 20px 24px 24px;
-        flex-direction: column;
-        gap: 18px;
-        z-index: 200;
-        box-shadow: 0 8px 24px rgba(26,26,26,0.06);
-      }
+      .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--cream); border-bottom: 1.5px solid rgba(26,26,26,0.15); padding: 20px 24px 24px; flex-direction: column; gap: 18px; z-index: 200; box-shadow: 0 8px 24px rgba(26,26,26,0.06); }
       nav.open .nav-links { display: flex; }
     }
+    @media (max-width: 600px) {
+      nav { padding: 14px 20px; }
+      #quiz-app { padding: 40px 20px 72px; }
+    }
 
-    /* ── FOOTER ── */
+    /* FOOTER */
     footer { text-align: center; padding: 32px 32px 48px; border-top: 1.5px solid rgba(26,26,26,0.12); }
-    .footer-disclaimer { font-size: 0.75rem; font-family: 'Courier Prime', monospace; opacity: 0.5; margin-bottom: 24px; }
-    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-top: 16px; font-family: 'Jost', sans-serif; font-size: 0.7rem; letter-spacing: 0.1em; }
-    .footer-links a { text-decoration: none; color: var(--ink); opacity: 0.5; }
+    .footer-disclaimer { font-size: 0.78rem; font-family: 'CoreBandiFace', cursive; opacity: 0.5; margin-bottom: 24px; }
+    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-top: 16px; font-family: 'CoreBandiFace', cursive; font-size: 1.1rem; letter-spacing: 0.04em; }
+    .footer-links a { text-decoration: none; color: var(--ink); opacity: 0.5; text-transform: uppercase; }
     .footer-links a:hover { opacity: 0.9; }
-    .btn-painted {
-      position: relative; display: inline-flex; align-items: center; justify-content: center;
-      font-family: 'Jost', sans-serif; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase;
-      text-decoration: none; color: var(--ink); background: none; border: none; cursor: pointer;
-      overflow: visible;
-    }
-    .paint-bg-img {
-      position: absolute;
-      inset: -8px -12px;
-      pointer-events: none;
-      z-index: 0;
-    }
+    .btn-painted { position: relative; display: inline-flex; align-items: center; justify-content: center; font-family: 'CoreBandiFace', cursive; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; color: var(--ink); background: none; border: none; cursor: pointer; overflow: visible; padding: 16px 48px; font-size: 0.9rem; }
+    .paint-bg-img { position: absolute; inset: 0; overflow: visible; transform: scaleX(1.1) scaleY(1.15); pointer-events: none; z-index: 0; }
     .paint-bg-img img { width: 100%; height: 100%; object-fit: fill; display: block; }
     .btn-label { position: relative; z-index: 1; }
   </style>
@@ -204,8 +165,8 @@
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
-    <li><a href="products.html">Products</a></li>
-    <li><a href="quiz.html">Free Quiz</a></li>
+    <li><a href="products.html">Workshop</a></li>
+    <li><a href="quiz.html" class="active">Free Quiz</a></li>
     <li><a href="faq.html">FAQ</a></li>
     <li><a href="blog.html">Blog</a></li>
     <li><a href="contact.html">Contact</a></li>
@@ -217,19 +178,33 @@
 
   <!-- INTRO -->
   <div class="step active" data-step="intro">
-    <h1 class="intro-title">Five Emotions Driving Your Misophonia: What's Yours?</h1>
-    <p class="intro-sub">Free 2-Minute Quiz</p>
+    <p class="intro-eyebrow">Free Quiz</p>
+    <h1 class="intro-title">Walk Me Through a Family Dinner and I'll Tell You Why One Crunch Keeps Wrecking Your Nervous System</h1>
     <div class="intro-copy">
-      <p>The chewing, the breathing, the tapping — it feels like the sound is the problem, like if it just stopped, you'd be okay.</p>
-      <p>But to be honest, misophonia was never just about the sound. Somewhere along the way, a specific noise got bound to a feeling your body couldn't escape, and it's been sounding the alarm ever since — which means the thing that actually drives your reaction isn't in your ears at all. It's underneath.</p>
-      <p>In two minutes, you'll get a glimpse of what's underneath. Once you see it, the reaction you've judged yourself for will finally start to make sense.</p>
-      <p>Answer from your body, not your head — the first thing that feels true usually is. You'll leave with an affirmation written for you, and a short guided audio practice, specific to what you find.</p>
+      <p>Let's start at the table. Dinner's ready. Maybe you feel yourself bracing a little bit already. Everyone sits down. Plates clink. Someone asks how your day was. For a minute, you're okay enough.</p>
+      <p>Then someone takes the first bite.</p>
+      <p>Maybe it's the chewing. Maybe it's the crunch. Maybe it's the clinking spoon against the bowl.</p>
+      <p>Whatever it is, your body gets there before your mind does. Your chest tightens. Your jaw clenches. You want to disappear, snap, cry, run, or somehow make it stop. Meanwhile, everyone else just keeps eating.</p>
+      <p>And later, when the clinks and crunches finally end, you wonder: <em>Why does this happen to me?</em></p>
+      <p>If you've ever thought:</p>
+      <ul class="intro-list">
+        <li>Why can't I just ignore it?</li>
+        <li>Why does this only happen with the people I love?</li>
+        <li>Why does one tiny sound feel so unbelievably big?</li>
+      </ul>
+      <p>…you're in the right place.</p>
+      <p>This isn't about whether the sounds are "real enough." They are. You don't have to convince me.</p>
+      <p>Instead, we're going to look at something most people never think to ask: <em>Why does your body react this way in the first place?</em></p>
+      <p>By the end, you'll discover the protective pattern your nervous system is most likely falling into when the sounds start — and why it makes so much sense.</p>
     </div>
-    <p class="intro-disclaimer">You're safe here. This is gentle reflection, not diagnosis or therapy. If something stirs, there's no rush — go at your own pace, seek support if you need, and stop any time.</p>
-    <button class="btn-start" id="start-btn">
-      <span class="paint-bg-start" aria-hidden="true"><img src="images/brushstroke-sage.png" alt=""></span>
-      <span class="start-label">Begin →</span>
-    </button>
+    <p class="intro-cta-note">There's no right answer here. Don't overthink it. Just answer with the first thing your body says.</p>
+    <p class="intro-disclaimer">You're safe here. This is gentle reflection, not diagnosis or therapy. If something stirs, there's no rush — go at your own pace and stop any time.</p>
+    <div class="btn-start-wrap">
+      <button class="btn-start" id="start-btn">
+        <span class="paint-bg-start" aria-hidden="true"><img src="images/brushstroke-sage.png" alt=""></span>
+        <span class="start-label">Pull up a chair</span>
+      </button>
+    </div>
   </div>
 
   <!-- QUESTIONS RENDERED BY JS -->
@@ -248,25 +223,24 @@
         <span class="paint-bg"><img src="images/brushstroke-sage.png" alt=""></span>
         <span class="label">See My Result →</span>
       </button>
-      <p class="privacy-note">No spam. Only what helps. Leave whenever you need to.</p>
+      <p class="privacy-note">No spam. Only what helps.</p>
     </form>
   </div>
 
   <!-- RESULT -->
   <div class="step" data-step="result">
-    <p class="result-emotion">Your result</p>
+    <p class="result-label">Your result</p>
     <h2 class="result-type" id="result-type"></h2>
     <p class="result-subtitle" id="result-subtitle"></p>
+    <p class="result-lede" id="result-lede"></p>
     <div class="result-body" id="result-body"></div>
     <div class="result-affirmation" id="result-affirmation"></div>
     <div class="result-next">
       <p class="result-next-label">What's next</p>
-      <p id="result-next-copy"></p>
-      <a href="https://the-safer-sounds-club.kit.com/products/the-safer-sounds-workshop" target="_blank" class="btn-workshop">
-        <span class="bg-img">
-          <img src="https://safersoundsclub.com/_assets/media/7b4e8e7951937c898ebff9e57a1e866f.png" alt="" aria-hidden="true">
-        </span>
-        <span class="label">Get the Workshop — $17</span>
+      <p class="result-next-copy" id="result-next-copy"></p>
+      <a href="products.html" class="btn-workshop">
+        <span class="bg-img"><img src="images/brushstroke-blue.png" alt="" aria-hidden="true"></span>
+        <span class="label">Teach Me The Next Step</span>
       </a>
     </div>
     <span class="retake-link" id="retake-btn">Retake the quiz</span>
@@ -275,42 +249,61 @@
 </div>
 
 <script>
-// ── QUIZ DATA (Megan's exact content) ───────────────────────────────
-// A = Overwhelm | B = Helplessness | C = Trapped | D = Swallowed No | E = Carrying It Alone
+// ── QUIZ DATA ────────────────────────────────────────────────────────
+// a = Overwhelm (A) | b = Helplessness (B) | c = Trapped (C) | d = Swallowed No (D) | e = Carrying It Alone (E)
 
 const QUESTIONS = [
   {
-    text: "When a trigger sound starts, the first wave is…",
+    narrative: `<p>You're at the table with your people, everyone's settled in. You pretend to be settling in too, but you know the dinner table isn't the place for that. Some part of you is on alert, paying attention to who's here. Where they're sitting. How close.</p>
+<p>And then that person. (It's always that person.) They pick up a fork. The first bite.</p>
+<p>Your body reacts first. The way it always does.</p>`,
+    stem: "The first thing through you is…",
     options: [
-      { text: "A flood — too much, all at once, like the volume of everything turns up.", type: "A" },
-      { text: "A sinking helplessness — here it is again, and there's nothing I can do.", type: "B" },
-      { text: "A trapped, need-to-flee charge with nowhere to put it.", type: "C" },
-      { text: "A hot flare of stop — you can't do that to me.", type: "D" },
-      { text: "A lonely ache — I love these people. Why does being near them cost me this much?", type: "E" },
+      { text: "Everything sharpens — too loud, too close, too much.", type: "A" },
+      { text: "Your stomach drops. Here it is again, and there's nothing I can do.", type: "B" },
+      { text: "A charge floods your legs. Get up, get out, now.", type: "C" },
+      { text: "Your jaw sets, your chest tightens. A no rises, but can't come out.", type: "D" },
+      { text: "An ache. I love this person. So why does being near them feel like this?", type: "E" },
     ]
   },
   {
-    text: "The hardest part isn't the sound itself. It's…",
+    narrative: `<p>The sound is real. The chewing is genuinely awful, and no one gets to tell you it isn't.</p>
+<p>But stay with it a second. If you're honest, the sound isn't the worst of it. The worst of it is underneath.</p>`,
+    stem: "The hardest part is…",
     options: [
-      { text: "How much everything gets to me — not just this.", type: "A" },
-      { text: "Feeling powerless over my own reaction.", type: "B" },
+      { text: "How much everything gets to me, not just this.", type: "A" },
+      { text: "That I'm powerless over my own reaction.", type: "B" },
       { text: "That I can't just leave the room.", type: "C" },
       { text: "That I can never say what I actually need.", type: "D" },
       { text: "Going through it without anyone really getting it.", type: "E" },
     ]
   },
   {
-    text: "When it's happening, your body most wants to…",
+    narrative: `<p>So you do the thing you always do. You push it all down, without anyone seeing. But your body has another want. And it's been wanting this for a long time.</p>`,
+    stem: "Right now, more than anything, it wants to…",
     options: [
-      { text: "Shut everything out — shrink how much is coming in.", type: "A" },
+      { text: "Shut everything out and shrink how much is coming in.", type: "A" },
       { text: "Freeze. Brace, and endure it.", type: "B" },
       { text: "Bolt. Get out, now.", type: "C" },
-      { text: "Push it away — make it stop.", type: "D" },
+      { text: "Push it away and make it stop.", type: "D" },
       { text: "Disappear quietly, so no one notices.", type: "E" },
     ]
   },
   {
-    text: "It tends to be worst in places where…",
+    narrative: `<p>But you can't. Not here. Not with them. Not without it becoming a thing.</p>
+<p>So the impulse goes nowhere. And instead…</p>`,
+    stem: "What you actually do at the table is…",
+    options: [
+      { text: "Try to turn the volume down — loops, earbuds, a focus point — anything to take the edge off.", type: "A" },
+      { text: "Go still, brace, and wait for it to pass. There's nothing to do but get through it.", type: "B" },
+      { text: "Find a reason to get up — the bathroom, a refill — anything that gets me out for a minute.", type: "C" },
+      { text: "Say nothing. Swallow it. The thing I want to say — please stop — doesn't feel possible.", type: "D" },
+      { text: "Keep my face calm and play along, so no one ever sees what it's costing me.", type: "E" },
+    ]
+  },
+  {
+    narrative: `<p>And here's the thing you maybe never say out loud: it was never only the table. The same thing finds you in other rooms.</p>`,
+    stem: "It tends to be at its worst anywhere…",
     options: [
       { text: "There's a lot going on at once.", type: "A" },
       { text: "I have no control over what happens.", type: "B" },
@@ -320,30 +313,33 @@ const QUESTIONS = [
     ]
   },
   {
-    text: "After a reaction, the thought that comes is…",
+    narrative: `<p>Then it's over. Sort of. Plates cleared, people starting to move on. But you're still in it.</p>`,
+    stem: "And in the aftermath, the thought that arrives is…",
     options: [
       { text: "Why am I so sensitive to everything?", type: "A" },
       { text: "There's nothing I can do about this.", type: "B" },
-      { text: "I can't keep doing this — I have to get out.", type: "C" },
+      { text: "I need to leave.", type: "C" },
       { text: "I hate that I couldn't just say something.", type: "D" },
       { text: "I've hurt them again, and now there's more distance between us.", type: "E" },
     ]
   },
   {
-    text: "If you could say one true thing to the person making the sound, it would be…",
+    narrative: `<p>Now, picture you and the trigger person — and a version of this where you could say the truest thing and nothing would break. No fallout. None.</p>`,
+    stem: "If you could turn to them and say one true thing, it would be…",
     options: [
       { text: "Everything is so loud to me right now.", type: "A" },
-      { text: "I don't know how to stop this happening to me.", type: "B" },
+      { text: "I don't know how to stop this from happening to me.", type: "B" },
       { text: "I need to be able to leave when I need to.", type: "C" },
-      { text: "I needed you to stop, and I never felt allowed to ask.", type: "D" },
+      { text: "I needed you to stop, and I don't feel allowed to ask.", type: "D" },
       { text: "I love you, and right now I don't know how to be near you.", type: "E" },
     ]
   },
   {
-    text: "The thing you most wish someone understood is…",
+    narrative: `<p>And underneath all of it…</p>`,
+    stem: "The thing you've wanted someone, anyone, to finally understand…",
     options: [
       { text: "I'm not difficult. I just feel everything more.", type: "A" },
-      { text: "This isn't a choice. It happens to me.", type: "B" },
+      { text: "This isn't a choice. It just happens to me.", type: "B" },
       { text: "I'm not being rude — I'm trying not to panic.", type: "C" },
       { text: "I have needs too, and they are not too much.", type: "D" },
       { text: "How alone this has been.", type: "E" },
@@ -354,55 +350,68 @@ const QUESTIONS = [
 const RESULTS = {
   A: {
     type: "Overwhelm",
-    subtitle: "The world has always come in louder for you.",
-    body: `<p>You weren't built with a thinner skin by mistake. Some nervous systems take in more — more sound, more texture, more of the room — and yours is one of them. That sensitivity isn't the flaw the world made it out to be. It's the soil misophonia grew in, and it's also part of how much you notice, feel, and care.</p>
-<p>Here's what that means: the reaction isn't you being difficult. It's a finely tuned system doing exactly what it learned to do when too much had nowhere to go. Your body isn't broken — it's been brilliant, and it's been alone.</p>
-<p>Your nervous system learned this, which means it can learn something else. Not by toughening up, but by being met. A gentler place to begin is learning to turn the volume down from the inside, in the moments it spikes.</p>`,
-    affirmation: "\"My sensitivity isn't too much. It's how deeply I notice, feel, and care.\"",
-    next: "The Safer Sounds Workshop. In one gentle hour, we go beneath the sound to what's actually always been too much — and you begin learning to turn the volume down from the inside, instead of white-knuckling against a world that comes in loud. The softest possible place to start."
+    subtitle: "Your nervous system learned that it has to work harder to filter the world.",
+    lede: "Turns out, it was never really the spoon. It was the feeling of too much coming in at once.",
+    body: `<p>When I walked through dinner with you, what stood out wasn't just the sound itself — it was everything feeling like too much all at once: the voices, movement, chewing, clinking, background noise, even the pressure of trying to stay present while all of it is happening.</p>
+<p>Your answers kept pointing to a nervous system that takes in a lot. Not just sound, but everything. The room. The people. The micro-changes in tone or energy. It all gets in.</p>
+<p>That isn't a flaw. It's a kind of sensitivity — one that notices deeply, tracks closely, and stays attuned to what others miss. But without enough space to filter and come back down, that same sensitivity can tip into overwhelm.</p>
+<p>The sound is real. But the sound isn't the whole story. For your nervous system, by the time that bite happens, your system may already be full — already holding more input than it can comfortably organize. So when the spoon clinks, it isn't landing on a calm, spacious system. It's landing on one that is already at capacity. That's when the alarm makes sense.</p>
+<p>This isn't about becoming less sensitive. It's about giving your sensitivity somewhere to land. Because sensitivity without support becomes overload. But sensitivity with space becomes clarity.</p>`,
+    affirmation: "My sensitivity isn't too much. It's how deeply I notice, feel, and care.",
+    next: "The Safer Sounds Workshop helps your nervous system work with the overwhelm underneath the sounds — not by shutting down what you notice, but by giving your system more room so everything doesn't have to land at once."
   },
   B: {
     type: "Helplessness",
-    subtitle: "You learned there was nothing you could do.",
-    body: `<p>Underneath the reaction is an old, sinking helplessness — the sense that this is happening to you and there's no lever to pull. That feeling isn't weakness. At some point your system met a moment it couldn't escape and couldn't change, and it filed the sound under danger. Every trigger since has re-run that verdict.</p>
-<p>The cruelty of it is that the protective charge — the part of you that wants to do something — usually can't complete. You can't leave, you can't make it stop, so the activation just builds. That's not you failing to cope. That's a response that was never allowed to finish.</p>
-<p>It can finish. That's the heart of this work: letting the body do, safely, what it always needed to do — and registering, maybe for the first time, it's over, I did something, I'm not powerless here.</p>`,
-    affirmation: "\"I'm not always powerless. I can find something to do.\"",
-    next: "The Safer Sounds Workshop. It's the first place that stuck, helpless charge gets somewhere to go. In one hour we meet the feeling underneath the reaction — gently, in the body — so you can begin to feel something you may not have felt in a long time: that there is something you can do here."
+    subtitle: "Your nervous system learned that sometimes nothing you do changes what's happening.",
+    lede: "Turns out, it wasn't really the spoon. It was the feeling that there was nothing you could do about it.",
+    body: `<p>When I walked through dinner with you, what stood out wasn't just the sound itself — it was what your body does after it starts. A shift shows up in your answers: not just irritation or overwhelm, but a sinking sense of <em>here we go again, I'm stuck again, no way out.</em></p>
+<p>The dinner table. The car. The meeting. The movie theater. Even lying in bed next to someone you love. What they share isn't just sound — it's the experience of something happening that you can't fully stop, control, or escape.</p>
+<p>That isn't random. Your nervous system is sensitive to moments where it predicts lack of control. At some point, it linked certain sensations with helplessness — not because you were powerless in every situation, but because there were moments where your body couldn't change what was happening safely or fast enough. Your system learned.</p>
+<p>Now, when the first bite happens, it isn't just sound. It's a prediction: <em>this is happening and I can't stop it.</em> That prediction matters more than the sound itself. When your nervous system believes nothing will change, it stops trying to solve and starts preparing to endure.</p>
+<p>That doesn't mean you are powerless now. It means your nervous system is running an old model of what's possible.</p>`,
+    affirmation: "I'm not always powerless. I can find something to do.",
+    next: "The Safer Sounds Workshop helps your nervous system work with the helplessness underneath the reaction — gently rebuilding a felt sense that you are not stuck in the same way you once were."
   },
   C: {
     type: "Trapped",
-    subtitle: "The worst of it lands in the rooms you can't walk out of.",
-    body: `<p>The dinner table, the car, the meeting, the bed. That's not a coincidence. When there's no exit, the system can't flee, so it braces instead — and it's been bracing for so long it may have forgotten it's bracing at all.</p>
-<p>This is why willpower never reaches it. You're not choosing to react; you're a body stuck in a room with no door, doing the only thing it knows how to do. The reaction isn't the problem — it's your body's solution to being trapped.</p>
-<p>What changes things isn't gritting through one more meal. It's having something to do inside the trapped feeling — a way to find an exit on the inside when there isn't one on the outside.</p>`,
-    affirmation: "\"My body learned to brace to keep me safe. It's allowed to soften with safe people now.\"",
-    next: "The Safer Sounds Workshop. In one hour we go beneath the sound to the braced, no-exit feeling under it — and you begin finding an exit on the inside, the one willpower could never reach. The gentlest first step out of the trapped room."
+    subtitle: "Your nervous system learned that sometimes surviving meant enduring.",
+    lede: "Turns out, it was about more than just the crunch. It was the feeling that you couldn't leave.",
+    body: `<p>When I walked through dinner with you, what stood out wasn't just how hard the chewing was. It was what happened around it. Your answers kept coming back to places where leaving didn't really feel like an option: the dinner table, the car, the meeting, lying in bed beside someone you love.</p>
+<p>Moments where your body wanted out, but getting up, speaking up, or walking away wasn't simple. That's not a coincidence.</p>
+<p>Your nervous system learned to connect certain sounds with the feeling of being trapped. Not because chewing itself is dangerous, but because there was once a feeling your body couldn't escape. When leaving doesn't feel possible, your body prepares the only way it knows how: it braces. The urge to flee has nowhere to go, so it becomes tight shoulders, a clenched jaw, shallow breathing — and quietly enduring until it's over.</p>
+<p>That's why "just ignore it" has never worked. Your reaction isn't the problem — it's a protective strategy your nervous system learned a long time ago. The hopeful part is that what was learned can also be relearned. Healing isn't about forcing yourself to tolerate chewing. It's about helping your body discover that it isn't as trapped as it once believed.</p>`,
+    affirmation: "My body learned to brace to keep me safe. It's allowed to soften with safe people now.",
+    next: "The Safer Sounds Workshop helps you work with the trapped, no-exit feeling underneath the sound. Together we'll help your nervous system begin experiencing something it may have forgotten was possible: choice."
   },
   D: {
     type: "The Swallowed No",
-    subtitle: "Underneath your reaction is a boundary that never got to be spoken.",
-    body: `<p>An impulse to say stop, that's too much, I need space — that couldn't come out, or came out once and was met with rejection. So you learned to hold the protest in. Misophonia, in part, is that swallowed "no" finally finding a body to live in.</p>
-<p>The rage that arrives now isn't you being unreasonable. It's a boundary, decades late, trying to complete itself. Your needs are not too much. They never were.</p>
-<p>Healing here looks like learning to feel that "no" and speak it — in your body first, then out loud, with the people who matter now. Not a wall thrown up in panic, but a boundary you can actually set and survive setting.</p>`,
-    affirmation: "\"My needs are not too much. They never were.\"",
-    next: "The Safer Sounds Workshop. There's more to learn about the \"no\" underneath this — and that's exactly where the workshop begins. In one hour we meet the boundary and needs underneath your reaction, gently, so it can finally start to move."
+    subtitle: "Your nervous system learned that saying \"no\" wasn't always safe to express.",
+    lede: "Turns out, it wasn't really the chewing you wanted to stop. It was everything you never got to say.",
+    body: `<p>When I walked through dinner with you, what stood out wasn't just the sound itself. It was the moment your body tightened before anything even came out. A kind of internal stop. A protest that arrives, fully formed, and then has nowhere to go.</p>
+<p>Not just irritation. Not just overwhelm. Something sharper than that — a boundary rising up in your body: <em>that's too much, I need this to stop, I can't do this right now.</em> And then not being able to say it.</p>
+<p>At some point, your nervous system learned that the impulse to say no couldn't always be expressed safely. Maybe it wasn't welcomed. Maybe it was ignored. Maybe it created more rupture than relief. Your system adapted the way all nervous systems do: it learned to hold it in.</p>
+<p>So now, when someone takes that first bite, it isn't just sound. It's a familiar tightening — a boundary showing up again, only this time with nowhere to land. That's why the reaction can feel so big. It's a protest that never fully got to complete itself.</p>
+<p>And when a "no" can't move outward, it moves inward instead. It becomes pressure. Tension. Flood. Urgency. A body trying to contain something it was never meant to hold alone. Your needs are not too much. They never were.</p>`,
+    affirmation: "My needs are not too much. They never were.",
+    next: "The Safer Sounds Workshop helps your nervous system gently meet the \"no\" underneath your reaction — not by forcing expression, but by helping your body learn that its boundaries can exist without everything falling apart."
   },
   E: {
     type: "Carrying It Alone",
-    subtitle: "The sound that hurts most is almost always made by the people you're closest to.",
-    body: `<p>And that's the cruelest part. You feel invaded by someone you love and can't leave, and you've mostly gone through it in private: hiding it, apologizing afterward, managing it so no one else has to. The hiding became its own exhausting second job.</p>
-<p>That isolation isn't a character flaw, and it isn't permanent. Misophonia binds hardest to the people our system watches most carefully — which means your reaction is, underneath everything, about love and closeness, not about wanting distance from them.</p>
-<p>This is the part that eases most when you stop carrying it alone — when the people around you finally understand what this actually is, and when you find others who already do.</p>`,
-    affirmation: "\"I don't have to carry this alone. I can let others in.\"",
-    next: "The Safer Sounds Workshop. The first hour you don't have to spend alone with this. We go beneath the sound together to what's actually underneath — and for once, someone who understands is right there with you while you do it."
+    subtitle: "Your nervous system learned that this was something you had to manage by yourself.",
+    lede: "Turns out, the hardest part wasn't dinner. It was believing you had to survive it alone.",
+    body: `<p>When I walked through dinner with you, what stood out wasn't just the sound itself — it was what happened after. The way you stay composed while something inside you is clearly working very hard. The effort it takes to not react. To not show it. To keep the meal moving like nothing is wrong.</p>
+<p>The sound matters. It really does. But what makes it heavier is how alone you've had to be inside it. The dinner table. The car. The meeting. Even lying in bed next to someone you love. What they share isn't just sound — it's proximity to other people, with no clear way to explain what's happening in your body without feeling like you're too much, difficult, or misunderstood.</p>
+<p>So you learned to manage it quietly. To mask it. To leave the room if needed, or stay and endure it — but mostly to handle it without making it anyone else's problem. That adaptation makes sense. It probably helped you move through situations that didn't have room for your experience.</p>
+<p>But over time, it creates a second layer of pain: not just the sound, but the isolation inside it. When something is hard and no one else can see it, or when it feels like no one else really gets it, it starts to feel like it's yours to carry alone. And if you've ever wondered why this feels so heavy — that's part of it. Not just the trigger itself, but the loneliness wrapped around it.</p>
+<p>The good news is that this pattern isn't fixed. Nervous systems can learn something new — not just about sound, but about support.</p>`,
+    affirmation: "I don't have to carry this alone. I can let others in.",
+    next: "The Safer Sounds Workshop helps your nervous system work with what's underneath the reaction — not just the sound, but the loneliness that often comes with it — so you don't have to hold it in isolation anymore."
   }
 };
 
 // ── STATE ────────────────────────────────────────────────────────────
 let currentQ = 0;
 let answers = { A: 0, B: 0, C: 0, D: 0, E: 0 };
-let selectedOption = null;
 
 // ── HELPERS ─────────────────────────────────────────────────────────
 function showStep(name) {
@@ -422,55 +431,58 @@ function computeResult() {
 function renderQuestion(index) {
   const container = document.getElementById('questions-container');
   container.innerHTML = '';
-  selectedOption = null;
+
+  // Hide other steps
+  ['intro','gate','result'].forEach(s => {
+    const el = document.querySelector(`[data-step="${s}"]`);
+    if (el) el.classList.remove('active');
+  });
 
   const q = QUESTIONS[index];
   const pct = Math.round((index / QUESTIONS.length) * 100);
-  const isLast = index === QUESTIONS.length - 1;
 
   const div = document.createElement('div');
   div.className = 'step active';
   div.dataset.step = 'question';
   div.innerHTML = `
     <div class="progress-wrap">
-      <p class="progress-label">${index + 1} / ${QUESTIONS.length}</p>
+      <p class="progress-label">${index + 1} of ${QUESTIONS.length}</p>
       <div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div>
     </div>
-    <p class="question-text">${q.text}</p>
+    ${q.narrative ? `<div class="question-narrative">${q.narrative}</div>` : ''}
+    <p class="question-stem">${q.stem}</p>
     <ul class="options-list">
-      ${q.options.map((o) => `<button class="option-btn" data-type="${o.type}">${o.text}</button>`).join('')}
+      ${q.options.map(o => `<button class="option-btn" data-type="${o.type}">${o.text}</button>`).join('')}
     </ul>
-    <div class="quiz-nav">
-      <button class="btn-next" id="next-btn" disabled>${isLast ? 'See my result →' : 'Next →'}</button>
-    </div>
   `;
   container.appendChild(div);
 
-  // hide other non-question steps
-  ['intro','gate','result'].forEach(s => {
-    const el = document.querySelector(`[data-step="${s}"]`);
-    if (el) el.classList.remove('active');
-  });
-
+  // AUTO-ADVANCE: click answer → brief visual → advance
   div.querySelectorAll('.option-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      div.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
-      btn.classList.add('selected');
-      selectedOption = btn.dataset.type;
-      document.getElementById('next-btn').disabled = false;
-    });
-  });
+      if (btn.disabled) return;
 
-  document.getElementById('next-btn').addEventListener('click', () => {
-    if (!selectedOption) return;
-    answers[selectedOption]++;
-    currentQ++;
-    if (currentQ < QUESTIONS.length) {
-      renderQuestion(currentQ);
-    } else {
-      container.innerHTML = '';
-      showStep('gate');
-    }
+      // Visual selection feedback
+      div.querySelectorAll('.option-btn').forEach(b => {
+        b.classList.remove('selected');
+        b.disabled = true;
+      });
+      btn.classList.add('selected');
+
+      // Tally answer
+      answers[btn.dataset.type]++;
+
+      // Advance after brief pause
+      setTimeout(() => {
+        currentQ++;
+        if (currentQ < QUESTIONS.length) {
+          renderQuestion(currentQ);
+        } else {
+          container.innerHTML = '';
+          showStep('gate');
+        }
+      }, 480);
+    });
   });
 }
 
@@ -480,21 +492,21 @@ function showResult() {
   const r = RESULTS[key];
   document.getElementById('result-type').textContent = r.type;
   document.getElementById('result-subtitle').textContent = r.subtitle;
+  document.getElementById('result-lede').textContent = r.lede;
   document.getElementById('result-body').innerHTML = r.body;
-  document.getElementById('result-affirmation').innerHTML = `<strong>An affirmation:</strong> ${r.affirmation}`;
-  document.getElementById('result-next-copy').innerHTML = `<strong><em>The Safer Sounds Workshop.</em></strong> ${r.next}`;
+  document.getElementById('result-affirmation').innerHTML = `<strong>An affirmation:</strong><br><em>"${r.affirmation}"</em>`;
+  document.getElementById('result-next-copy').textContent = r.next;
   showStep('result');
 }
 
 // ── EMAIL FORM — Kit V3 tag subscribe ───────────────────────────────
-var KIT_API_KEY   = 'aKA9MO5x22X-Yx6_y0eKNw';
-var KIT_TAG_LEAD  = 20633468; // "quiz-lead"
-var KIT_RESULT_TAGS = { A: 20633540, B: 20633543, C: 20633541, D: 20633542, E: 20633544 };
-// A=overwhelm B=helplessness C=trapped D=swallowed-no E=carrying-alone
+var KIT_API_KEY   = '-m5hdWkZBggKWuX0bFzsaQ';   // Megan's public API key — safe to expose
+var KIT_TAG_LEAD  = 20670092;
+var KIT_RESULT_TAGS = { A: 20670096, B: 20670097, C: 20670098, D: 20670099, E: 20670100 };
 
 document.getElementById('email-form').addEventListener('submit', function(e) {
   e.preventDefault();
-  var fname = document.getElementById('fname').value.trim();
+  var fname  = document.getElementById('fname').value.trim();
   var femail = document.getElementById('femail').value.trim();
   if (!fname || !femail) { alert('Please enter your name and email.'); return; }
 
@@ -502,13 +514,11 @@ document.getElementById('email-form').addEventListener('submit', function(e) {
   btn.textContent = 'One moment…';
 
   var result = computeResult();
-  var resultTagId = KIT_RESULT_TAGS[result];
   var payload = JSON.stringify({ api_key: KIT_API_KEY, first_name: fname, email: femail });
 
-  // Subscribe to quiz-lead tag + result-specific tag, then show result
   Promise.all([
     fetch('https://api.convertkit.com/v3/tags/' + KIT_TAG_LEAD + '/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: payload }),
-    fetch('https://api.convertkit.com/v3/tags/' + resultTagId + '/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: payload })
+    fetch('https://api.convertkit.com/v3/tags/' + KIT_RESULT_TAGS[result] + '/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: payload })
   ]).catch(function() {}).finally(function() { showResult(); });
 });
 
@@ -527,7 +537,6 @@ document.getElementById('retake-btn').addEventListener('click', () => {
 });
 </script>
 
-
 <script>
   (function() {
     var toggle = document.querySelector('.nav-toggle');
@@ -539,19 +548,11 @@ document.getElementById('retake-btn').addEventListener('click', () => {
     });
   })();
 </script>
-<script>
-  (function() {
-    var page = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.nav-links a').forEach(function(a) {
-      if (a.getAttribute('href') === page) a.classList.add('active');
-    });
-  })();
-</script>
 
 <footer>
   <p class="footer-disclaimer">The Safer Sounds Club, LLC &nbsp;|&nbsp; The Safer Sounds Club is educational and is not a substitute for therapy.</p>
   <div style="margin-bottom:8px;">
-    <a href="quiz.html" class="btn-painted btn-sage" style="padding:14px 44px;font-size:0.72rem;">
+    <a href="https://the-safer-sounds-club.kit.com/0bb51426e7" target="_blank" class="btn-painted">
       <span class="paint-bg-img" aria-hidden="true"><img src="images/brushstroke-sage.png" alt=""></span>
       <span class="btn-label">Join the email list</span>
     </a>
@@ -559,7 +560,7 @@ document.getElementById('retake-btn').addEventListener('click', () => {
   <div class="footer-links">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
-    <a href="products.html">Products</a>
+    <a href="products.html">Workshop</a>
     <a href="quiz.html">Free Quiz</a>
     <a href="faq.html">FAQ</a>
     <a href="blog.html">Blog</a>

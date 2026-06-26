@@ -20,11 +20,19 @@
     "url": "https://safersoundsclub.com"
   }
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.gstatic.com/s/greatvibes/v19/RWmMoKWR9v4ksMfaWd_JN9XFiaQ.woff2" as="font" type="font/woff2" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@400&family=Great+Vibes&family=Courier+Prime:wght@400;700&family=Jost:wght@300;400&display=swap" rel="stylesheet">
   <style>
+    @font-face {
+      font-family: 'CoreBandiFace';
+      src: url('fonts/CoreBandiFace.woff2') format('woff2'),
+           url('fonts/CoreBandiFace.woff') format('woff'),
+           url('fonts/CoreBandiFace.ttf') format('truetype');
+      font-weight: normal; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'MeowScript';
+      src: url('fonts/MeowScript.ttf') format('truetype');
+      font-weight: normal; font-style: normal; font-display: swap;
+    }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -35,13 +43,13 @@
       --max-w: 860px;
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; font-size: 20px; }
 
     body {
       background: var(--cream);
       color: var(--ink);
-      font-family: 'Courier Prime', 'Courier New', monospace;
-      font-size: 17px;
+      font-family: 'CoreBandiFace', cursive;
+      font-size: 28px;
       line-height: 1.7;
       overflow-x: hidden;
     }
@@ -59,7 +67,8 @@
       justify-content: space-between;
     }
     .nav-brand {
-      font-family: 'Great Vibes', cursive;
+      font-family: 'MeowScript', cursive;
+      font-weight: 400;
       font-size: 1.6rem;
       color: var(--ink);
       text-decoration: none;
@@ -71,10 +80,10 @@
       flex-wrap: wrap;
     }
     .nav-links a {
-      font-family: 'Jost', sans-serif;
-      font-size: 0.7rem;
+      font-family: 'CoreBandiFace', cursive;
+      font-size: 1.1rem;
       font-weight: 400;
-      letter-spacing: 0.11em;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
       text-decoration: none;
       color: var(--ink);
@@ -90,13 +99,13 @@
       display: block;
     }
 
-    .script { font-family: 'Great Vibes', cursive; }
+    .script { font-family: 'MeowScript', cursive; font-weight: 400; }
 
     .caps-label {
-      font-family: 'Jost', sans-serif;
-      font-size: 0.72rem;
+      font-family: 'CoreBandiFace', cursive;
+      font-size: 1.2rem;
       font-weight: 300;
-      letter-spacing: 0.18em;
+      letter-spacing: -0.025em;
       text-transform: uppercase;
       line-height: 1.5;
     }
@@ -112,21 +121,22 @@
     /* ── HERO ── */
     .hero {
       text-align: center;
-      padding: 60px 32px 0;
+      padding: 40px 0 0;
       overflow: hidden;
     }
 
     .welcome-badge {
-      font-family: 'Cormorant SC', Georgia, 'Times New Roman', serif;
-      font-size: 1rem;
+      font-family: 'CoreBandiFace', cursive;
+      font-size: 1.7rem;
       font-weight: 400;
-      letter-spacing: 0.32em;
+      letter-spacing: -0.03em;
       text-transform: uppercase;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 18px;
       margin-bottom: 16px;
+      padding: 0 32px;
       opacity: 0.82;
     }
     .welcome-badge .deco {
@@ -151,12 +161,26 @@
       mix-blend-mode: multiply;
     }
 
-    .hero-title {
-      font-family: 'Great Vibes', cursive;
-      font-size: clamp(3.5rem, 8vw, 6rem);
-      line-height: 1.1;
+    /* Arc title — SVG on desktop, plain h1 on mobile */
+    .hero-title-arc {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto 8px;
+      overflow: visible;
+    }
+    .hero-title-mobile {
+      display: none;
+      font-family: 'MeowScript', cursive;
+      font-weight: 400;
+      font-size: clamp(2.8rem, 12vw, 5rem);
+      line-height: 1.15;
       margin-bottom: 32px;
       text-align: center;
+    }
+    @media (max-width: 600px) {
+      .hero-title-arc { display: none; }
+      .hero-title-mobile { display: block; }
     }
 
     .hero-chair-row {
@@ -164,14 +188,17 @@
       align-items: center;
       justify-content: center;
       gap: 32px;
-      max-width: 1100px;
-      margin: 0 auto;
+      max-width: 900px;
+      margin: -140px auto 0;
+      padding: 0 32px;
+      position: relative;
+      z-index: 1;
     }
-    .hero-side { flex: 0 0 140px; }
+    .hero-side { flex: 1; max-width: 260px; }
     .hero-side .caps-label { line-height: 1.6; }
     .hero-chair-img {
-      flex: 1;
-      max-width: 380px;
+      flex: 0 0 360px;
+      width: 360px;
       overflow: hidden;
     }
 
@@ -183,19 +210,20 @@
     /* ── TAGLINE ── */
     .tagline-section {
       text-align: center;
-      padding: 48px 32px 32px;
+      padding: 28px 32px 20px;
     }
     .tagline-caps {
-      font-family: 'Jost', sans-serif;
-      font-size: 0.8rem;
+      font-family: 'CoreBandiFace', cursive;
+      font-size: 1.35rem;
       font-weight: 300;
-      letter-spacing: 0.15em;
+      letter-spacing: -0.025em;
       text-transform: uppercase;
       margin-bottom: 12px;
     }
     .tagline-script {
-      font-family: 'Great Vibes', cursive;
-      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-family: 'MeowScript', cursive;
+      font-weight: 400;
+      font-size: clamp(2rem, 4vw, 3rem);
       margin-bottom: 32px;
     }
     .dots-divider {
@@ -222,14 +250,15 @@
       padding: 72px clamp(24px, 4vw, 72px) 72px clamp(32px, 7vw, 140px);
     }
     .problem-script-h2 {
-      font-family: 'Great Vibes', cursive;
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      line-height: 1.15;
+      font-family: 'MeowScript', cursive;
+      font-weight: 400;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.1;
       margin-bottom: 24px;
     }
     .problem-body {
-      font-size: 1rem;
-      line-height: 1.8;
+      font-size: 1.33rem;
+      line-height: 1.65;
       margin-bottom: 20px;
     }
     .problem-img-col {
@@ -250,10 +279,10 @@
       justify-content: center;
       text-decoration: none;
       color: var(--ink);
-      font-family: 'Jost', sans-serif;
-      font-size: 0.78rem;
+      font-family: 'CoreBandiFace', cursive;
+      font-size: 1.1rem;
       font-weight: 400;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       padding: 20px 64px;
       cursor: pointer;
@@ -295,7 +324,7 @@
 
     /* ── NARRATIVE SECTION ── */
     .narrative-section {
-      padding: 56px 32px;
+      padding: 36px 32px;
       max-width: 1100px;
       margin: 0 auto;
       display: grid;
@@ -329,7 +358,7 @@
     /* ── BRIDGE SECTION ── */
     .bridge-section {
       text-align: center;
-      padding: 56px 32px;
+      padding: 36px 32px;
       background: rgba(122, 149, 168, 0.07);
       border-top: 1.5px dashed rgba(122,149,168,0.25);
       border-bottom: 1.5px dashed rgba(122,149,168,0.25);
@@ -339,33 +368,34 @@
       margin: 0 auto;
     }
     .bridge-h3 {
-      font-family: 'Courier Prime', monospace;
+      font-family: 'CoreBandiFace', cursive;
       font-size: 1.05rem;
       font-weight: 700;
       letter-spacing: 0.02em;
       margin-bottom: 16px;
     }
     .bridge-body {
-      font-size: 1rem;
-      line-height: 1.85;
+      font-size: 1.3rem;
+      line-height: 1.65;
       margin-bottom: 16px;
     }
     .bridge-italic {
       font-style: italic;
-      font-size: 0.95rem;
+      font-size: 1.1rem;
       opacity: 0.85;
     }
 
     /* ── PRODUCT TEASER ── */
     .product-teaser {
       text-align: center;
-      padding: 16px 32px 48px;
+      padding: 16px 32px 28px;
       max-width: var(--max-w);
       margin: 0 auto;
     }
     .product-script-h2 {
-      font-family: 'Great Vibes', cursive;
-      font-size: clamp(2rem, 4vw, 3rem);
+      font-family: 'MeowScript', cursive;
+      font-weight: 400;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
       margin-bottom: 12px;
     }
     .product-desc {
@@ -399,8 +429,9 @@
       pointer-events: none;
     }
     .wyg-script-h2 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 2.8rem;
+      font-family: 'MeowScript', cursive;
+      font-weight: 400;
+      font-size: 2.4rem;
       text-align: center;
       margin-bottom: 32px;
     }
@@ -422,7 +453,7 @@
       margin: 0 auto;
     }
     .ready-h3 {
-      font-family: 'Jost', sans-serif;
+      font-family: 'CoreBandiFace', cursive;
       font-size: 0.78rem;
       font-weight: 300;
       letter-spacing: 0.2em;
@@ -442,14 +473,15 @@
 
     /* ── CLOSING ── */
     .closing-section {
-      padding: 64px 32px 56px;
+      padding: 40px 32px 40px;
       max-width: 900px;
       margin: 0 auto;
       text-align: center;
     }
     .closing-script {
-      font-family: 'Great Vibes', cursive;
-      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      font-family: 'MeowScript', cursive;
+      font-weight: 400;
+      font-size: clamp(2rem, 3.5vw, 3.2rem);
       line-height: 1.2;
       margin-bottom: 16px;
     }
@@ -475,7 +507,7 @@
 
     /* ── BIO / ABOUT MEGAN ── */
     .bio-section {
-      padding: 56px 32px;
+      padding: 36px 32px;
       background: rgba(122, 158, 138, 0.07);
       border-top: 1.5px dashed rgba(122,158,138,0.3);
       border-bottom: 1.5px dashed rgba(122,158,138,0.3);
@@ -497,19 +529,20 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: 'Jost', sans-serif;
+      font-family: 'CoreBandiFace', cursive;
       font-size: 0.7rem;
       letter-spacing: 0.1em;
       color: rgba(26,26,26,0.5);
     }
     .bio-script-h3 {
-      font-family: 'Great Vibes', cursive;
-      font-size: clamp(2.2rem, 4vw, 3rem);
+      font-family: 'MeowScript', cursive;
+      font-weight: 400;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
       margin-bottom: 8px;
       line-height: 1.1;
     }
     .bio-label {
-      font-family: 'Jost', sans-serif;
+      font-family: 'CoreBandiFace', cursive;
       font-size: 0.75rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
@@ -533,7 +566,7 @@
     }
     .footer-disclaimer {
       font-size: 0.75rem;
-      font-family: 'Courier Prime', monospace;
+      font-family: 'CoreBandiFace', cursive;
       opacity: 0.5;
       margin-bottom: 24px;
     }
@@ -543,7 +576,7 @@
       flex-wrap: wrap;
       justify-content: center;
       margin-top: 16px;
-      font-family: 'Jost', sans-serif;
+      font-family: 'CoreBandiFace', cursive;
       font-size: 0.7rem;
       letter-spacing: 0.1em;
     }
@@ -562,7 +595,7 @@
       nav { padding: 14px 20px; }
       .nav-links { gap: 16px; }
       .nav-links li:first-child { display: none; } /* hide "Home" on mobile */
-      .hero { padding: 32px 20px 0; }
+      .hero { padding: 32px 0 0; }
       .tagline-section { padding: 32px 20px 24px; }
       .bridge-section { padding: 40px 20px; }
       .product-teaser { padding: 16px 20px 40px; }
@@ -645,7 +678,7 @@
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
-    <li><a href="products.html">Products</a></li>
+    <li><a href="products.html">Workshop</a></li>
     <li><a href="quiz.html">Free Quiz</a></li>
     <li><a href="faq.html">FAQ</a></li>
     <li><a href="blog.html">Blog</a></li>
@@ -665,16 +698,30 @@
       <img src="images/welcome-swirl.png" alt="" loading="lazy" decoding="async">
     </span>
   </div>
-  <h1 class="hero-title">the Safer Sounds Club</h1>
+  <!-- SVG arc title — desktop -->
+  <svg class="hero-title-arc" viewBox="0 0 1100 260" xmlns="http://www.w3.org/2000/svg"
+       role="img" aria-label="the Safer Sounds Club">
+    <defs>
+      <path id="title-arc" d="M 40,230 C 275,70 825,70 1060,230"/>
+    </defs>
+    <text fill="#1a1a1a">
+      <textPath href="#title-arc" startOffset="50%" text-anchor="middle"
+        style="font-family:'MeowScript',cursive;font-size:88px;font-weight:400;">
+        the Safer Sounds Club
+      </textPath>
+    </text>
+  </svg>
+  <!-- Plain title — mobile only -->
+  <h1 class="hero-title-mobile" aria-hidden="true">the Safer Sounds Club</h1>
   <div class="hero-chair-row">
     <div class="hero-side" style="text-align:center;">
-      <p class="caps-label" style="opacity:0.5;letter-spacing:0.2em;line-height:2;">PEACE<br>IN YOUR<br>BODY</p>
+      <p class="caps-label" style="opacity:0.5;letter-spacing:-0.025em;line-height:2;">PEACE IN<br>YOUR BODY</p>
     </div>
     <div class="hero-chair-img">
       <img src="images/Chair.png" alt="Beach chair" style="width:100%;display:block;mix-blend-mode:multiply;" fetchpriority="high" decoding="async">
     </div>
     <div class="hero-side">
-      <p class="caps-label" style="opacity:0.5;letter-spacing:0.2em;line-height:2;">AT HOME<br>IN YOUR<br>LIFE</p>
+      <p class="caps-label" style="opacity:0.5;letter-spacing:-0.025em;line-height:2;">AT HOME<br>IN YOUR LIFE</p>
     </div>
   </div>
 </section>
@@ -705,10 +752,6 @@
 
 <hr class="full-dashes">
 
-<div class="starfish-mid-1" style="text-align:center;padding:16px 0;">
-  <img src="images/Starfish.png" alt="" aria-hidden="true" style="width:110px;display:inline-block;mix-blend-mode:multiply;" loading="lazy" decoding="async">
-</div>
-
 <!-- ── NARRATIVE ── -->
 <section class="narrative-section">
   <div class="narrative-img">
@@ -730,79 +773,25 @@
 
 <hr class="full-dashes">
 
-<div style="text-align:center;padding:16px 0;">
-  <img src="images/Starfish.png" alt="" aria-hidden="true" style="width:110px;display:inline-block;mix-blend-mode:multiply;" loading="lazy" decoding="async">
-</div>
-
-<!-- ── BRIDGE ── -->
+<!-- ── BRIDGE + WORKSHOP ── -->
 <section class="bridge-section">
   <div class="bridge-inner">
-    <p class="bridge-body" style="font-size:1.1rem;font-weight:700;">You don't need another coping strategy.</p>
+    <p class="bridge-body" style="font-size:1.3rem;font-weight:700;">You don't need another coping strategy.</p>
     <p class="bridge-body">You need someone to finally help you understand why this is happening, and what your nervous system has been trying to tell you all along.</p>
     <p class="bridge-italic">This free 2-minute quiz turns "I don't know why I'm like this" into an actual starting point, showing you what your reactions have been trying to tell you. It costs nothing but two minutes — and it could be the moment this finally makes sense.</p>
-  </div>
-</section>
-
-<!-- ── PRODUCT TEASER ── -->
-<section class="product-teaser">
-  <p class="caps-label" style="margin-bottom:8px;">A guided experience for anyone who has made their world smaller to manage their reaction to sounds, and is ready to start getting it back</p>
-
-  <div style="margin:32px 0;">
-    <a href="https://the-safer-sounds-club.kit.com/products/the-safer-sounds-workshop" target="_blank" class="btn-painted">
-      <span class="paint-bg-img" aria-hidden="true">
-        <img src="images/brushstroke-blue.png" alt="" loading="lazy" decoding="async">
-      </span>
-      <span class="btn-label">$17 &nbsp;|&nbsp; Get the Workshop</span>
-    </a>
-  </div>
-</section>
-
-<!-- ── WHAT YOU'LL GET ── -->
-<section class="wyg-section">
-
-  <div class="wyg-inner">
-    <h2 class="wyg-script-h2">What you'll get:</h2>
-    <div class="wyg-item">
-      <strong>A 60-minute guided experience:</strong> Not a lecture. An experience. You'll slow down a real trigger moment and finally understand your reaction from the inside: in your body, not just your mind. Work through it at your own pace, as many times as you need, with as many triggers as you'd like.
-    </div>
-    <div class="wyg-item">
-      <strong>A guided mindfulness and somatic regulation practice:</strong> A body-based practice to return to anytime, before a triggering environment, after a reaction hits, or on the days that things feel like too much.
-    </div>
-    <div class="wyg-item">
-      <strong>The Misophonia Relief Map worksheet:</strong> Your own personal map of what's underneath your reaction: the sensations, emotions, beliefs, and unmet needs your nervous system has been reaching for all along. Specific to your nervous system, your pattern, your history. Bring it to your therapist or work through it on your own. Yours to keep. Come back to it whenever you need.
+    <hr class="narrative-divider" style="margin:32px auto;max-width:200px;">
+    <h2 class="product-script-h2" style="margin-bottom:16px;">The Safer Sounds Workshop</h2>
+    <p class="bridge-body">A 60-minute guided experience to finally understand what's underneath your misophonia — in your body, not just your mind. Includes a somatic regulation practice and a personal worksheet to map your own pattern.</p>
+    <p class="bridge-body" style="margin-top:16px;"><em>You've spent years managing this. Sixty minutes to finally understand it &amp; start finding your way back to your life.</em></p>
+    <div style="margin-top:32px;">
+      <a href="products.html" class="btn-painted">
+        <span class="paint-bg-img" aria-hidden="true">
+          <img src="images/brushstroke-blue.png" alt="">
+        </span>
+        <span class="btn-label">See the Workshop</span>
+      </a>
     </div>
   </div>
-</section>
-
-<!-- ── WHEN YOU'RE READY ── -->
-<section class="ready-section">
-  <h3 class="ready-h3">WHEN YOU'RE READY FOR THE NEXT STEP</h3>
-  <p style="margin-bottom:20px;font-size:1rem;">You're ready for this if:</p>
-  <ul class="ready-list">
-    <li>You've eaten alone more times than you want to admit.</li>
-    <li>You've left meals early, turned down trips, made your world smaller to accommodate how difficult this is.</li>
-    <li>You know exactly who the gum chewers are in your life and you've never figured out how to talk to them about it.</li>
-    <li>You've been told you're too sensitive, probably by the same people whose sounds bother you most.</li>
-    <li>You've tried the coping strategies and you're still here.</li>
-    <li>You want to sit at the dinner table. Sleep in your own bed. Say yes to all the things. Have your life back.</li>
-  </ul>
-</section>
-
-<hr class="full-dashes">
-
-<!-- ── CLOSING ── -->
-<section class="closing-section">
-  <div style="margin:0 auto 44px;max-width:480px;">
-    <img src="images/Wave.png" alt="" aria-hidden="true" style="width:100%;display:block;mix-blend-mode:multiply;opacity:0.88;" loading="lazy" decoding="async">
-  </div>
-  <h2 class="closing-script">You've spent years managing this.</h2>
-  <p class="closing-body">Sixty minutes to finally understand it &amp; start finding your way back to your life.</p>
-  <a href="https://the-safer-sounds-club.kit.com/products/the-safer-sounds-workshop" target="_blank" class="btn-painted">
-    <span class="paint-bg-img" aria-hidden="true">
-      <img src="images/brushstroke-blue.png" alt="">
-    </span>
-    <span class="btn-label">Get the Workshop</span>
-  </a>
 </section>
 
 
@@ -819,7 +808,7 @@
       <p class="bio-script-h3">Hi, I'm Megan.</p>
       <p class="bio-label">Licensed Therapist &bull; EMDR &bull; Sensorimotor Psychotherapy &bull; Colorado</p>
       <p>I've had misophonia for most of my life — and spent years wishing someone had built what I built here. I'm a licensed therapist trained in EMDR and Sensorimotor Psychotherapy. This isn't theory for me. It's personal.</p>
-      <p><a href="about.html" style="font-family:'Jost',sans-serif;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink);text-underline-offset:4px;">My full story &rarr;</a></p>
+      <p><a href="about.html" style="font-family:'CoreBandiFace',cursive;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink);text-underline-offset:4px;">My full story &rarr;</a></p>
     </div>
   </div>
 </section>
@@ -828,7 +817,7 @@
 <footer>
   <p class="footer-disclaimer">The Safer Sounds Club, LLC &nbsp;|&nbsp; The Safer Sounds Club is educational and is not a substitute for therapy.</p>
   <div style="margin-bottom:8px;">
-    <a href="quiz.html" class="btn-painted btn-sage" style="padding:14px 44px;font-size:0.72rem;">
+    <a href="https://the-safer-sounds-club.kit.com/0bb51426e7" target="_blank" class="btn-painted btn-sage" style="padding:14px 44px;font-size:0.72rem;">
       <span class="paint-bg-img" aria-hidden="true"><img src="images/brushstroke-sage.png" alt="" loading="lazy" decoding="async"></span>
       <span class="btn-label">Join the email list</span>
     </a>
@@ -836,7 +825,7 @@
   <div class="footer-links">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
-    <a href="products.html">Products</a>
+    <a href="products.html">Workshop</a>
     <a href="quiz.html">Free Quiz</a>
     <a href="faq.html">FAQ</a>
     <a href="blog.html">Blog</a>
@@ -848,16 +837,16 @@
 <!-- ── QUIZ POPUP ── -->
 <div id="quiz-popup" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(26,26,26,0.55);align-items:center;justify-content:center;padding:24px;">
   <div style="background:var(--cream);max-width:480px;width:100%;padding:48px 40px;position:relative;text-align:center;">
-    <button onclick="document.getElementById('quiz-popup').style.display='none';sessionStorage.setItem('popup-dismissed','1');" aria-label="Close" style="position:absolute;top:16px;right:20px;background:none;border:none;font-size:1.3rem;cursor:pointer;opacity:0.4;font-family:'Courier Prime',monospace;">✕</button>
-    <p style="font-family:'Jost',sans-serif;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;opacity:0.5;margin-bottom:16px;">Free 2-Minute Quiz</p>
-    <h2 style="font-family:'Great Vibes',cursive;font-size:2.6rem;line-height:1.25;margin-bottom:20px;">It's about more than the sound.</h2>
+    <button onclick="document.getElementById('quiz-popup').style.display='none';sessionStorage.setItem('popup-dismissed','1');" aria-label="Close" style="position:absolute;top:16px;right:20px;background:none;border:none;font-size:1.3rem;cursor:pointer;opacity:0.4;font-family:'CoreBandiFace',cursive;">✕</button>
+    <p style="font-family:'CoreBandiFace',cursive;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;opacity:0.5;margin-bottom:16px;">Free 2-Minute Quiz</p>
+    <h2 style="font-family:'CoreBandiFace',cursive;font-size:2.6rem;line-height:1.25;margin-bottom:20px;">It's about more than the sound.</h2>
     <p style="font-size:0.97rem;line-height:1.8;margin-bottom:8px;">Underneath the panic and rage is a deeper feeling driving the whole reaction.</p>
     <p style="font-size:0.97rem;line-height:1.8;margin-bottom:28px;">Two minutes to find yours — and a short guided mindfulness practice, specific to you, to keep.</p>
-    <a href="quiz.html" class="btn-painted btn-sage">
+    <a href="https://the-safer-sounds-club.kit.com/0bb51426e7" target="_blank" class="btn-painted btn-sage">
       <span class="paint-bg-img" aria-hidden="true"><img src="images/brushstroke-sage.png" alt="" loading="lazy" decoding="async"></span>
       <span class="btn-label">See What's Underneath</span>
     </a>
-    <p style="font-family:'Jost',sans-serif;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;opacity:0.4;margin-top:20px;cursor:pointer;" onclick="document.getElementById('quiz-popup').style.display='none';sessionStorage.setItem('popup-dismissed','1');">No thanks, I'll skip it</p>
+    <p style="font-family:'CoreBandiFace',cursive;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;opacity:0.4;margin-top:20px;cursor:pointer;" onclick="document.getElementById('quiz-popup').style.display='none';sessionStorage.setItem('popup-dismissed','1');">No thanks, I'll skip it</p>
   </div>
 </div>
 <script>

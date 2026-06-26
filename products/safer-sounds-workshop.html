@@ -41,23 +41,23 @@
     ]
   }
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Courier+Prime:wght@400;700&family=Jost:wght@300;400&display=swap" rel="stylesheet">
   <style>
+    @font-face { font-family: 'CoreBandiFace'; src: url('../fonts/CoreBandiFace.woff2') format('woff2'), url('../fonts/CoreBandiFace.woff') format('woff'), url('../fonts/CoreBandiFace.ttf') format('truetype'); font-weight: normal; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'MeowScript'; src: url('../fonts/MeowScript.ttf') format('truetype'); font-weight: normal; font-style: normal; font-display: swap; }
+    html { font-size: 18px; }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root { --cream: #f5f0e8; --ink: #1a1a1a; --sage: #7a9e8a; --blue-slate: #7a95a8; --max-w: 1100px; }
-    body { background: var(--cream); color: var(--ink); font-family: 'Courier Prime', monospace; font-size: 17px; line-height: 1.7; overflow-x: hidden; }
+    body { background: var(--cream); color: var(--ink); font-family: 'CoreBandiFace', cursive; font-size: 21px; line-height: 1.7; overflow-x: hidden; }
 
     nav { position: sticky; top: 0; z-index: 100; background: var(--cream); border-bottom: 1px solid rgba(26,26,26,0.12); padding: 14px 40px; display: flex; align-items: center; justify-content: space-between; }
-    .nav-brand { font-family: 'Great Vibes', cursive; font-size: 1.6rem; color: var(--ink); text-decoration: none; }
+    .nav-brand { font-family: 'MeowScript', cursive; font-weight: 400; font-size: 1.6rem; color: var(--ink); text-decoration: none; }
     .nav-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
-    .nav-links a { font-family: 'Jost', sans-serif; font-size: 0.7rem; font-weight: 400; letter-spacing: 0.11em; text-transform: uppercase; text-decoration: none; color: var(--ink); opacity: 0.65; transition: opacity 0.2s; }
+    .nav-links a { font-family: 'CoreBandiFace', cursive; font-size: 1.1rem; font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; color: var(--ink); opacity: 0.75; transition: opacity 0.2s; }
     .nav-links a:hover { opacity: 1; }
     .nav-links a.active { color: var(--sage); opacity: 1; }
 
     /* breadcrumb */
-    .breadcrumb { display: block; max-width: var(--max-w); margin: 0 auto; padding: 20px 32px 0; font-family: 'Jost', sans-serif; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.45; border-bottom: none; background: transparent; position: static; }
+    .breadcrumb { display: block; max-width: var(--max-w); margin: 0 auto; padding: 20px 32px 0; font-family: 'CoreBandiFace', cursive; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.45; border-bottom: none; background: transparent; position: static; }
     .breadcrumb a { color: var(--ink); text-decoration: none; }
     .breadcrumb a:hover { opacity: 0.7; }
     .breadcrumb span { margin: 0 8px; }
@@ -66,25 +66,25 @@
     .product-page { max-width: var(--max-w); margin: 0 auto; padding: 40px 32px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
     .product-img-col img { width: 100%; display: block; mix-blend-mode: multiply; }
 
-    .product-label { font-family: 'Jost', sans-serif; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--blue-slate); opacity: 0.85; margin-bottom: 10px; }
-    .product-title { font-family: 'Great Vibes', cursive; font-size: clamp(2.4rem, 4vw, 3.4rem); line-height: 1.15; margin-bottom: 10px; }
-    .product-price-tag { font-family: 'Jost', sans-serif; font-size: 0.9rem; letter-spacing: 0.08em; opacity: 0.6; margin-bottom: 24px; }
+    .product-label { font-family: 'CoreBandiFace', cursive; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--blue-slate); opacity: 0.85; margin-bottom: 10px; }
+    .product-title { font-family: 'MeowScript', cursive; font-weight: 400; font-size: clamp(2.4rem, 4vw, 3.4rem); line-height: 1.15; margin-bottom: 10px; }
+    .product-price-tag { font-family: 'CoreBandiFace', cursive; font-size: 0.9rem; letter-spacing: 0.08em; opacity: 0.6; margin-bottom: 24px; }
     .product-intro { font-size: 1.05rem; line-height: 1.9; margin-bottom: 28px; }
     .product-intro p { margin-bottom: 14px; }
 
     /* CTA button */
-    .btn-painted { position: relative; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; color: var(--ink); font-family: 'Jost', sans-serif; font-size: 0.78rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; padding: 20px 56px; cursor: pointer; border: none; background: none; transition: transform 0.18s ease, opacity 0.18s ease; }
+    .btn-painted { position: relative; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; color: var(--ink); font-family: 'CoreBandiFace', cursive; font-size: 0.78rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; padding: 20px 56px; cursor: pointer; border: none; background: none; transition: transform 0.18s ease, opacity 0.18s ease; }
     .btn-painted:hover { transform: translateY(-2px); opacity: 0.9; }
     .paint-bg-img { position: absolute; inset: 0; overflow: visible; transform: scaleX(1.1) scaleY(1.15); }
     .paint-bg-img img { width: 100%; height: 100%; object-fit: fill; opacity: 0.92; }
     .btn-label { position: relative; z-index: 2; }
 
     .cta-block { margin: 32px 0 20px; }
-    .cta-note { font-family: 'Jost', sans-serif; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.4; margin-top: 14px; }
+    .cta-note { font-family: 'CoreBandiFace', cursive; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.4; margin-top: 14px; }
 
     /* what's included */
     .full-dashes { border: none; border-top: 1.5px dashed rgba(26,26,26,0.2); margin: 32px 0; }
-    .includes-label { font-family: 'Jost', sans-serif; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.5; margin-bottom: 20px; }
+    .includes-label { font-family: 'CoreBandiFace', cursive; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.5; margin-bottom: 20px; }
     .includes-list { list-style: none; padding: 0; }
     .includes-list li { font-size: 1rem; line-height: 1.8; margin-bottom: 18px; padding-left: 20px; position: relative; }
     .includes-list li::before { content: '—'; position: absolute; left: 0; opacity: 0.4; }
@@ -93,7 +93,7 @@
     /* for whom section */
     .for-whom { background: rgba(122,149,168,0.06); border-top: 1.5px dashed rgba(122,149,168,0.25); border-bottom: 1.5px dashed rgba(122,149,168,0.25); padding: 64px 32px; }
     .for-whom-inner { max-width: 720px; margin: 0 auto; text-align: center; }
-    .for-whom h2 { font-family: 'Great Vibes', cursive; font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 28px; }
+    .for-whom h2 { font-family: 'MeowScript', cursive; font-weight: 400; font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 28px; }
     .for-whom ul { list-style: none; padding: 0; text-align: left; max-width: 580px; margin: 0 auto 36px; }
     .for-whom ul li { font-size: 1rem; line-height: 1.8; margin-bottom: 12px; padding-left: 20px; position: relative; }
     .for-whom ul li::before { content: '—'; position: absolute; left: 0; opacity: 0.35; }
@@ -102,13 +102,13 @@
     .about-strip { max-width: 800px; margin: 0 auto; padding: 64px 32px; }
     .about-strip-inner { display: grid; grid-template-columns: 120px 1fr; gap: 32px; align-items: start; }
     .about-photo { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; object-position: top center; }
-    .about-byline { font-family: 'Jost', sans-serif; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.5; margin-bottom: 8px; }
-    .about-name { font-family: 'Great Vibes', cursive; font-size: 2rem; margin-bottom: 10px; }
+    .about-byline { font-family: 'CoreBandiFace', cursive; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.5; margin-bottom: 8px; }
+    .about-name { font-family: 'MeowScript', cursive; font-weight: 400; font-size: 2rem; margin-bottom: 10px; }
     .about-body { font-size: 0.97rem; line-height: 1.85; }
 
     footer { text-align: center; padding: 32px 32px 48px; border-top: 1.5px solid rgba(26,26,26,0.12); }
-    .footer-disclaimer { font-size: 0.75rem; font-family: 'Courier Prime', monospace; opacity: 0.5; margin-bottom: 24px; }
-    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; font-family: 'Jost', sans-serif; font-size: 0.7rem; letter-spacing: 0.1em; margin-top: 16px; }
+    .footer-disclaimer { font-size: 0.75rem; font-family: 'CoreBandiFace', cursive; opacity: 0.5; margin-bottom: 24px; }
+    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; font-family: 'CoreBandiFace', cursive; font-size: 1.1rem; letter-spacing: 0.1em; margin-top: 16px; }
     .footer-links a { text-decoration: none; color: var(--ink); opacity: 0.5; }
     .footer-links a:hover { opacity: 0.9; }
 
@@ -146,7 +146,7 @@
   <ul class="nav-links">
     <li><a href="../index.html">Home</a></li>
     <li><a href="../about.html">About</a></li>
-    <li><a href="../products.html">Products</a></li>
+    <li><a href="../products.html">Workshop</a></li>
     <li><a href="../quiz.html">Free Quiz</a></li>
     <li><a href="../faq.html">FAQ</a></li>
     <li><a href="../blog.html">Blog</a></li>
@@ -158,7 +158,7 @@
 <nav aria-label="breadcrumb" class="breadcrumb">
   <a href="../index.html">Home</a>
   <span aria-hidden="true">/</span>
-  <a href="../products.html">Products</a>
+  <a href="../products.html">Workshop</a>
   <span aria-hidden="true">/</span>
   The Safer Sounds Workshop
 </nav>
@@ -245,7 +245,7 @@
       <p class="about-byline">Your guide</p>
       <p class="about-name">Hi, I'm Megan.</p>
       <p class="about-body">I'm a licensed therapist trained in EMDR and Sensorimotor Psychotherapy — and I've had misophonia for most of my life. I built The Safer Sounds Workshop because I spent years wishing someone had built it for me. This isn't theory. It's personal.</p>
-      <p style="margin-top:14px;"><a href="../about.html" style="font-family:'Jost',sans-serif;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink);text-underline-offset:4px;">My full story &rarr;</a></p>
+      <p style="margin-top:14px;"><a href="../about.html" style="font-family:'CoreBandiFace',cursive;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink);text-underline-offset:4px;">My full story &rarr;</a></p>
     </div>
   </div>
 </section>
@@ -261,7 +261,7 @@
   <div class="footer-links">
     <a href="../index.html">Home</a>
     <a href="../about.html">About</a>
-    <a href="../products.html">Products</a>
+    <a href="../products.html">Workshop</a>
     <a href="../quiz.html">Free Quiz</a>
     <a href="../faq.html">FAQ</a>
     <a href="../blog.html">Blog</a>

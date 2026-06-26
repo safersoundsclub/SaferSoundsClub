@@ -9,26 +9,36 @@
   <meta property="og:title" content="Contact | The Safer Sounds Club">
   <meta property="og:type" content="website">
   <meta name="robots" content="index, follow">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
   <!-- EmailJS SDK -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <style>
+    @font-face {
+      font-family: 'CoreBandiFace';
+      src: url('fonts/CoreBandiFace.woff2') format('woff2'),
+           url('fonts/CoreBandiFace.woff') format('woff'),
+           url('fonts/CoreBandiFace.ttf') format('truetype');
+      font-weight: normal; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'MeowScript';
+      src: url('fonts/MeowScript.ttf') format('truetype');
+      font-weight: normal; font-style: normal; font-display: swap;
+    }
+    html { font-size: 18px; }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root { --cream: #f5f0e8; --ink: #1a1a1a; --sage: #7a9e8a; --blue-slate: #7a95a8; --max-w: 1100px; }
-    body { background: var(--cream); color: var(--ink); font-family: 'Courier Prime', monospace; font-size: 17px; line-height: 1.7; overflow-x: hidden; }
+    body { background: var(--cream); color: var(--ink); font-family: 'CoreBandiFace', cursive; font-size: 21px; line-height: 1.7; overflow-x: hidden; }
 
     nav { position: sticky; top: 0; z-index: 100; background: var(--cream); border-bottom: 1px solid rgba(26,26,26,0.12); padding: 14px 40px; display: flex; align-items: center; justify-content: space-between; }
-    .nav-brand { font-family: 'Great Vibes', cursive; font-size: 1.6rem; color: var(--ink); text-decoration: none; }
+    .nav-brand { font-family: 'MeowScript', cursive; font-weight: 400; font-size: 1.6rem; color: var(--ink); text-decoration: none; }
     .nav-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
-    .nav-links a { font-family: 'Jost', sans-serif; font-size: 0.7rem; font-weight: 400; letter-spacing: 0.11em; text-transform: uppercase; text-decoration: none; color: var(--ink); opacity: 0.65; transition: opacity 0.2s; }
+    .nav-links a { font-family: 'CoreBandiFace', cursive; font-size: 1.1rem; font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; color: var(--ink); opacity: 0.75; transition: opacity 0.2s; }
     .nav-links a:hover { opacity: 1; }
     .nav-links a.active { color: var(--sage); opacity: 1; }
 
     .btn-painted {
       position: relative; display: inline-flex; align-items: center; justify-content: center;
-      text-decoration: none; color: var(--ink); font-family: 'Jost', sans-serif;
+      text-decoration: none; color: var(--ink); font-family: 'CoreBandiFace', cursive;
       font-size: 0.78rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase;
       padding: 20px 56px; cursor: pointer; border: none; background: none;
     }
@@ -47,24 +57,24 @@
     .full-dashes { border: none; border-top: 1.5px dashed rgba(26,26,26,0.25); margin: 0; }
 
     .page-hero { text-align: center; padding: 72px 32px 48px; }
-    .page-hero h1 { font-family: 'Great Vibes', cursive; font-size: clamp(3rem, 8vw, 5.5rem); margin-bottom: 12px; }
-    .page-hero p { font-family: 'Jost', sans-serif; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.55; max-width: 600px; margin: 0 auto; }
+    .page-hero h1 { font-family: 'MeowScript', cursive; font-weight: 400; font-size: clamp(2.8rem, 7vw, 5rem); margin-bottom: 12px; }
+    .page-hero p { font-family: 'CoreBandiFace', cursive; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.55; max-width: 600px; margin: 0 auto; }
 
     .contact-layout { max-width: 900px; margin: 0 auto; padding: 64px 32px 88px; display: grid; grid-template-columns: 1fr 340px; gap: 72px; align-items: start; }
 
     /* FORM */
-    .form-title { font-family: 'Great Vibes', cursive; font-size: 2.4rem; margin-bottom: 8px; }
-    .form-sub { font-family: 'Jost', sans-serif; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.5; margin-bottom: 36px; }
+    .form-title { font-family: 'MeowScript', cursive; font-weight: 400; font-size: 2.2rem; margin-bottom: 8px; }
+    .form-sub { font-family: 'CoreBandiFace', cursive; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.5; margin-bottom: 36px; }
 
     .form-row { margin-bottom: 28px; }
     .form-label {
-      display: block; font-family: 'Jost', sans-serif; font-size: 0.68rem;
+      display: block; font-family: 'CoreBandiFace', cursive; font-size: 0.68rem;
       font-weight: 300; letter-spacing: 0.16em; text-transform: uppercase;
       opacity: 0.6; margin-bottom: 8px;
     }
     .form-input, .form-select, .form-textarea {
       width: 100%; background: transparent; border: none; border-bottom: 1.5px solid rgba(26,26,26,0.3);
-      padding: 10px 0; font-family: 'Courier Prime', monospace; font-size: 1rem; color: var(--ink);
+      padding: 10px 0; font-family: 'CoreBandiFace', cursive; font-size: 1rem; color: var(--ink);
       outline: none; transition: border-color 0.2s; border-radius: 0; -webkit-appearance: none;
     }
     .form-input:focus, .form-select:focus, .form-textarea:focus { border-bottom-color: var(--sage); }
@@ -75,7 +85,7 @@
     .form-submit { margin-top: 12px; }
     .form-submit .btn-painted { font-size: 0.78rem; }
 
-    .form-status { margin-top: 20px; font-family: 'Jost', sans-serif; font-size: 0.8rem; letter-spacing: 0.1em; display: none; }
+    .form-status { margin-top: 20px; font-family: 'CoreBandiFace', cursive; font-size: 0.8rem; letter-spacing: 0.1em; display: none; }
     .form-status.success { color: var(--sage); }
     .form-status.error { color: #a86060; }
 
@@ -83,8 +93,8 @@
     .contact-sidebar { padding: 32px 28px; background: rgba(122,149,168,0.08); border-radius: 2px; border: 1px dashed rgba(122,149,168,0.3); padding-top: 32px; }
     .sidebar-block { margin-bottom: 36px; padding-bottom: 36px; border-bottom: 1px dashed rgba(122,149,168,0.25); }
     .sidebar-block:last-child { border-bottom: none; margin-bottom: 0; }
-    .sidebar-label { font-family: 'Jost', sans-serif; font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--blue-slate); opacity: 0.9; margin-bottom: 12px; display: block; }
-    .sidebar-heading { font-family: 'Courier Prime', monospace; font-weight: 700; font-size: 1rem; margin-bottom: 10px; }
+    .sidebar-label { font-family: 'CoreBandiFace', cursive; font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--blue-slate); opacity: 0.9; margin-bottom: 12px; display: block; }
+    .sidebar-heading { font-family: 'CoreBandiFace', cursive; font-weight: 700; font-size: 1rem; margin-bottom: 10px; }
     .sidebar-body { font-size: 0.93rem; line-height: 1.8; opacity: 0.8; }
 
     /* LINE ART */
@@ -92,8 +102,8 @@
     .line-art-divider img { height: 48px; opacity: 0.22; mix-blend-mode: multiply; }
 
     footer { text-align: center; padding: 32px 32px 48px; border-top: 1.5px solid rgba(26,26,26,0.12); }
-    .footer-disclaimer { font-size: 0.75rem; font-family: 'Courier Prime', monospace; opacity: 0.5; margin-bottom: 24px; }
-    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; font-family: 'Jost', sans-serif; font-size: 0.7rem; letter-spacing: 0.1em; margin-top: 16px; }
+    .footer-disclaimer { font-size: 0.75rem; font-family: 'CoreBandiFace', cursive; opacity: 0.5; margin-bottom: 24px; }
+    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; font-family: 'CoreBandiFace', cursive; font-size: 1.1rem; letter-spacing: 0.1em; margin-top: 16px; }
     .footer-links a { text-decoration: none; color: var(--ink); opacity: 0.5; }
     .footer-links a:hover { opacity: 0.9; }
 
@@ -154,7 +164,7 @@
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
-    <li><a href="products.html">Products</a></li>
+    <li><a href="products.html">Workshop</a></li>
     <li><a href="quiz.html">Free Quiz</a></li>
     <li><a href="faq.html">FAQ</a></li>
     <li><a href="blog.html">Blog</a></li>
@@ -260,7 +270,7 @@
 <footer>
   <p class="footer-disclaimer">The Safer Sounds Club, LLC &nbsp;|&nbsp; The Safer Sounds Club is educational and is not a substitute for therapy.</p>
   <div style="margin-bottom:8px;">
-    <a href="quiz.html" class="btn-painted btn-sage" style="padding:14px 44px;font-size:0.72rem;">
+    <a href="https://the-safer-sounds-club.kit.com/0bb51426e7" target="_blank" class="btn-painted btn-sage" style="padding:14px 44px;font-size:0.72rem;">
       <span class="paint-bg-img" aria-hidden="true"><img src="images/brushstroke-sage.png" alt=""></span>
       <span class="btn-label">Join the email list</span>
     </a>
@@ -268,7 +278,7 @@
   <div class="footer-links">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
-    <a href="products.html">Products</a>
+    <a href="products.html">Workshop</a>
     <a href="quiz.html">Free Quiz</a>
     <a href="faq.html">FAQ</a>
     <a href="blog.html">Blog</a>
@@ -280,9 +290,9 @@
   // ─── EmailJS Configuration ───────────────────────────────────────────
   // MEGAN: Replace these three placeholders with your actual EmailJS values.
   // Sign up at https://www.emailjs.com → Dashboard → Email Services + Email Templates
-  const EMAILJS_PUBLIC_KEY  = 'YOUR_EMAILJS_PUBLIC_KEY';   // Account → API Keys
-  const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';           // Email Services → Service ID
-  const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';          // Email Templates → Template ID
+  const EMAILJS_PUBLIC_KEY  = '2CAA7_gjK3xs1k2iy';
+  const EMAILJS_SERVICE_ID  = 'service_ep3w4cp';
+  const EMAILJS_TEMPLATE_ID = 'template_hb1wpgj';
 
   emailjs.init(EMAILJS_PUBLIC_KEY);
 

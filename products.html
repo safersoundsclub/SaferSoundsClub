@@ -4,206 +4,172 @@
   <link rel="icon" type="image/png" href="images/favicon.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Products & Resources | The Safer Sounds Club — Misophonia Tools</title>
-  <meta name="description" content="Guided workshops, workbooks, and audio series for people ready to understand their misophonia — not just manage it. Start with the free quiz.">
-  <meta name="keywords" content="misophonia workshop, misophonia workbook, misophonia resources, misophonia somatic therapy, misophonia relief, misophonia tools">
-  <meta property="og:title" content="Products — The Safer Sounds Club">
-  <meta property="og:description" content="Somatic tools and guided resources for misophonia relief — workshops, workbooks, and mindfulness series.">
+  <title>The Safer Sounds Workshop | Misophonia Relief — $17</title>
+  <meta name="description" content="A 60-minute somatic workshop for people with misophonia. Finally understand what's driving your reaction — in your body, not just your mind. Guided experience, somatic practice, and personal worksheet. $17.">
+  <meta name="keywords" content="misophonia workshop, misophonia help, misophonia treatment, somatic therapy, sound sensitivity relief, misophonia self-help">
+  <meta property="og:title" content="The Safer Sounds Workshop | Misophonia Relief">
+  <meta property="og:description" content="A 60-minute guided experience to finally understand your misophonia from the inside — and start finding your way back to your life.">
   <meta property="og:type" content="website">
   <meta name="robots" content="index, follow">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "name": "Misophonia Resources — The Safer Sounds Club",
-    "itemListElement": [
-      {
-        "@type": "Product",
-        "position": 1,
-        "name": "The Safer Sounds Workshop",
-        "description": "A 60-minute self-guided somatic experience for people with misophonia ready to understand what's underneath their reaction.",
-        "offers": { "@type": "Offer", "price": "17", "priceCurrency": "USD" }
-      },
-      {
-        "@type": "Product",
-        "position": 2,
-        "name": "The Misophonia Relief Map",
-        "description": "A guided workbook that maps the sensations, emotions, and unmet needs underneath your misophonia reaction.",
-        "offers": { "@type": "Offer", "price": "17", "priceCurrency": "USD" }
-      }
-    ]
-  }
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --cream: #f5f0e8; --ink: #1a1a1a; --sage: #7a9e8a; --blue-slate: #7a95a8; --max-w: 1100px; }
-    body { background: var(--cream); color: var(--ink); font-family: 'Courier Prime', monospace; font-size: 17px; line-height: 1.7; overflow-x: hidden; }
 
+  <style>
+    @font-face {
+      font-family: 'CoreBandiFace';
+      src: url('fonts/CoreBandiFace.woff2') format('woff2'),
+           url('fonts/CoreBandiFace.woff') format('woff'),
+           url('fonts/CoreBandiFace.ttf') format('truetype');
+      font-weight: normal; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: 'MeowScript';
+      src: url('fonts/MeowScript.ttf') format('truetype');
+      font-weight: normal; font-style: normal; font-display: swap;
+    }
+
+    html { font-size: 18px; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --cream: #f5f0e8; --ink: #1a1a1a; --sage: #7a9e8a; --blue-slate: #7a95a8; --max-w: 860px; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--cream); color: var(--ink); font-family: 'CoreBandiFace', cursive; font-size: 21px; line-height: 1.7; overflow-x: hidden; }
+
+    /* ── NAV ── */
     nav { position: sticky; top: 0; z-index: 100; background: var(--cream); border-bottom: 1px solid rgba(26,26,26,0.12); padding: 14px 40px; display: flex; align-items: center; justify-content: space-between; }
-    .nav-brand { font-family: 'Great Vibes', cursive; font-size: 1.6rem; color: var(--ink); text-decoration: none; }
+    .nav-brand { font-family: 'MeowScript', cursive; font-weight: 400; font-size: 1.6rem; color: var(--ink); text-decoration: none; }
     .nav-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
-    .nav-links a { font-family: 'Jost', sans-serif; font-size: 0.7rem; font-weight: 400; letter-spacing: 0.11em; text-transform: uppercase; text-decoration: none; color: var(--ink); opacity: 0.65; transition: opacity 0.2s; }
+    .nav-links a { font-family: 'CoreBandiFace', cursive; font-size: 1.1rem; font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; color: var(--ink); opacity: 0.75; transition: opacity 0.2s; }
     .nav-links a:hover { opacity: 1; }
     .nav-links a.active { color: var(--sage); opacity: 1; }
-
-    /* Base: all CTA buttons share this shell */
-    .btn-painted {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      color: var(--ink);
-      font-family: 'Jost', sans-serif;
-      font-size: 0.78rem;
-      font-weight: 400;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      padding: 20px 64px;
-      cursor: pointer;
-      border: none;
-      background: none;
-    }
-    /* Sage variant — same PNG brushstroke system as blue */
-    .btn-sage .paint-bg { display: none; }
-    .btn-sage .paint-bg::after { display: none; }
-    .paint-bg-img {
-      position: absolute; inset: 0; overflow: visible;
-      transform: scaleX(1.1) scaleY(1.15);
-    }
-    .paint-bg-img img { width: 100%; height: 100%; object-fit: fill; opacity: 0.95; }
-    .btn-painted {
-      transition: transform 0.18s ease, opacity 0.18s ease;
-    }
-    .btn-painted:hover {
-      transform: translateY(-2px);
-      opacity: 0.9;
-    }
-    .btn-label { position: relative; z-index: 2; }
-
-    .page-hero { text-align: center; padding: 72px 32px 40px; }
-    .page-hero h1 { font-family: 'Great Vibes', cursive; font-size: clamp(3rem, 8vw, 5.5rem); margin-bottom: 12px; }
-    .page-hero p { font-family: 'Jost', sans-serif; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.55; }
-
-    .full-dashes { border: none; border-top: 1.5px dashed rgba(26,26,26,0.25); margin: 0; }
-
-    .featured-section { max-width: 100%; padding: 64px 32px 56px; background: rgba(122,158,138,0.06); border-bottom: 1.5px dashed rgba(122,158,138,0.3); }
-    .featured-section-inner { max-width: var(--max-w); margin: 0 auto; }
-    .featured-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
-
-    .product-img-wrap {
-      width: 100%; aspect-ratio: 4/3; overflow: hidden; margin-bottom: 28px;
-      background: #f5f0e8;
-    }
-    .product-img-wrap img {
-      width: 100%; height: 100%; object-fit: cover;
-      mix-blend-mode: multiply;
-    }
-    .product-img-wrap.clip-left img { object-position: left center; }
-    .product-img-placeholder {
-      width: 100%; aspect-ratio: 4/3; margin-bottom: 28px;
-      border: 1.5px dashed rgba(26,26,26,0.2);
-      display: flex; align-items: center; justify-content: center;
-      text-align: center; padding: 24px;
-    }
-
-    .product-label { font-family: 'Jost', sans-serif; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--blue-slate); opacity: 0.85; margin-bottom: 8px; }
-    .product-title { font-family: 'Great Vibes', cursive; font-size: 2.4rem; margin-bottom: 8px; line-height: 1.2; }
-    .product-price { font-family: 'Jost', sans-serif; font-size: 0.85rem; letter-spacing: 0.08em; margin-bottom: 20px; opacity: 0.65; }
-    .product-body { font-size: 0.96rem; line-height: 1.85; margin-bottom: 20px; }
-    .product-body p { margin-bottom: 12px; }
-    .product-includes { font-size: 0.9rem; line-height: 1.8; margin-bottom: 28px; }
-    .product-includes strong { font-weight: 700; display: block; margin-bottom: 8px; }
-    .product-includes ul { padding-left: 20px; }
-    .product-includes li { margin-bottom: 6px; }
-
-    .section-label { text-align: center; padding: 56px 32px 8px; }
-    .section-label p { font-family: 'Jost', sans-serif; font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.4; }
-
-    .secondary-grid { max-width: var(--max-w); margin: 0 auto; padding: 24px 32px 56px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
-    .secondary-card { border: 1.5px dashed rgba(122,149,168,0.4); padding: 32px 28px; background: rgba(122,149,168,0.05); }
-    .secondary-label { font-family: 'Jost', sans-serif; font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.4; margin-bottom: 10px; }
-    .secondary-title { font-family: 'Courier Prime', monospace; font-size: 1.05rem; font-weight: 700; line-height: 1.4; margin-bottom: 8px; }
-    .secondary-price { font-family: 'Jost', sans-serif; font-size: 0.8rem; letter-spacing: 0.06em; margin-bottom: 14px; opacity: 0.65; }
-    .secondary-body { font-size: 0.9rem; line-height: 1.8; margin-bottom: 24px; opacity: 0.85; }
-    .secondary-card.coming-soon { opacity: 0.55; }
-    .coming-soon-tag { font-family: 'Jost', sans-serif; font-size: 0.63rem; letter-spacing: 0.18em; text-transform: uppercase; border: 1px solid rgba(26,26,26,0.4); display: inline-block; padding: 3px 10px; margin-bottom: 14px; }
-
-    .quiz-cta-wrap { background: rgba(122,158,138,0.08); border-top: 1.5px dashed rgba(122,158,138,0.35); }
-    .quiz-cta { text-align: center; padding: 56px 32px 80px; max-width: 640px; margin: 0 auto; }
-    .quiz-cta h2 { font-family: 'Great Vibes', cursive; font-size: clamp(2.4rem, 5vw, 3.2rem); margin-bottom: 16px; }
-    .quiz-cta p { font-size: 0.97rem; line-height: 1.85; margin-bottom: 32px; }
-
-    footer { text-align: center; padding: 32px 32px 48px; border-top: 1.5px solid rgba(26,26,26,0.12); }
-    .footer-disclaimer { font-size: 0.75rem; font-family: 'Courier Prime', monospace; opacity: 0.5; margin-bottom: 24px; }
-    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; font-family: 'Jost', sans-serif; font-size: 0.7rem; letter-spacing: 0.1em; margin-top: 16px; }
-    .footer-links a { text-decoration: none; color: var(--ink); opacity: 0.5; }
-    .footer-links a:hover { opacity: 0.9; }
-
-    @media (max-width: 800px) {
-      nav { padding: 14px 20px; }
-      .nav-links { gap: 12px; }
-      .featured-grid { grid-template-columns: 1fr; gap: 56px; }
-      .secondary-grid { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 480px) {
-      .btn-painted { padding: 18px 36px; }
-      nav { padding: 12px 16px; }
-    }
-  
-    /* ── HAMBURGER NAV ── */
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 4px;
-      flex-direction: column;
-      gap: 5px;
-      flex-shrink: 0;
-    }
-    .nav-toggle span {
-      display: block;
-      width: 22px;
-      height: 1.5px;
-      background: var(--ink);
-      transition: transform 0.25s, opacity 0.2s;
-    }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; flex-direction: column; gap: 5px; flex-shrink: 0; }
+    .nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--ink); transition: transform 0.25s, opacity 0.2s; }
     nav.open .nav-toggle span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
     nav.open .nav-toggle span:nth-child(2) { opacity: 0; }
     nav.open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
     @media (max-width: 720px) {
       .nav-toggle { display: flex; }
       nav { position: relative; flex-wrap: wrap; }
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: var(--cream);
-        border-bottom: 1.5px solid rgba(26,26,26,0.15);
-        padding: 20px 24px 24px;
-        flex-direction: column;
-        gap: 18px;
-        z-index: 200;
-        box-shadow: 0 8px 24px rgba(26,26,26,0.06);
-      }
+      .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--cream); border-bottom: 1.5px solid rgba(26,26,26,0.15); padding: 20px 24px 24px; flex-direction: column; gap: 18px; z-index: 200; box-shadow: 0 8px 24px rgba(26,26,26,0.06); }
       nav.open .nav-links { display: flex; }
+    }
+
+    /* ── SHARED ── */
+    .btn-painted { position: relative; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; color: var(--ink); font-family: 'CoreBandiFace', cursive; font-size: 0.78rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; padding: 20px 64px; cursor: pointer; border: none; background: none; transition: transform 0.18s ease, opacity 0.18s ease; }
+    .btn-painted:hover { transform: translateY(-2px); opacity: 0.9; }
+    .paint-bg-img { position: absolute; inset: 0; overflow: visible; transform: scaleX(1.1) scaleY(1.15); }
+    .paint-bg-img img { width: 100%; height: 100%; object-fit: fill; opacity: 0.92; }
+    .btn-label { position: relative; z-index: 2; }
+    .btn-sage .paint-bg { display: none; }
+    .full-dashes { border: none; border-top: 1.5px dashed rgba(26,26,26,0.25); margin: 8px 0; }
+    .caps-label { font-family: 'CoreBandiFace', cursive; font-size: 0.72rem; font-weight: 300; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1.5; }
+
+    /* ── HERO ── */
+    .page-hero { text-align: center; padding: 72px 32px 56px; max-width: 840px; margin: 0 auto; }
+    .page-hero .eyebrow { font-family: 'CoreBandiFace', cursive; font-size: 1.1rem; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.5; margin-bottom: 20px; }
+    .page-hero h1 { font-family: 'MeowScript', cursive; font-weight: 400; font-size: clamp(2.8rem, 6vw, 4.8rem); line-height: 1.1; margin-bottom: 24px; }
+    .page-hero .subhead { font-size: 1.05rem; line-height: 1.85; max-width: 620px; margin: 0 auto 36px; }
+
+    /* ── OPENING STORY ── */
+    .story-section { padding: 56px 32px; max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 400px 1fr; column-gap: 56px; align-items: start; }
+    .story-img img { width: 100%; mix-blend-mode: multiply; }
+    .story-text .story-intro { font-style: italic; font-size: 1.05rem; font-weight: 700; margin-bottom: 20px; }
+    .story-text p { font-size: 1rem; line-height: 1.85; margin-bottom: 14px; }
+    .story-text hr { border: none; border-top: 1px dashed rgba(26,26,26,0.25); margin: 16px 0; }
+
+    /* ── BRIDGE CALLOUT ── */
+    .callout { text-align: center; padding: 56px 32px; background: rgba(122,149,168,0.07); border-top: 1.5px dashed rgba(122,149,168,0.25); border-bottom: 1.5px dashed rgba(122,149,168,0.25); }
+    .callout-inner { max-width: var(--max-w); margin: 0 auto; }
+    .callout-inner p { font-size: 1.05rem; line-height: 1.85; margin-bottom: 14px; }
+
+    /* ── VIDEO PLACEHOLDER ── */
+    .video-section { padding: 48px 32px; text-align: center; }
+    .video-wrap { max-width: 640px; margin: 0 auto; }
+    .video-placeholder { aspect-ratio: 16/9; background: rgba(26,26,26,0.05); border: 1.5px dashed rgba(26,26,26,0.2); display: flex; align-items: center; justify-content: center; font-family: 'CoreBandiFace', cursive; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.45; }
+    .video-caption { font-family: 'CoreBandiFace', cursive; font-size: 0.78rem; opacity: 0.5; margin-top: 12px; letter-spacing: 0.08em; }
+
+    /* ── MODULES ── */
+    .modules-section { padding: 56px 32px; max-width: var(--max-w); margin: 0 auto; }
+    .modules-eyebrow { font-family: 'CoreBandiFace', cursive; font-size: 1.1rem; letter-spacing: 0.2em; text-transform: uppercase; text-align: center; opacity: 0.45; margin-bottom: 12px; }
+    .modules-title { font-family: 'MeowScript', cursive; font-weight: 400; font-size: clamp(2rem, 3.5vw, 2.8rem); text-align: center; margin-bottom: 48px; }
+    .module-card { border: 1.5px solid rgba(122,158,138,0.3); border-radius: 2px; padding: 32px 40px; margin-bottom: 20px; position: relative; background: rgba(122,158,138,0.025); }
+    .module-card::before { content: ''; position: absolute; inset: 4px; border: 1px dashed rgba(26,26,26,0.08); border-radius: 2px; pointer-events: none; }
+    .module-num { font-family: 'CoreBandiFace', cursive; font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.4; margin-bottom: 6px; }
+    .module-title { font-family: 'CoreBandiFace', cursive; font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+    .module-body { font-size: 0.97rem; line-height: 1.8; }
+
+    /* ── MID CTA ── */
+    .mid-cta { text-align: center; padding: 48px 32px; }
+    .mid-cta p { font-style: italic; font-size: 1rem; line-height: 1.8; max-width: 560px; margin: 0 auto 32px; opacity: 0.85; }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials-section { padding: 56px 32px; background: rgba(122,149,168,0.06); border-top: 1.5px dashed rgba(122,149,168,0.2); border-bottom: 1.5px dashed rgba(122,149,168,0.2); }
+    .testimonials-inner { max-width: var(--max-w); margin: 0 auto; }
+    .testimonials-eyebrow { font-family: 'CoreBandiFace', cursive; font-size: 1.1rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.45; text-align: center; margin-bottom: 40px; }
+    .testimonial-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .testimonial-card { border: 1.5px dashed rgba(26,26,26,0.18); padding: 28px; }
+    .testimonial-quote { font-style: italic; font-size: 0.97rem; line-height: 1.8; margin-bottom: 16px; }
+    .testimonial-attr { font-family: 'CoreBandiFace', cursive; font-size: 1.1rem; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.5; }
+
+    /* ── BIO ── */
+    .bio-section { padding: 56px 32px; }
+    .bio-inner { display: grid; grid-template-columns: 200px 1fr; gap: 40px; align-items: start; max-width: var(--max-w); margin: 0 auto; }
+    .bio-photo { width: 200px; height: 200px; border-radius: 50%; overflow: hidden; background: #d4c9b5; }
+    .bio-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+    .bio-script-h3 { font-family: 'MeowScript', cursive; font-weight: 400; font-size: clamp(2rem, 3.5vw, 2.8rem); margin-bottom: 8px; line-height: 1.1; }
+    .bio-label { font-family: 'CoreBandiFace', cursive; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage); opacity: 0.9; margin-bottom: 20px; }
+    .bio-body p { margin-bottom: 1rem; font-size: 1rem; line-height: 1.8; }
+
+    /* ── PRICING ── */
+    .pricing-section { padding: 64px 32px; text-align: center; max-width: 640px; margin: 0 auto; }
+    .pricing-eyebrow { font-family: 'CoreBandiFace', cursive; font-size: 1.1rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.45; margin-bottom: 12px; }
+    .pricing-title { font-family: 'MeowScript', cursive; font-weight: 400; font-size: clamp(2.2rem, 4vw, 3.2rem); margin-bottom: 8px; }
+    .pricing-price { font-family: 'CoreBandiFace', cursive; font-size: 2.4rem; font-weight: 700; margin-bottom: 8px; }
+    .pricing-tagline { font-size: 0.97rem; line-height: 1.8; opacity: 0.75; margin-bottom: 36px; }
+    .pricing-includes { text-align: left; border: 1.5px solid rgba(122,158,138,0.3); padding: 28px 32px; margin-bottom: 36px; background: rgba(122,158,138,0.04); }
+    .pricing-includes h4 { font-family: 'CoreBandiFace', cursive; font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.5; margin-bottom: 16px; }
+    .pricing-includes ul { list-style: none; }
+    .pricing-includes li { font-size: 0.97rem; line-height: 1.7; padding: 6px 0; border-bottom: 1px dashed rgba(26,26,26,0.1); display: flex; align-items: baseline; gap: 10px; }
+    .pricing-includes li:last-child { border-bottom: none; }
+    .pricing-includes li::before { content: '✓'; color: var(--sage); font-size: 0.85rem; flex-shrink: 0; }
+    .pricing-wave { max-width: 420px; margin: 0 auto 48px; display: block; mix-blend-mode: multiply; opacity: 0.88; }
+
+    /* ── GUARANTEE ── */
+    .guarantee-section { padding: 48px 32px; text-align: center; background: rgba(122,149,168,0.05); border-top: 1.5px dashed rgba(122,149,168,0.2); }
+    .guarantee-inner { max-width: 560px; margin: 0 auto; }
+    .guarantee-inner p { font-size: 0.97rem; line-height: 1.85; margin-bottom: 10px; }
+
+    /* ── FOOTER ── */
+    footer { text-align: center; padding: 32px 32px 48px; border-top: 1.5px solid rgba(26,26,26,0.12); }
+    .footer-disclaimer { font-size: 0.75rem; font-family: 'CoreBandiFace', cursive; opacity: 0.5; margin-bottom: 24px; }
+    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-top: 16px; font-family: 'CoreBandiFace', cursive; font-size: 1.1rem; letter-spacing: 0.1em; }
+    .footer-links a { text-decoration: none; color: var(--ink); opacity: 0.5; }
+    .footer-links a:hover { opacity: 0.85; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 14px 20px; }
+      .page-hero { padding: 48px 20px 40px; }
+      .story-section { grid-template-columns: 1fr; padding: 40px 20px; }
+      .story-img { max-width: 280px; margin: 0 auto 32px; }
+      .modules-section { padding: 40px 20px; }
+      .module-card { padding: 24px 22px; }
+      .testimonial-grid { grid-template-columns: 1fr; }
+      .bio-inner { grid-template-columns: 1fr; }
+      .bio-photo { margin: 0 auto; }
+      .pricing-section { padding: 48px 20px; }
+      .pricing-includes { padding: 24px 20px; }
+      .btn-painted { padding: 18px 40px; }
+      .guarantee-section { padding: 40px 20px; }
     }
   </style>
 </head>
 <body>
 
+<!-- ── NAV ── -->
 <nav>
   <a href="index.html" class="nav-brand">the Safer Sounds Club</a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
-    <li><a href="products.html">Products</a></li>
+    <li><a href="products.html" class="active">Workshop</a></li>
     <li><a href="quiz.html">Free Quiz</a></li>
     <li><a href="faq.html">FAQ</a></li>
     <li><a href="blog.html">Blog</a></li>
@@ -212,108 +178,176 @@
   <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
 </nav>
 
+<!-- ── HERO ── -->
 <section class="page-hero">
-  <h1>the Shop</h1>
-  <p>Resources for people ready to stop just managing their misophonia</p>
+  <p class="eyebrow">A guided experience for misophonia</p>
+  <h1>The Safer Sounds Workshop</h1>
+  <p class="subhead">Finally understand what's underneath your reaction — in your body, not just your mind. A 60-minute guided experience you can return to again and again.</p>
+  <a href="https://the-safer-sounds-club.kit.com/products/the-safer-sounds-workshop" target="_blank" class="btn-painted">
+    <span class="paint-bg-img" aria-hidden="true">
+      <img src="images/brushstroke-blue.png" alt="" loading="lazy" decoding="async">
+    </span>
+    <span class="btn-label">$17 &nbsp;|&nbsp; Get Instant Access</span>
+  </a>
+</section>
+
+<img src="images/dots-row.png" style="display:block;max-width:560px;width:80%;margin:0 auto;mix-blend-mode:multiply;opacity:0.7;" aria-hidden="true" alt="" loading="lazy" decoding="async">
+
+<!-- ── OPENING STORY ── -->
+<section class="story-section">
+  <div class="story-img">
+    <img src="images/Umbrella.png" alt="Beach umbrella line art" loading="lazy" decoding="async">
+  </div>
+  <div class="story-text">
+    <p class="story-intro">If this is your life:</p>
+    <p>You ate lunch at your desk alone again. Not because you're busy — because the office kitchen is a minefield and you learned a long time ago that it's just easier this way.</p>
+    <hr>
+    <p>You've planned the exits before you sat down. You know which restaurants are too loud, which family members to seat farthest away. You have an entire invisible architecture of avoidance that looks, from the outside, like having a lot of preferences.</p>
+    <hr>
+    <p>You've mentioned it to a therapist. They nodded and moved on. You got the sense they didn't really know what to do with it. So you stopped bringing it up.</p>
+    <hr>
+    <p>You've tried the coping strategies. The headphones, the apps, the noise machines. They help — until they don't. And you're still here.</p>
+    <hr>
+    <p>You don't need another way to manage it. You need to understand what's actually happening — and start getting your life back.</p>
+  </div>
+</section>
+
+<!-- ── CALLOUT ── -->
+<section class="callout">
+  <div class="callout-inner">
+    <p><strong>The problem isn't the sound.</strong></p>
+    <p>The sound is just the trigger. Underneath every misophonia reaction is a deeper feeling your nervous system has been reaching for — something it learned to protect you from a long time ago.</p>
+    <p><em>When you understand what that feeling is, the whole thing stops being a mystery you're managing and starts being something you can actually work with.</em></p>
+  </div>
+</section>
+
+<!-- ── VIDEO INTRO ── -->
+<section class="video-section">
+  <div class="video-wrap">
+    <div class="video-placeholder" aria-label="Intro video from Megan">
+      Video introduction — coming soon
+    </div>
+    <p class="video-caption">A note from Megan on what this workshop is (and isn't)</p>
+  </div>
 </section>
 
 <hr class="full-dashes">
 
-<!-- FEATURED PRODUCTS -->
-<div class="featured-section">
-  <div class="featured-section-inner">
-  <div class="featured-grid">
+<!-- ── MODULES / WHAT'S INSIDE ── -->
+<section class="modules-section">
+  <p class="modules-eyebrow">What's inside</p>
+  <h2 class="modules-title">What you'll get:</h2>
 
-    <!-- WORKSHOP -->
-    <article class="product-card">
-      <div class="product-img-wrap clip-left">
-        <img src="images/Stand.png" alt="The Safer Sounds Workshop" style="mix-blend-mode:multiply;" loading="lazy" decoding="async">
-      </div>
-      <p class="product-label">Digital Workshop</p>
-      <h2 class="product-title">The Safer Sounds Workshop</h2>
-      <p class="product-price">$17</p>
-      <div class="product-body">
-        <p>A 60-minute self-guided somatic experience that walks you through a real trigger moment — so you can finally understand what your nervous system has been trying to tell you all along.</p>
-      </div>
-      <a href="products/safer-sounds-workshop.html" style="display:inline-block;font-family:'Jost',sans-serif;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink);text-underline-offset:4px;margin-bottom:24px;">Full details &amp; what's included &rarr;</a>
-      <div style="margin-top:4px;">
-        <a href="https://the-safer-sounds-club.kit.com/products/the-safer-sounds-workshop" target="_blank" class="btn-painted">
-          <span class="paint-bg-img" aria-hidden="true">
-            <img src="images/brushstroke-blue.png" alt="" loading="lazy" decoding="async">
-          </span>
-          <span class="btn-label">Get the Workshop — $17</span>
-        </a>
-      </div>
-    </article>
-
-    <!-- RELIEF MAP -->
-    <article class="product-card">
-      <div style="width:100%;aspect-ratio:4/3;margin-bottom:28px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:var(--cream);">
-        <img src="images/Two waves.png" alt="The Misophonia Relief Map" style="width:100%;height:100%;object-fit:cover;object-position:center;mix-blend-mode:multiply;opacity:0.82;" loading="lazy" decoding="async">
-      </div>
-      <p class="product-label">Workbook</p>
-      <h2 class="product-title">The Misophonia Relief Map</h2>
-      <p class="product-price">$17</p>
-      <div class="product-body">
-        <p>A guided workbook that takes you from "I don't know why I'm like this" to a personal map of exactly what's underneath your misophonia — sensations, emotions, beliefs, and unmet needs. Yours to keep.</p>
-      </div>
-      <p style="font-family:'Jost',sans-serif;font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;border:1px solid rgba(26,26,26,0.35);display:inline-block;padding:6px 16px;opacity:0.55;margin-top:8px;">Coming Soon</p>
-    </article>
-
+  <div class="module-card">
+    <p class="module-num">Part 01</p>
+    <p class="module-title">A 60-Minute Guided Experience</p>
+    <p class="module-body">Not a lecture. An experience. You'll slow down a real trigger moment and finally understand your reaction from the inside — in your body, not just your mind. Work through it at your own pace, as many times as you need, with as many triggers as you'd like.</p>
   </div>
-  </div><!-- /featured-section-inner -->
-</div>
+
+  <div class="module-card">
+    <p class="module-num">Part 02</p>
+    <p class="module-title">A Somatic Regulation Practice</p>
+    <p class="module-body">A body-based practice you can return to anytime — before a triggering environment, after a reaction hits, or on the days that feel like too much. This isn't about calming down. It's about coming home to your own nervous system.</p>
+  </div>
+
+  <div class="module-card">
+    <p class="module-num">Part 03</p>
+    <p class="module-title">The Misophonia Relief Map Worksheet</p>
+    <p class="module-body">Your own personal map of what's underneath your reaction — the sensations, emotions, beliefs, and unmet needs your nervous system has been reaching for. Specific to your pattern, your history. Bring it to your therapist or work through it on your own. Yours to keep.</p>
+  </div>
+</section>
+
+<!-- ── MID-PAGE CTA ── -->
+<section class="mid-cta">
+  <p>Sixty minutes to finally understand what's been happening in your body for years — and a set of tools to keep coming back to.</p>
+  <a href="https://the-safer-sounds-club.kit.com/products/the-safer-sounds-workshop" target="_blank" class="btn-painted">
+    <span class="paint-bg-img" aria-hidden="true">
+      <img src="images/brushstroke-blue.png" alt="" loading="lazy" decoding="async">
+    </span>
+    <span class="btn-label">$17 &nbsp;|&nbsp; Get the Workshop</span>
+  </a>
+</section>
 
 <hr class="full-dashes">
 
-<div class="section-label"><p>Also Available</p></div>
+<!-- ── TESTIMONIALS ── -->
+<section class="testimonials-section">
+  <div class="testimonials-inner">
+    <p class="testimonials-eyebrow">What others are saying</p>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <p class="testimonial-quote">"I've spent years being told I was too sensitive. This workshop was the first time I actually understood why my body responds the way it does. I didn't expect to feel so seen."</p>
+        <p class="testimonial-attr">— Workshop participant</p>
+      </div>
+      <div class="testimonial-card">
+        <p class="testimonial-quote">"I've tried so many things. This was different. I finally have language for what's happening inside me — and something I can actually do with it."</p>
+        <p class="testimonial-attr">— Workshop participant</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-<div class="secondary-grid">
+<!-- ── BIO ── -->
+<section class="bio-section">
+  <p class="caps-label" style="text-align:center;margin-bottom:32px;">About your guide:</p>
+  <div class="bio-inner">
+    <div>
+      <div class="bio-photo">
+        <img src="images/megan-carlson.jpg" alt="Megan Carlson, licensed therapist" loading="lazy" decoding="async">
+      </div>
+    </div>
+    <div class="bio-body">
+      <p class="bio-script-h3">Hi, I'm Megan.</p>
+      <p class="bio-label">Licensed Therapist &bull; EMDR &bull; Sensorimotor Psychotherapy &bull; Colorado</p>
+      <p>I've had misophonia for most of my life — and spent years wishing someone had built what I built here.</p>
+      <p>I'm a licensed therapist trained in EMDR and Sensorimotor Psychotherapy. I work with the nervous system. I understand misophonia not just as a clinician, but as someone who has lived inside it. This isn't theory for me. It's personal.</p>
+      <p>I built this workshop because I believe you deserve more than a list of coping strategies. You deserve to actually understand what's happening — and what your body has been trying to tell you all along.</p>
+      <p><a href="about.html" style="font-family:'CoreBandiFace',cursive;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink);text-underline-offset:4px;">My full story &rarr;</a></p>
+    </div>
+  </div>
+</section>
 
-  <article class="secondary-card">
-    <p class="secondary-label">Audio Series</p>
-    <h3 class="secondary-title">Guided Mindfulness Series</h3>
-    <p class="secondary-price">$27</p>
-    <p class="secondary-body">Five guided mindfulness practices to help your nervous system find regulation, agency, expansiveness, boundaries, and belonging. Extended from the free audio at the end of the quiz — and a complete standalone resource.</p>
-    <a href="quiz.html" class="btn-painted btn-sage" style="padding:16px 32px;font-size:0.72rem;">
-      <span class="paint-bg-img" aria-hidden="true"><img src="images/brushstroke-sage.png" alt="" loading="lazy" decoding="async"></span>
-      <span class="btn-label" style="white-space:nowrap;">Start with the Free Quiz →</span>
-    </a>
-  </article>
+<!-- ── PRICING ── -->
+<section class="pricing-section">
+  <img src="images/Wave.png" class="pricing-wave" alt="" aria-hidden="true" loading="lazy" decoding="async">
+  <p class="pricing-eyebrow">Ready to begin?</p>
+  <h2 class="pricing-title">The Safer Sounds Workshop</h2>
+  <p class="pricing-price">$17</p>
+  <p class="pricing-tagline">Instant access. Yours to keep. Return to it as many times as you need.</p>
 
-  <article class="secondary-card coming-soon">
-    <span class="coming-soon-tag">Coming Soon</span>
-    <p class="secondary-label">Video Course</p>
-    <h3 class="secondary-title">Parenting a Sensitive Kid with Misophonia</h3>
-    <p class="secondary-price">$47</p>
-    <p class="secondary-body">Short videos, conversation guides, and gentle regulation practices for parents raising a child with misophonia. Honest, body-based, and designed to meet the feelings underneath the sound — for both of you.</p>
-  </article>
+  <div class="pricing-includes">
+    <h4>Everything included:</h4>
+    <ul>
+      <li>60-minute guided somatic experience</li>
+      <li>Somatic regulation practice (audio)</li>
+      <li>The Misophonia Relief Map worksheet</li>
+      <li>Unlimited access — work at your own pace</li>
+    </ul>
+  </div>
 
-  <article class="secondary-card coming-soon">
-    <span class="coming-soon-tag">Coming Soon</span>
-    <p class="secondary-label">Professional Training</p>
-    <h3 class="secondary-title">Training for Therapists: A Somatic Approach to Misophonia</h3>
-    <p class="secondary-price">Pricing TBD</p>
-    <p class="secondary-body">A clinical training for therapists working with misophonia through a somatic and attachment-focused lens, including EMDR-specific applications. Details coming soon.</p>
-  </article>
-
-</div>
-
-<div class="quiz-cta-wrap">
-<div class="quiz-cta">
-  <h2>Not sure where to start?</h2>
-  <p>Take the free 2-minute quiz. It identifies which of five deeper feelings is underneath your misophonia — and what your nervous system actually needs. You'll leave with a free guided mindfulness practice written for your result.</p>
-  <a href="quiz.html" class="btn-painted btn-sage">
-    <span class="paint-bg-img" aria-hidden="true"><img src="images/brushstroke-sage.png" alt="" loading="lazy" decoding="async"></span>
-    <span class="btn-label">Take the Free Quiz</span>
+  <a href="https://the-safer-sounds-club.kit.com/products/the-safer-sounds-workshop" target="_blank" class="btn-painted">
+    <span class="paint-bg-img" aria-hidden="true">
+      <img src="images/brushstroke-blue.png" alt="" loading="lazy" decoding="async">
+    </span>
+    <span class="btn-label">Get Instant Access</span>
   </a>
-</div>
-</div>
+</section>
 
+<!-- ── GUARANTEE / REASSURANCE ── -->
+<section class="guarantee-section">
+  <div class="guarantee-inner">
+    <p class="caps-label" style="margin-bottom:16px;">A note before you go</p>
+    <p>This workshop isn't a cure. Misophonia is complex, and healing it takes time. What this gives you is a real starting point — a way to finally understand your own pattern and begin working with it rather than against it.</p>
+    <p>If you're already working with a therapist, this is something you can bring into that work. If you're not, this is a meaningful place to begin.</p>
+    <p style="margin-top:16px;font-style:italic;opacity:0.7;font-size:0.95rem;">The Safer Sounds Club is educational and is not a substitute for therapy.</p>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
 <footer>
   <p class="footer-disclaimer">The Safer Sounds Club, LLC &nbsp;|&nbsp; The Safer Sounds Club is educational and is not a substitute for therapy.</p>
   <div style="margin-bottom:8px;">
-    <a href="quiz.html" class="btn-painted btn-sage" style="padding:14px 44px;font-size:0.72rem;">
+    <a href="https://the-safer-sounds-club.kit.com/0bb51426e7" target="_blank" class="btn-painted btn-sage" style="padding:14px 44px;font-size:0.72rem;">
       <span class="paint-bg-img" aria-hidden="true"><img src="images/brushstroke-sage.png" alt="" loading="lazy" decoding="async"></span>
       <span class="btn-label">Join the email list</span>
     </a>
@@ -321,7 +355,7 @@
   <div class="footer-links">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
-    <a href="products.html">Products</a>
+    <a href="products.html">Workshop</a>
     <a href="quiz.html">Free Quiz</a>
     <a href="faq.html">FAQ</a>
     <a href="blog.html">Blog</a>
@@ -329,15 +363,6 @@
   </div>
 </footer>
 
-
-<script>
-  (function() {
-    var page = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.nav-links a').forEach(function(a) {
-      if (a.getAttribute('href') === page) a.classList.add('active');
-    });
-  })();
-</script>
 <script>
   (function() {
     var toggle = document.querySelector('.nav-toggle');
