@@ -46,13 +46,13 @@
   <style>
     @font-face { font-family: 'CoreBandiFace'; src: url('../fonts/CoreBandiFace.woff2') format('woff2'), url('../fonts/CoreBandiFace.woff') format('woff'), url('../fonts/CoreBandiFace.ttf') format('truetype'); font-weight: normal; font-style: normal; font-display: block; }
     @font-face { font-family: 'MeowScript'; src: url('../fonts/MeowScript.ttf') format('truetype'); font-weight: normal; font-style: normal; font-display: block; }
-    html { font-size: 18px; }
+    html { font-size: 20px; }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root { --cream: #f5f0e8; --ink: #1a1a1a; --sage: #7a9e8a; --blue-slate: #7a95a8; --max-w: 1100px; }
     body { background: var(--cream); color: var(--ink); font-family: 'CoreBandiFace', cursive; font-size: 21px; line-height: 1.7; overflow-x: hidden; }
 
     nav { position: sticky; top: 0; z-index: 100; background: var(--cream); border-bottom: 1px solid rgba(26,26,26,0.12); padding: 14px 40px; display: flex; align-items: center; justify-content: space-between; }
-    .nav-brand { font-family: 'MeowScript', cursive; font-weight: 400; font-size: 1.6rem; color: var(--ink); text-decoration: none; }
+    .nav-brand { font-family: 'MeowScript', cursive; font-weight: 400; font-size: 1.6rem; color: var(--ink); text-decoration: none; white-space: nowrap; }
     .nav-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
     .nav-links a { font-family: 'CoreBandiFace', cursive; font-size: 1.1rem; font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; color: var(--ink); opacity: 0.75; transition: opacity 0.2s; }
     .nav-links a:hover { opacity: 1; }
@@ -133,7 +133,7 @@
     nav.open .nav-toggle span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
     nav.open .nav-toggle span:nth-child(2) { opacity: 0; }
     nav.open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-    @media (max-width: 720px) {
+    @media (max-width: 1024px) {
       .nav-toggle { display: flex; }
       nav { position: relative; flex-wrap: wrap; }
       .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--cream); border-bottom: 1.5px solid rgba(26,26,26,0.15); padding: 20px 24px 24px; flex-direction: column; gap: 18px; z-index: 200; box-shadow: 0 8px 24px rgba(26,26,26,0.06); }
@@ -230,25 +230,6 @@
       <li>You've tried the coping strategies. They helped a little. You're still here.</li>
       <li>You want to sit at the dinner table. Sleep in your own bed. Say yes to things again.</li>
     </ul>
-    <a href="https://the-safer-sounds-club.kit.com/products/the-safer-sounds-workshop" target="_blank" rel="noopener" class="btn-painted">
-      <span class="paint-bg-img" aria-hidden="true">
-        <img src="../images/brushstroke-blue.png" alt="" loading="lazy" decoding="async">
-      </span>
-      <span class="btn-label">Get the Workshop — $17</span>
-    </a>
-  </div>
-</section>
-
-<!-- ABOUT MEGAN -->
-<section class="about-strip">
-  <div class="about-strip-inner">
-    <img src="../images/megan-carlson.jpg" alt="Megan Carlson, licensed therapist" class="about-photo" loading="lazy" decoding="async">
-    <div>
-      <p class="about-byline">Your guide</p>
-      <p class="about-name">Hi, I'm Megan.</p>
-      <p class="about-body">I'm a licensed therapist trained in EMDR and Sensorimotor Psychotherapy — and I've had misophonia for most of my life. I built The Safer Sounds Workshop because I spent years wishing someone had built it for me. This isn't theory. It's personal.</p>
-      <p style="margin-top:14px;"><a href="../about.html" style="font-family:'CoreBandiFace',cursive;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink);text-underline-offset:4px;">My full story &rarr;</a></p>
-    </div>
   </div>
 </section>
 

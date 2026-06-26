@@ -26,13 +26,13 @@
       src: url('fonts/MeowScript.ttf') format('truetype');
       font-weight: normal; font-style: normal; font-display: block;
     }
-    html { font-size: 18px; }
+    html { font-size: 20px; }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root { --cream: #f5f0e8; --ink: #1a1a1a; --sage: #7a9e8a; --blue-slate: #7a95a8; --max-w: 1100px; }
     body { background: var(--cream); color: var(--ink); font-family: 'CoreBandiFace', cursive; font-size: 21px; line-height: 1.7; overflow-x: hidden; }
 
     nav { position: sticky; top: 0; z-index: 100; background: var(--cream); border-bottom: 1px solid rgba(26,26,26,0.12); padding: 14px 40px; display: flex; align-items: center; justify-content: space-between; }
-    .nav-brand { font-family: 'MeowScript', cursive; font-weight: 400; font-size: 1.6rem; color: var(--ink); text-decoration: none; }
+    .nav-brand { font-family: 'MeowScript', cursive; font-weight: 400; font-size: 1.6rem; color: var(--ink); text-decoration: none; white-space: nowrap; }
     .nav-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
     .nav-links a { font-family: 'CoreBandiFace', cursive; font-size: 1.1rem; font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; color: var(--ink); opacity: 0.75; transition: opacity 0.2s; }
     .nav-links a:hover { opacity: 1; }
@@ -103,6 +103,24 @@
     .line-art-divider { text-align: center; padding: 32px 0; }
     .line-art-divider img { height: 48px; opacity: 0.22; mix-blend-mode: multiply; }
 
+    /* ── SUCCESS OVERLAY ── */
+    .success-overlay {
+      display: none;
+      position: fixed; inset: 0; z-index: 500;
+      background: rgba(245,240,232,0.96);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      align-items: center; justify-content: center;
+      text-align: center; padding: 40px 32px;
+    }
+    .success-overlay.visible { display: flex; }
+    .success-card { max-width: 520px; }
+    .success-icon { font-size: 2.4rem; margin-bottom: 24px; opacity: 0.6; }
+    .success-heading { font-family: 'MeowScript', cursive; font-weight: 400; font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.2; margin-bottom: 20px; }
+    .success-body { font-size: 1rem; line-height: 1.85; opacity: 0.75; margin-bottom: 36px; }
+    .success-close { font-family: 'CoreBandiFace', cursive; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; background: none; border: none; cursor: pointer; opacity: 0.45; color: var(--ink); padding: 8px; }
+    .success-close:hover { opacity: 0.9; }
+
     footer { text-align: center; padding: 32px 32px 48px; border-top: 1.5px solid rgba(26,26,26,0.12); }
     .footer-disclaimer { font-size: 0.75rem; font-family: 'CoreBandiFace', cursive; opacity: 0.5; margin-bottom: 24px; }
     .footer-links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; font-family: 'CoreBandiFace', cursive; font-size: 1.1rem; letter-spacing: 0.1em; margin-top: 16px; }
@@ -138,7 +156,7 @@
     nav.open .nav-toggle span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
     nav.open .nav-toggle span:nth-child(2) { opacity: 0; }
     nav.open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-    @media (max-width: 720px) {
+    @media (max-width: 1024px) {
       .nav-toggle { display: flex; }
       nav { position: relative; flex-wrap: wrap; }
       .nav-links {
@@ -160,6 +178,16 @@
   </style>
 </head>
 <body>
+
+<!-- SUCCESS OVERLAY -->
+<div class="success-overlay" id="successOverlay" role="dialog" aria-modal="true" aria-label="Message sent">
+  <div class="success-card">
+    <div class="success-icon">✉</div>
+    <h2 class="success-heading">Message received.</h2>
+    <p class="success-body">Thank you for reaching out. Megan reads every note personally and will be in touch within a few days.</p>
+    <button class="success-close" id="successClose" onclick="document.getElementById('successOverlay').classList.remove('visible')">Close ✕</button>
+  </div>
+</div>
 
 <nav>
   <a href="index.html" class="nav-brand">the Safer Sounds Club</a>
@@ -334,10 +362,8 @@
 
     try {
       await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
-      status.textContent = 'Message sent — thank you. We\'ll be in touch within a few days.';
-      status.className = 'form-status success';
-      status.style.display = 'block';
       form.reset();
+      document.getElementById('successOverlay').classList.add('visible');
     } catch (err) {
       console.error('EmailJS error:', err);
       status.textContent = 'Something went wrong. Please try again or email us directly.';
