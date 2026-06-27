@@ -2,7 +2,7 @@
 node_modules/
 
 # TinaCMS generated files (rebuilt on deploy)
-.tina/__generated__/
+tina/__generated__/
 admin/
 
 # env
