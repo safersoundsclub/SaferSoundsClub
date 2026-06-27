@@ -73,19 +73,9 @@ export default defineConfig({
             ui: { component: "textarea" },
           },
           {
-            type: "string",
+            type: "image",
             name: "heroImage",
             label: "Hero Image",
-            options: [
-              "Umbrella",
-              "Beach",
-              "Wave",
-              "Palm",
-              "Starfish",
-              "Sand Dollar",
-              "Stand",
-              "Chair",
-            ],
           },
           {
             type: "rich-text",
@@ -114,26 +104,6 @@ export default defineConfig({
                 ui: { component: "textarea" },
               },
             ],
-          },
-          {
-            type: "string",
-            name: "prevLabel",
-            label: "← Previous Post Title",
-          },
-          {
-            type: "string",
-            name: "prevHref",
-            label: "← Previous Post Filename (e.g. why-coping-strategies.html)",
-          },
-          {
-            type: "string",
-            name: "nextLabel",
-            label: "Next Post → Title",
-          },
-          {
-            type: "string",
-            name: "nextHref",
-            label: "Next Post → Filename",
           },
         ],
       },

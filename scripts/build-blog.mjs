@@ -9,6 +9,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import matter from "gray-matter";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -16,24 +17,22 @@ const CONTENT_DIR = path.join(ROOT, "content", "blog");
 const BLOG_DIR = path.join(ROOT, "blog");
 const BLOG_INDEX = path.join(ROOT, "blog.html");
 
-// ── Minimal front-matter parser (avoids a dep at runtime) ──────────────────
-function parseFrontmatter(raw) {
-  const match = raw.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
-  if (!match) return { data: {}, content: raw };
-  const data = {};
-  for (const line of match[1].split("\n")) {
-    const m = line.match(/^(\w+):\s*"?([^"]*)"?\s*$/);
-    if (m) data[m[1]] = m[2];
-  }
-  // Parse faq as structured block after --- body ---
-  const bodyRaw = match[2];
-  const faqSplit = bodyRaw.split("\n---faq---\n");
-  data._body = faqSplit[0].trim();
-  data._faqRaw = faqSplit[1] || "";
-  return { data, content: bodyRaw };
+// ── Hero image src resolution ─────────────────────────────────────────────────
+// Legacy format:  "Umbrella"          → ../images/Umbrella.png
+// Tina upload:    "/images/photo.jpg" → ../images/photo.jpg
+function heroSrcForPost(heroImage) {
+  if (!heroImage) return "../images/Umbrella.png";
+  if (heroImage.startsWith("/")) return `..${heroImage}`;
+  return `../images/${heroImage}.png`;
 }
 
-// ── Very small markdown → HTML (headings, bold, italic, paragraphs) ─────────
+function heroSrcForIndex(heroImage) {
+  if (!heroImage) return "images/Umbrella.png";
+  if (heroImage.startsWith("/")) return heroImage.slice(1);
+  return `images/${heroImage}.png`;
+}
+
+// ── Minimal markdown → HTML (headings, bold, italic, paragraphs) ─────────────
 function mdToHtml(md) {
   const lines = md.split("\n");
   const out = [];
@@ -51,7 +50,6 @@ function mdToHtml(md) {
   for (const raw of lines) {
     const line = raw.trim();
     if (!line) { flush(); continue; }
-
     if (line.startsWith("## ")) {
       flush();
       out.push(`<h2>${inline(line.slice(3))}</h2>`);
@@ -68,7 +66,7 @@ function mdToHtml(md) {
   return out.join("\n");
 }
 
-// ── Parse the custom ---faq--- block ────────────────────────────────────────
+// ── Parse the legacy ---faq--- block (existing migrated posts) ────────────────
 function parseFaqBlock(raw) {
   if (!raw.trim()) return [];
   const items = [];
@@ -83,20 +81,36 @@ function parseFaqBlock(raw) {
   return items;
 }
 
-// ── HTML template for a blog post ───────────────────────────────────────────
-function renderPost(data, bodyHtml, faqItems) {
+// ── Parse a post file ─────────────────────────────────────────────────────────
+function parsePost(raw) {
+  const { data, content } = matter(raw);
+
+  // Support legacy ---faq--- block in body (for migrated posts)
+  const faqSplit = content.split("\n---faq---\n");
+  const bodyRaw = faqSplit[0].trim();
+  const faqRaw = faqSplit[1] || "";
+
+  // FAQ: prefer structured frontmatter (Tina-saved), fall back to legacy block
+  let faqItems = [];
+  if (data.faq && Array.isArray(data.faq) && data.faq.length > 0) {
+    faqItems = data.faq.map((item) => ({ q: item.question, a: item.answer }));
+  } else if (faqRaw) {
+    faqItems = parseFaqBlock(faqRaw);
+  }
+
+  return { data, bodyRaw, faqItems };
+}
+
+// ── HTML template for a blog post ─────────────────────────────────────────────
+function renderPost(data, bodyHtml, faqItems, prevPost, nextPost) {
   const {
     title = "",
     dateDisplay = "",
     description = "",
-    heroImage = "Umbrella",
-    prevLabel = "",
-    prevHref = "",
-    nextLabel = "",
-    nextHref = "",
+    heroImage = "",
   } = data;
 
-  const heroImgSrc = `../images/${heroImage}.png`;
+  const heroImgSrc = heroSrcForPost(heroImage);
 
   const faqHtml =
     faqItems.length > 0
@@ -104,22 +118,18 @@ function renderPost(data, bodyHtml, faqItems) {
   <div class="faq">
     <p class="faq-label">Frequently Asked Questions</p>
     ${faqItems
-      .map(
-        ({ q, a }) => `
+      .map(({ q, a }) => `
     <div class="faq-item">
       <h3>${q}</h3>
       <p>${a}</p>
-    </div>`
-      )
+    </div>`)
       .join("")}
   </div>`
       : "";
 
   const navLinks = [];
-  if (prevLabel && prevHref)
-    navLinks.push(`<a href="${prevHref}">← ${prevLabel}</a>`);
-  if (nextLabel && nextHref)
-    navLinks.push(`<a href="${nextHref}">Next: ${nextLabel} →</a>`);
+  if (prevPost) navLinks.push(`<a href="${prevPost.slug}.html">← ${prevPost.title}</a>`);
+  if (nextPost) navLinks.push(`<a href="${nextPost.slug}.html">Next: ${nextPost.title} →</a>`);
 
   const postNavHtml =
     navLinks.length > 0
@@ -167,50 +177,57 @@ ${postNavHtml}
 </html>`;
 }
 
-// ── Main ─────────────────────────────────────────────────────────────────────
-const mdFiles = fs
-  .readdirSync(CONTENT_DIR)
-  .filter((f) => f.endsWith(".md"))
-  .sort();
+// ── Main ──────────────────────────────────────────────────────────────────────
 
-const posts = [];
+// First pass: parse all posts
+const mdFiles = fs.readdirSync(CONTENT_DIR).filter((f) => f.endsWith(".md")).sort();
+const allPosts = [];
 
 for (const file of mdFiles) {
   const slug = file.replace(".md", "");
   const raw = fs.readFileSync(path.join(CONTENT_DIR, file), "utf8");
-  const { data } = parseFrontmatter(raw);
+  const { data, bodyRaw, faqItems } = parsePost(raw);
+  allPosts.push({ slug, data, bodyRaw, faqItems });
+}
 
-  const bodyHtml = mdToHtml(data._body || "");
-  const faqItems = parseFaqBlock(data._faqRaw || "");
+// Sort newest first
+allPosts.sort((a, b) => (a.data.date < b.data.date ? 1 : -1));
 
-  const html = renderPost(data, bodyHtml, faqItems);
-  const outPath = path.join(BLOG_DIR, `${slug}.html`);
-  fs.writeFileSync(outPath, html, "utf8");
+// Second pass: render each post with auto-computed prev/next
+for (let i = 0; i < allPosts.length; i++) {
+  const { slug, data, bodyRaw, faqItems } = allPosts[i];
 
-  posts.push({ slug, title: data.title, date: data.date, dateDisplay: data.dateDisplay, heroImage: data.heroImage, description: data.description, excerpt: data.excerpt || "" });
+  // Older post = prev (← left); newer post = next (→ right)
+  const prevPost = i < allPosts.length - 1
+    ? { slug: allPosts[i + 1].slug, title: allPosts[i + 1].data.title }
+    : null;
+  const nextPost = i > 0
+    ? { slug: allPosts[i - 1].slug, title: allPosts[i - 1].data.title }
+    : null;
+
+  const bodyHtml = mdToHtml(bodyRaw);
+  const html = renderPost(data, bodyHtml, faqItems, prevPost, nextPost);
+  fs.writeFileSync(path.join(BLOG_DIR, `${slug}.html`), html, "utf8");
   console.log(`✓ blog/${slug}.html`);
 }
 
-// ── Rebuild the blog index card grid in blog.html ───────────────────────────
-// Sort newest first
-posts.sort((a, b) => (a.date < b.date ? 1 : -1));
-
-const cardHtml = posts
-  .map(
-    ({ slug, title, dateDisplay, heroImage, excerpt, description }) => `
+// ── Rebuild blog index card grid ──────────────────────────────────────────────
+const cardHtml = allPosts
+  .map(({ slug, data }) => {
+    const { title = "", dateDisplay = "", heroImage = "", description = "", excerpt = "" } = data;
+    return `
   <article class="post-card">
     <a href="blog/${slug}.html">
-      <img class="post-thumb" src="images/${heroImage}.png" alt="${title}" loading="lazy" decoding="async">
+      <img class="post-thumb" src="${heroSrcForIndex(heroImage)}" alt="${title}" loading="lazy" decoding="async">
       <p class="post-date">${dateDisplay}</p>
       <h2 class="post-title">${title}</h2>
       <p class="post-excerpt">${excerpt || description}</p>
       <span class="read-more">Read more →</span>
     </a>
-  </article>`
-  )
+  </article>`;
+  })
   .join("\n");
 
-// Splice the generated cards into blog.html between markers
 let blogIndex = fs.readFileSync(BLOG_INDEX, "utf8");
 const START = "<!-- POSTS:START -->";
 const END = "<!-- POSTS:END -->";
@@ -222,9 +239,9 @@ if (blogIndex.includes(START) && blogIndex.includes(END)) {
     "\n    " +
     blogIndex.slice(blogIndex.indexOf(END));
   fs.writeFileSync(BLOG_INDEX, blogIndex, "utf8");
-  console.log(`✓ blog.html index updated (${posts.length} posts)`);
+  console.log(`✓ blog.html index updated (${allPosts.length} posts)`);
 } else {
-  console.log("ℹ blog.html: add <!-- POSTS:START --> and <!-- POSTS:END --> markers to enable auto-update");
+  console.log("ℹ blog.html: POSTS markers not found — no index update");
 }
 
-console.log(`\nDone — ${posts.length} posts built.`);
+console.log(`\nDone — ${allPosts.length} posts built.`);
