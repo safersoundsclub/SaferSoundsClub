@@ -1,0 +1,19 @@
+{
+  "name": "safer-sounds-club",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "tinacms build && node scripts/build-blog.mjs",
+    "dev": "tinacms dev -c \"node scripts/build-blog.mjs\"",
+    "build:blog": "node scripts/build-blog.mjs"
+  },
+  "dependencies": {
+    "@tinacms/cli": "^2.5.1",
+    "tinacms": "^3.9.3"
+  },
+  "devDependencies": {
+    "gray-matter": "^4.0.3",
+    "marked": "^11.2.0",
+    "typescript": "^5.3.3"
+  }
+}

@@ -1,0 +1,14 @@
+# dependencies
+node_modules/
+
+# TinaCMS generated files (rebuilt on deploy)
+.tina/__generated__/
+admin/
+
+# env
+.env
+.env.local
+.env*.local
+
+# OS
+.DS_Store
