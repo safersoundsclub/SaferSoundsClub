@@ -72,9 +72,8 @@
   </div>
 </div>
 <footer>
-  <p class="post-meta" style="text-align:center;margin-bottom:16px;">The Safer Sounds Club, LLC &nbsp;|&nbsp; The Safer Sounds Club is educational and is not a substitute for therapy.</p>
-  <div class="footer-links" style="margin-bottom:16px;"><a href="https://the-safer-sounds-club.kit.com/0bb51426e7" target="_blank" style="opacity:0.75;">Join the email list</a></div>
-  <div class="footer-links"><a href="../index.html">Home</a><a href="../about.html">About</a><a href="../products.html">Workshop</a><a href="../quiz.html">Free Quiz</a><a href="../faq.html">FAQ</a><a href="../blog.html" class="active">Blog</a><a href="../contact.html">Contact</a></div>
+  <p style="font-size:.78rem;font-family:'CoreBandiFace',cursive;opacity:.6;margin-bottom:12px;">The Safer Sounds Club, LLC &nbsp;|&nbsp; Educational only — not a substitute for therapy.</p>
+  <div class="footer-links"><a href="../blog.html">← All Posts</a><a href="../products.html">Workshop</a><a href="../quiz.html">Free Quiz</a></div>
 </footer>
 <script>(function(){var t=document.querySelector(".nav-toggle"),n=document.querySelector("nav");if(!t||!n)return;t.addEventListener("click",function(){n.classList.toggle("open")});document.querySelectorAll(".nav-links a").forEach(function(a){a.addEventListener("click",function(){n.classList.remove("open")})})})();</script></body>
 </html>
