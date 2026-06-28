@@ -20,12 +20,12 @@
       src: url('fonts/CoreBandiFace.woff2') format('woff2'),
            url('fonts/CoreBandiFace.woff') format('woff'),
            url('fonts/CoreBandiFace.ttf') format('truetype');
-      font-weight: normal; font-style: normal; font-display: block;
+      font-weight: normal; font-style: normal; font-display: optional;
     }
     @font-face {
       font-family: 'MeowScript';
       src: url('fonts/MeowScript.ttf') format('truetype');
-      font-weight: normal; font-style: normal; font-display: block;
+      font-weight: normal; font-style: normal; font-display: optional;
     }
 
     html { font-size: 20px; }
@@ -167,6 +167,36 @@
       .footer-links { gap: 12px; font-size: 0.9rem; }
     }
   </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Safer Sounds Club Products",
+  "url": "https://safersoundsclub.com/products.html",
+  "description": "Workshops and resources for people with misophonia from Megan Carlson.",
+  "provider": {
+    "@type": "Organization",
+    "name": "The Safer Sounds Club",
+    "url": "https://safersoundsclub.com"
+  },
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Course",
+        "name": "Safer Sounds Workshop",
+        "url": "https://safersoundsclub.com/products/safer-sounds-workshop.html",
+        "description": "An in-depth workshop to help people with misophonia understand their nervous system and build practical coping strategies.",
+        "provider": {
+          "@type": "Organization",
+          "name": "The Safer Sounds Club"
+        }
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
