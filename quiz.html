@@ -28,7 +28,7 @@
            url('fonts/MeowScript.ttf') format('truetype');
       font-weight: normal; font-style: normal; font-display: swap;
     }
-    html { font-size: 20px; }
+    html { font-size: 20px;  overflow-x: hidden; }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root { --cream: #faf7f2; --ink: #1a1a1a; --sage: #7a9e8a; --blue-slate: #7a95a8; }
     body { background: var(--cream); color: var(--ink); font-family: 'CoreBandiFace', cursive; font-size: 21px; line-height: 1.75; min-height: 100vh; }
@@ -49,12 +49,12 @@
     /* INTRO */
     .intro-eyebrow { font-family: 'CoreBandiFace', cursive; font-size: 0.85rem; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.5; text-align: center; margin-bottom: 14px; }
     .intro-script-accent { font-family: 'MeowScript', cursive; font-weight: 400; font-size: clamp(1.8rem, 4.5vw, 2.6rem); color: var(--sage); text-align: center; margin-bottom: 16px; line-height: 1.2; }
-    .intro-title { font-family: 'CoreBandiFace', cursive; font-weight: 400; font-size: clamp(1.0rem, 1.9vw, 1.4rem); text-align: center; margin-bottom: 36px; line-height: 1.4; letter-spacing: -0.01em; opacity: 0.8; }
+    .intro-title { font-family: 'CoreBandiFace', cursive; font-weight: 400; font-size: clamp(1.0rem, 1.9vw, 1.4rem); text-align: center; margin-bottom: 36px; line-height: 1.4; letter-spacing: -0.01em; }
     .intro-copy p { font-size: 1rem; line-height: 1.85; margin-bottom: 16px; }
     .intro-list { list-style: none; margin: 12px 0 20px 0; padding: 0; }
     .intro-list li { font-size: 1rem; line-height: 1.8; padding-left: 20px; position: relative; margin-bottom: 6px; }
     .intro-list li::before { content: "•"; position: absolute; left: 0; color: var(--sage); }
-    .intro-cta-note { font-size: 1rem; line-height: 1.85; font-style: italic; opacity: 0.75; margin: 24px 0 36px; }
+    .intro-cta-note { font-size: 1rem; line-height: 1.85; font-style: italic; margin: 24px 0 36px; }
     .intro-disclaimer { font-family: 'CoreBandiFace', cursive; font-size: 0.75rem; font-style: italic; opacity: 0.5; line-height: 1.6; margin-bottom: 36px; }
     .btn-start-wrap { text-align: center; }
     .btn-start {
@@ -74,7 +74,7 @@
     .progress-fill { height: 100%; background: var(--sage); border-radius: 2px; transition: width 0.35s ease; }
 
     /* QUESTION */
-    .question-narrative { font-size: 1rem; line-height: 1.85; margin-bottom: 28px; opacity: 0.85; }
+    .question-narrative { font-size: 1rem; line-height: 1.85; margin-bottom: 28px; }
     .question-narrative p { margin-bottom: 14px; }
     .question-narrative p:last-child { margin-bottom: 0; }
     .question-stem { font-size: 1.1rem; font-weight: 700; line-height: 1.5; margin-bottom: 24px; }
