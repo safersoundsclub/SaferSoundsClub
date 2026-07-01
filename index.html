@@ -12,6 +12,10 @@
   <meta property="og:title" content="The Safer Sounds Club | Misophonia Help & Resources">
   <meta property="og:description" content="Somatic tools and guided resources for people ready to stop just managing their misophonia.">
   <meta property="og:type" content="website">
+  <meta property="og:image" content="https://safersoundsclub.com/images/og-image.jpg">
+  <meta property="og:url" content="https://safersoundsclub.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://safersoundsclub.com/images/og-image.jpg">
   <meta name="robots" content="index, follow">
   <style>
     @font-face {
@@ -25,7 +29,7 @@
       font-family: 'MeowScript';
       src: url('fonts/MeowScript.woff2') format('woff2'),
            url('fonts/MeowScript.ttf') format('truetype');
-      font-weight: normal; font-style: normal; font-display: swap;
+      font-weight: normal; font-style: normal; font-display: block;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -884,18 +888,18 @@
 
 
 <!-- ── QUIZ POPUP ── -->
-<div id="quiz-popup" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(26,26,26,0.55);align-items:center;justify-content:center;padding:24px;">
-  <div style="background:var(--cream);max-width:480px;width:100%;padding:48px 40px;position:relative;text-align:center;">
-    <button onclick="document.getElementById('quiz-popup').style.display='none';sessionStorage.setItem('popup-dismissed','1');" aria-label="Close" style="position:absolute;top:16px;right:20px;background:none;border:none;font-size:1.3rem;cursor:pointer;opacity:0.4;font-family:'CoreBandiFace',cursive;">✕</button>
-    <h2 style="font-family:'MeowScript',cursive;font-weight:400;font-size:clamp(1.8rem,5vw,2.8rem);line-height:1.2;margin-bottom:20px;">Let's sit down to a meal together.</h2>
-    <p style="font-size:0.97rem;line-height:1.8;margin-bottom:8px;">I'll tell you why the clinks and crunches feel like a personal attack.</p>
-    <p style="font-size:0.97rem;line-height:1.8;margin-bottom:28px;">In just a couple of minutes, we'll uncover what your nervous system is actually reacting to.</p>
-    <a href="quiz.html" class="btn-painted btn-sage">
+<div id="quiz-popup" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(26,26,26,0.55);align-items:center;justify-content:center;padding:16px;">
+  <div style="background:var(--cream);max-width:440px;width:100%;padding:clamp(28px,5vw,44px) clamp(22px,5vw,40px);position:relative;text-align:center;max-height:90svh;overflow-y:auto;">
+    <button onclick="document.getElementById('quiz-popup').style.display='none';sessionStorage.setItem('popup-dismissed','1');" aria-label="Close" style="position:absolute;top:12px;right:16px;background:none;border:none;font-size:1.2rem;cursor:pointer;opacity:0.4;font-family:'CoreBandiFace',cursive;line-height:1;">✕</button>
+    <h2 style="font-family:'MeowScript',cursive;font-weight:400;font-size:clamp(1.5rem,5vw,2.4rem);line-height:1.2;margin-bottom:14px;">Let's sit down to a meal together.</h2>
+    <p style="font-size:0.9rem;line-height:1.75;margin-bottom:6px;">I'll tell you why the clinks and crunches feel like a personal attack.</p>
+    <p style="font-size:0.9rem;line-height:1.75;margin-bottom:22px;">In just a couple of minutes, we'll uncover what your nervous system is actually reacting to.</p>
+    <a href="quiz.html" class="btn-painted btn-sage" style="font-size:0.85rem;padding:14px 48px;">
       <span class="paint-bg-img" aria-hidden="true"><img src="images/brushstroke-sage.png" alt="" loading="lazy" decoding="async"></span>
       <span class="btn-label">Pull Up a Chair</span>
     </a>
-    <img src="images/Chair.png" alt="" aria-hidden="true" style="width:clamp(72px,14vw,106px);mix-blend-mode:multiply;opacity:0.72;margin:18px auto 0;display:block;" loading="lazy" decoding="async">
-    <p style="font-family:'CoreBandiFace',cursive;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;opacity:0.4;margin-top:10px;cursor:pointer;" onclick="document.getElementById('quiz-popup').style.display='none';sessionStorage.setItem('popup-dismissed','1');">No thanks, I'll skip it</p>
+    <img src="images/Chair.png" alt="" aria-hidden="true" style="width:clamp(56px,11vw,86px);mix-blend-mode:multiply;opacity:0.72;margin:12px auto 0;display:block;" loading="lazy" decoding="async">
+    <p style="font-family:'CoreBandiFace',cursive;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;opacity:0.4;margin-top:8px;cursor:pointer;" onclick="document.getElementById('quiz-popup').style.display='none';sessionStorage.setItem('popup-dismissed','1');">No thanks, I'll skip it</p>
   </div>
 </div>
 <script>
