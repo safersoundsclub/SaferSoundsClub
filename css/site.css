@@ -50,11 +50,19 @@ h1, h2, h3, .subhead, .page-hero p, .pricing-tagline {
   height: 100%;
   object-fit: cover;
 }
-/* small screens: the ornate frame's flourishes collide with the photo —
-   swap to the clean portrait outline (also from Megan's Canva) */
+/* small screens: iOS Safari mis-sizes the photo inside the framed box,
+   so no frame overlay on mobile for now — clean photo only.
+   Also: center all painted buttons on mobile. */
 @media (max-width: 820px) {
-  .sketch-frame { padding: 5.5%; }
-  .sketch-frame::after { background-image: url('../images/frame-small.png'); }
+  .sketch-frame { padding: 0; }
+  .sketch-frame::after { display: none; }
+  a.btn-painted,
+  button.btn-painted {
+    display: table;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 /* ── QUIZ POPUP (injected by site.js on every page) ── */
