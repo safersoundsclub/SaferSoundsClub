@@ -3,7 +3,7 @@ title: "Do I Overreact to Chewing?"
 date: "2026-04-25"
 dateDisplay: "April 25, 2026"
 description: "The rage and panic you feel about chewing isn't really about the chewing. Here's what your nervous system is actually responding to."
-heroImage: "Umbrella"
+heroImage: "silverware"
 prevLabel: "Why Can't I Ignore Chewing Sounds?"
 prevHref: "why-cant-i-ignore-chewing-sounds.html"
 nextLabel: "Why Coping Strategies Don't Help"
@@ -16,7 +16,7 @@ The chewing sounds have been bothering you for a while, maybe years. You leave t
     
 And somewhere in the back of your mind, this question keeps showing up. *Am I overreacting?*
     
-Here's the most honest answer I can give you. You're reacting. Whether it's an overreaction depends on what you think your reaction is supposed to be matching. If you think it's supposed to match the sound — yes, the rage is probably disproportionate to chewing. Of course it is. Chewing is not actually dangerous. But your reaction isn't matching the sound. It's matching something else.
+Here's the most honest answer I can give you. You're reacting. Whether it's an overreaction depends on what you think your reaction is supposed to be matching. If you think it's supposed to match the sound, yes, the rage is probably disproportionate to chewing. Of course it is. Chewing is not actually dangerous. But your reaction isn't matching the sound. It's matching something else.
 
     
 
@@ -27,7 +27,7 @@ This is the part that surprised me most when I first learned it about myself. An
     
 When you have a strong reaction to chewing, your nervous system isn't responding to the chewing. It's responding to what the chewing *represents* to it.
     
-Somewhere along the way, your nervous system learned that certain sounds — chewing, breathing, slurping, throat-clearing, repetitive tapping — were signals worth paying attention to. Signals that something was about to feel hard or overwhelming or unmanageable. You probably don't remember when this learning happened. You don't need to. Your nervous system remembered for you.
+Somewhere along the way, your nervous system learned that certain sounds, chewing, breathing, slurping, throat-clearing, repetitive tapping, were signals worth paying attention to. Signals that something was about to feel hard or overwhelming or unmanageable. You probably don't remember when this learning happened. You don't need to. Your nervous system remembered for you.
     
 And ever since, when those sounds happen, your body responds the way it learned to respond. Fast. Automatically. Before your thinking brain has even caught up. The chewing is just the trigger. What's getting triggered is something older and bigger than the sound itself.
 
@@ -51,7 +51,7 @@ Knowing this is genuinely helpful. Because the next time it happens, you can sto
     
 It's almost never the stranger on the subway whose chewing sends you over the edge. It's the people you're closest to. Your partner. Your family. The people you love most. There's a reason for that, and it's not what you think.
     
-The people we're closest to are the people our nervous system monitors most carefully. We track them — their sounds, their moods, their energy — because they matter to us. The closer the relationship, the more our system is paying attention.
+The people we're closest to are the people our nervous system monitors most carefully. We track them, their sounds, their moods, their energy, because they matter to us. The closer the relationship, the more our system is paying attention.
     
 So when a stranger chews, your nervous system doesn't really notice. When your partner chews, your nervous system is already on alert, and the chewing becomes a signal it's been primed to respond to. This isn't a character flaw and it's not a sign that something is wrong with your relationship. It's actually one of the most important things to understand about misophonia: it's not really about sound sensitivity. It's about what certain sounds mean to a nervous system that's in relationship.
 
@@ -62,19 +62,19 @@ So when a stranger chews, your nervous system doesn't really notice. When your p
     
 You might have misophonia. It's much more common than the silence around it suggests. There's a name for what you're experiencing, and there are people who understand it from the inside. You're not crazy. You're not too much. You're not overreacting in the way you've been worried about.
     
-Your nervous system is responding to something. And the something it's responding to is real, even if it's not the chewing itself. Coping strategies have their place, but they don't change the underlying pattern. What does change it is working with your nervous system at the level where the pattern actually lives — in the body, in the learned response, in the older feelings that the chewing keeps bumping into.
+Your nervous system is responding to something. And the something it's responding to is real, even if it's not the chewing itself. Coping strategies have their place, but they don't change the underlying pattern. What does change it is working with your nervous system at the level where the pattern actually lives, in the body, in the learned response, in the older feelings that the chewing keeps bumping into.
     
-The reaction was learned, which means it can be unlearned. That's not wishful thinking — that's how nervous systems actually change.
+The reaction was learned, which means it can be unlearned. That's not wishful thinking, that's how nervous systems actually change.
 
 ---faq---
 
 **Is it normal to get angry at chewing sounds?**
 
-Many people find chewing sounds annoying, but for some people the reaction goes well beyond annoyance — into rage, panic, or an overwhelming urge to escape. This intense response is called misophonia. It's not an overreaction in the way most people think — it's a learned nervous system response to specific sounds, and it has real, identifiable patterns underneath it.
+Many people find chewing sounds annoying, but for some people the reaction goes well beyond annoyance, into rage, panic, or an overwhelming urge to escape. This intense response is called misophonia. It's not an overreaction in the way most people think, it's a learned nervous system response to specific sounds, and it has real, identifiable patterns underneath it.
 
 **Why do I overreact to chewing?**
 
-The reaction isn't really about the chewing itself. Your nervous system has likely learned to associate certain sounds with threat or overwhelm, often through earlier experiences. When you hear those sounds now, your body responds automatically — faster than conscious thought — to what the sound represents rather than to the sound itself. This is why willpower doesn't work in the moment.
+The reaction isn't really about the chewing itself. Your nervous system has likely learned to associate certain sounds with threat or overwhelm, often through earlier experiences. When you hear those sounds now, your body responds automatically, faster than conscious thought, to what the sound represents rather than to the sound itself. This is why willpower doesn't work in the moment.
 
 **Is misophonia a real condition?**
 

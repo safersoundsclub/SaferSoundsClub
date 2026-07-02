@@ -7,7 +7,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | The Safer Sounds Club</title>
-  <meta name="description" content="Get in touch with Megan at the Safer Sounds Club. Questions about misophonia resources, the workshop, the workbook, or therapist training — we'd love to hear from you.">
+  <meta name="description" content="Get in touch with Megan at the Safer Sounds Club. Questions about misophonia resources, the workshop, or therapist consultation, we'd love to hear from you.">
   <meta property="og:title" content="Contact | The Safer Sounds Club">
   <meta property="og:site_name" content="The Safer Sounds Club">
   <meta property="og:type" content="website">
@@ -18,6 +18,7 @@
   <meta name="robots" content="index, follow">
   <!-- EmailJS SDK -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <link rel="stylesheet" href="css/site.css">
   <style>
     @font-face {
       font-family: 'CoreBandiFace';
@@ -35,7 +36,7 @@
     html { font-size: 20px;  overflow-x: hidden; }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root { --cream: #faf7f2; --ink: #1a1a1a; --sage: #7a9e8a; --blue-slate: #7a95a8; --max-w: 1100px; }
-    body { background: var(--cream); color: var(--ink); font-family: 'CoreBandiFace', cursive; font-size: 21px; line-height: 1.7; overflow-x: hidden; }
+    body { background: var(--cream); color: var(--ink); font-family: 'CoreBandiFace', cursive; font-size: 21px; line-height: 1.55;  }
 
     nav { position: sticky; top: 0; z-index: 100; background: var(--cream); border-bottom: 1px solid rgba(26,26,26,0.12); padding: 14px 40px; display: flex; align-items: center; justify-content: space-between; }
     .nav-brand { font-family: 'MeowScript', cursive; font-weight: 400; font-size: 1.6rem; color: var(--ink); text-decoration: none; white-space: nowrap; }
@@ -68,7 +69,7 @@
     .page-hero h1 { font-family: 'MeowScript', cursive; font-weight: 400; font-size: clamp(2.8rem, 7vw, 5rem); margin-bottom: 12px; }
     .page-hero p { font-family: 'CoreBandiFace', cursive; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.55; max-width: 600px; margin: 0 auto; }
 
-    .contact-layout { max-width: 900px; margin: 0 auto; padding: 64px 32px 88px; display: grid; grid-template-columns: 1fr 340px; gap: 72px; align-items: start; }
+    .contact-layout { max-width: 900px; margin: 0 auto; padding: 64px 32px 48px; display: grid; grid-template-columns: 1fr 340px; gap: 72px; align-items: start; }
 
     /* FORM */
     .form-title { font-family: 'MeowScript', cursive; font-weight: 400; font-size: 2.2rem; margin-bottom: 8px; }
@@ -98,7 +99,7 @@
     .form-status.error { color: #a86060; }
 
     /* SIDEBAR */
-    .contact-sidebar { padding: 32px 28px; background: rgba(122,149,168,0.08); border-radius: 2px; border: 1px dashed rgba(122,149,168,0.3); padding-top: 32px; }
+    .contact-sidebar { padding: 32px 28px; background: transparent; border-radius: 2px; border: 1.5px dashed rgba(26,26,26,0.25); padding-top: 32px; }
     .sidebar-block { margin-bottom: 36px; padding-bottom: 36px; border-bottom: 1px dashed rgba(122,149,168,0.25); }
     .sidebar-block:last-child { border-bottom: none; margin-bottom: 0; }
     .sidebar-label { font-family: 'CoreBandiFace', cursive; font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--blue-slate); opacity: 0.9; margin-bottom: 12px; display: block; }
@@ -127,7 +128,7 @@
     .success-close { font-family: 'CoreBandiFace', cursive; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; background: none; border: none; cursor: pointer; opacity: 0.45; color: var(--ink); padding: 8px; }
     .success-close:hover { opacity: 0.9; }
 
-    footer { text-align: center; padding: 32px 32px 48px; border-top: 1.5px solid rgba(26,26,26,0.12); }
+    footer { text-align: center; padding: 8px 32px 48px; }
     .footer-disclaimer { font-size: 0.75rem; font-family: 'CoreBandiFace', cursive; opacity: 0.5; margin-bottom: 24px; }
     .footer-links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; font-family: 'CoreBandiFace', cursive; font-size: 1.1rem; letter-spacing: 0.1em; margin-top: 16px; }
     .footer-links a { text-decoration: none; color: var(--ink); opacity: 0.5; }
@@ -287,25 +288,22 @@
   <aside class="contact-sidebar">
     <div class="sidebar-block">
       <span class="sidebar-label">Response time</span>
-      <p class="sidebar-body">Messages are typically answered within two to three business days. For urgent matters, note that in your message.</p>
+      <p class="sidebar-body">Messages are typically answered within two to three business days. Megan reads every note personally, so if something feels important to share, don't hold back. For urgent matters, note that in your message.</p>
     </div>
 
     <div class="sidebar-block">
       <span class="sidebar-label">For therapists</span>
-      <p class="sidebar-heading">Interested in training?</p>
-      <p class="sidebar-body">Select "Therapist or clinician" in the form and let us know about your practice. We'll add you to the early-access list for the upcoming therapist curriculum.</p>
-    </div>
-
-    <div class="sidebar-block">
-      <span class="sidebar-label">Not a substitute for therapy</span>
-      <p class="sidebar-body">The Safer Sounds Club is an educational resource, not a mental health treatment. If you're in crisis or need immediate support, please reach out to a licensed mental health professional.</p>
-    </div>
-
-    <div class="sidebar-block">
-      <span class="sidebar-label">Elsewhere</span>
-      <p class="sidebar-body">We share misophonia research, practice prompts, and community updates regularly. Find us where you spend time online, or start with the <a href="quiz.html" style="color:var(--ink);text-decoration:underline;text-underline-offset:3px;">free quiz</a>.</p>
+      <p class="sidebar-heading">Interested in consultation?</p>
+      <p class="sidebar-body">Megan offers consultation to therapists working with clients with misophonia, including EMDR protocol adaptations, somatic interventions, and case conceptualization. Select "Therapist or clinician" in the form and tell us a little about your practice.</p>
     </div>
   </aside>
+</div>
+
+<!-- ELSEWHERE — full-width strip below form + sidebar to balance the layout -->
+<div style="max-width:900px;margin:0 auto;padding:0 32px 72px;text-align:center;">
+  <img src="images/dots-row.png" aria-hidden="true" alt="" style="display:block;width:100%;max-width:360px;margin:0 auto 28px;mix-blend-mode:multiply;opacity:0.55;" loading="lazy" decoding="async">
+  <span class="sidebar-label" style="display:block;margin-bottom:12px;">Elsewhere</span>
+  <p class="sidebar-body" style="max-width:560px;margin:0 auto;">We share misophonia research, practice prompts, and community updates regularly. Find us where you spend time online, or start with the <a href="quiz.html" style="color:var(--ink);text-decoration:underline;text-underline-offset:3px;">free quiz</a>.</p>
 </div>
 
 <div style="width:100%;max-width:760px;margin:64px auto 0;padding:0 32px;">
@@ -313,6 +311,7 @@
 </div>
 <div style="height:40px;"></div>
 
+<img src="images/squiggle-line.png" class="squiggle-footer" aria-hidden="true" alt="" loading="lazy" decoding="async">
 <footer>
   <div class="footer-links">
     <a href="about.html">About</a>
@@ -389,25 +388,7 @@
   });
 </script>
 
-<script>
-  (function() {
-    var page = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.nav-links a').forEach(function(a) {
-      if (a.getAttribute('href') === page) a.classList.add('active');
-    });
-  })();
-</script>
-<script>
-  (function() {
-    var toggle = document.querySelector('.nav-toggle');
-    var nav = document.querySelector('nav');
-    if (!toggle || !nav) return;
-    toggle.addEventListener('click', function() { nav.classList.toggle('open'); });
-    document.querySelectorAll('.nav-links a').forEach(function(a) {
-      a.addEventListener('click', function() { nav.classList.remove('open'); });
-    });
-  })();
-</script>
+<script src="js/site.js" defer></script>
 
 </body>
 </html>

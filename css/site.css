@@ -1,0 +1,132 @@
+/* ── Safer Sounds Club — shared site styles ─────────────────────────────
+   Loaded on every page. Keep page-specific styles inline in each page. */
+
+/* ── TYPOGRAPHY: avoid single-word widows on headings/subtitles ── */
+h1, h2, h3, .subhead, .page-hero p, .pricing-tagline {
+  text-wrap: balance;
+}
+
+/* ── NAV: stays visible on scroll (position: sticky in each page's CSS) ── */
+
+/* ── SQUIGGLE DIVIDERS (from Megan's original site) ── */
+.squiggle-footer {
+  width: 100%;
+  display: block;
+  mix-blend-mode: multiply;
+  opacity: 0.9;
+}
+.squiggle-divider {
+  display: block;
+  width: min(420px, 70%);
+  margin: 8px auto;
+  mix-blend-mode: multiply;
+  opacity: 0.85;
+}
+
+/* ── HAND-DRAWN FRAMES — Megan's original Canva assets ──
+   frame-small.png  = "Small frame" (simple wobbly outline) for text boxes
+   frame-border.png = "Large frame" (wavy + corner flourishes) for photos    */
+.sketch-card {
+  border: clamp(12px, 2vw, 18px) solid transparent;
+  border-image: url('../images/frame-small.png') 70 stretch;
+  background: transparent;
+  padding: 14px 18px;
+}
+.sketch-frame {
+  position: relative;
+  padding: 9%;
+  background: transparent;
+}
+.sketch-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('../images/frame-border.png') center / 100% 100% no-repeat;
+  pointer-events: none;
+}
+.sketch-frame > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── QUIZ POPUP (injected by site.js on every page) ── */
+#ssc-popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(26, 26, 26, 0.55);
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+#ssc-popup.visible { display: flex; }
+.ssc-popup-card {
+  background: var(--cream, #faf7f2);
+  max-width: 440px;
+  width: 100%;
+  padding: clamp(28px, 5vw, 44px) clamp(22px, 5vw, 40px);
+  position: relative;
+  text-align: center;
+  max-height: 90svh;
+  overflow-y: auto;
+}
+.ssc-popup-card h2 {
+  font-family: 'MeowScript', cursive;
+  font-weight: 400;
+  font-size: clamp(1.5rem, 5vw, 2.4rem);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+.ssc-popup-card p.ssc-pop-body {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+.ssc-pop-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--ink, #1a1a1a);
+  font-family: 'CoreBandiFace', cursive;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 14px 48px;
+  margin-top: 16px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: transform 0.18s ease, opacity 0.18s ease;
+}
+.ssc-pop-btn:hover { transform: translateY(-2px); opacity: 0.9; }
+.ssc-pop-btn .ssc-pop-bg {
+  position: absolute;
+  inset: 0;
+  overflow: visible;
+  transform: scaleX(1.1) scaleY(1.15);
+}
+.ssc-pop-btn .ssc-pop-bg img { width: 100%; height: 100%; object-fit: fill; opacity: 0.92; }
+.ssc-pop-btn .ssc-pop-label { position: relative; z-index: 2; }
+.ssc-pop-skip {
+  font-family: 'CoreBandiFace', cursive;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.4;
+  margin-top: 8px;
+  cursor: pointer;
+}
+.ssc-pop-skip:hover { opacity: 0.7; }
+.ssc-pop-chair {
+  width: clamp(56px, 11vw, 86px);
+  mix-blend-mode: multiply;
+  opacity: 0.72;
+  margin: 12px auto 0;
+  display: block;
+}

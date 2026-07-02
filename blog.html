@@ -6,11 +6,11 @@
   <link rel="preload" href="fonts/MeowScript.woff2" as="font" type="font/woff2" crossorigin>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog — The Safer Sounds Club</title>
-  <meta name="description" content="Articles on misophonia — what it is, what causes it, how somatic therapy helps, and what people with misophonia actually need to know. Written by a licensed therapist with misophonia.">
+  <title>Blog | The Safer Sounds Club</title>
+  <meta name="description" content="Articles on misophonia: what it is, what causes it, how somatic therapy helps, and what people with misophonia actually need to know. Written by a licensed therapist with misophonia.">
   <meta name="keywords" content="misophonia blog, misophonia articles, misophonia research, misophonia therapy blog, somatic therapy misophonia">
-  <meta property="og:title" content="Blog — The Safer Sounds Club">
-  <meta property="og:description" content="Misophonia articles written by a licensed therapist who has it — grounded in research and real clinical experience.">
+  <meta property="og:title" content="Blog | The Safer Sounds Club">
+  <meta property="og:description" content="Misophonia articles written by a licensed therapist who has it, grounded in research and real clinical experience.">
   <meta property="og:site_name" content="The Safer Sounds Club">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://www.safersoundsclub.com/images/og-image.jpg">
@@ -18,7 +18,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://www.safersoundsclub.com/images/og-image.jpg">
   <meta name="robots" content="index, follow">
-
+  <link rel="stylesheet" href="css/site.css">
   <style>
     @font-face {
       font-family: 'CoreBandiFace';
@@ -36,7 +36,7 @@
     html { font-size: 20px;  overflow-x: hidden; }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root { --cream: #faf7f2; --ink: #1a1a1a; --sage: #7a9e8a; --blue-slate: #7a95a8; }
-    body { background: var(--cream); color: var(--ink); font-family: 'CoreBandiFace', cursive; font-size: 21px; line-height: 1.7; }
+    body { background: var(--cream); color: var(--ink); font-family: 'CoreBandiFace', cursive; font-size: 21px; line-height: 1.55;  }
     nav { position: sticky; top: 0; z-index: 100; background: var(--cream); border-bottom: 1px solid rgba(26,26,26,0.12); padding: 14px 40px; display: flex; align-items: center; justify-content: space-between; }
     .nav-brand { font-family: 'MeowScript', cursive; font-weight: 400; font-size: 1.6rem; color: var(--ink); text-decoration: none; white-space: nowrap; }
     .nav-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
@@ -50,10 +50,10 @@
 
     /* ── FEATURED POST ── */
     .featured-post { max-width: 1100px; margin: 0 auto; padding: 56px 32px 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
-    .featured-post-img { width: 100%; aspect-ratio: 4/3; object-fit: contain; mix-blend-mode: multiply; background: var(--cream); display: block; }
+    .featured-post-img { width: 100%; aspect-ratio: 4/3; object-fit: contain; background: #f0e9dc; padding: 16px; display: block; }
     .featured-eyebrow { font-family: 'CoreBandiFace', cursive; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sage); opacity: 0.9; margin-bottom: 16px; }
     .featured-post-title { font-family: 'CoreBandiFace', cursive; font-size: clamp(1.3rem, 2.5vw, 1.9rem); font-weight: 700; line-height: 1.35; margin-bottom: 20px; }
-    .featured-post-excerpt { font-size: 0.97rem; line-height: 1.85; opacity: 0.82; margin-bottom: 28px; }
+    .featured-post-excerpt { font-size: 0.97rem; line-height: 1.65; opacity: 1; margin-bottom: 28px; }
     .featured-post-date { font-family: 'CoreBandiFace', cursive; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage); opacity: 0.9; margin-bottom: 12px; }
     .featured-post a { text-decoration: none; color: var(--ink); }
     .featured-post a:hover .featured-post-title { opacity: 0.7; }
@@ -64,15 +64,15 @@
     .blog-grid { max-width: 1100px; margin: 0 auto; padding: 64px 32px 96px; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 48px; }
     .post-card { display: flex; flex-direction: column; }
     .post-card a { text-decoration: none; color: var(--ink); }
-    .post-thumb { width: 100%; aspect-ratio: 4/3; object-fit: contain; display: block; margin-bottom: 20px; transition: opacity 0.2s; background: var(--cream); mix-blend-mode: multiply; }
+    .post-thumb { width: 100%; aspect-ratio: 4/3; object-fit: contain; background: #f0e9dc; padding: 14px; display: block; margin-bottom: 20px; transition: opacity 0.2s; }
     .post-card:hover .post-thumb { opacity: 0.85; }
     .post-date { font-family: 'CoreBandiFace', cursive; font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sage); opacity: 0.9; margin-bottom: 8px; }
     .post-title { font-family: 'CoreBandiFace', cursive; font-size: 1.05rem; font-weight: 700; line-height: 1.45; margin-bottom: 12px; transition: opacity 0.2s; }
     .post-card:hover .post-title { opacity: 0.7; }
-    .post-excerpt { font-size: 0.9rem; line-height: 1.75; opacity: 0.8; margin-bottom: 16px; }
+    .post-excerpt { font-size: 0.9rem; line-height: 1.6; opacity: 1; margin-bottom: 16px; }
     .read-more { font-family: 'CoreBandiFace', cursive; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: underline; text-underline-offset: 4px; color: var(--sage); opacity: 0.85; transition: opacity 0.2s; }
     .post-card:hover .read-more { opacity: 1; }
-    footer { text-align: center; padding: 32px 32px 48px; border-top: 1.5px solid rgba(26,26,26,0.12); }
+    footer { text-align: center; padding: 8px 32px 48px; }
     .footer-disclaimer { font-size: 0.75rem; font-family: 'CoreBandiFace', cursive; opacity: 0.5; margin-bottom: 24px; }
     .footer-links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; font-family: 'CoreBandiFace', cursive; font-size: 1.1rem; letter-spacing: 0.1em; margin-top: 16px; }
     .footer-links a { text-decoration: none; color: var(--ink); opacity: 0.5; }
@@ -192,7 +192,7 @@
 <!-- ── FEATURED POST ── -->
 <div class="featured-post">
   <a href="blog/why-does-the-sound-of-breathing-bother-me.html">
-    <img class="featured-post-img" src="images/Beach.png" alt="Why Does The Sound of Breathing Bother Me?">
+    <img class="featured-post-img" src="images/seagull.png" alt="Why Does The Sound of Breathing Bother Me?">
   </a>
   <div class="featured-post-body">
     <a href="blog/why-does-the-sound-of-breathing-bother-me.html">
@@ -212,17 +212,17 @@
 
   <article class="post-card">
     <a href="blog/why-does-the-sound-of-breathing-bother-me.html">
-      <img class="post-thumb" src="images/Beach.png" alt="Why Does The Sound of Breathing Bother Me?" loading="lazy" decoding="async">
+      <img class="post-thumb" src="images/seagull.png" alt="Why Does The Sound of Breathing Bother Me?" loading="lazy" decoding="async">
       <p class="post-date">May 5, 2026</p>
       <h2 class="post-title">Why Does The Sound of Breathing Bother Me?</h2>
-      <p class="post-excerpt">If the sound of someone breathing drives you crazy, you're not too sensitive and you're not alone. Here's the real neurological reason — and what actually helps.</p>
+      <p class="post-excerpt">If the sound of someone breathing drives you crazy, you're not too sensitive and you're not alone. Here's the real neurological reason, and what actually helps.</p>
       <span class="read-more">Read more →</span>
     </a>
   </article>
 
   <article class="post-card">
     <a href="blog/misophonia-worse-when-stressed.html">
-      <img class="post-thumb" src="images/Wave.png" alt="Why Misophonia Feels Worse When You're Tired, Stressed, or Already Overwhelmed" loading="lazy" decoding="async">
+      <img class="post-thumb" src="images/coral-blue.png" alt="Why Misophonia Feels Worse When You're Tired, Stressed, or Already Overwhelmed" loading="lazy" decoding="async">
       <p class="post-date">May 1, 2026</p>
       <h2 class="post-title">Why Misophonia Feels Worse When You're Tired, Stressed, or Already Overwhelmed</h2>
       <p class="post-excerpt">If your misophonia reactions are worse on hard days, there's a real neurological reason. Here's what's actually happening and what helps.</p>
@@ -232,7 +232,7 @@
 
   <article class="post-card">
     <a href="blog/why-cant-i-ignore-chewing-sounds.html">
-      <img class="post-thumb" src="images/Palm.png" alt="Why Can't I Ignore Chewing Sounds?" loading="lazy" decoding="async">
+      <img class="post-thumb" src="images/fish-school.png" alt="Why Can't I Ignore Chewing Sounds?" loading="lazy" decoding="async">
       <p class="post-date">April 29, 2026</p>
       <h2 class="post-title">Why Can't I Ignore Chewing Sounds?</h2>
       <p class="post-excerpt">If you can't ignore chewing sounds no matter how hard you try, there's a real neurological reason. Here's what's actually going on.</p>
@@ -242,7 +242,7 @@
 
   <article class="post-card">
     <a href="blog/do-i-overreact-to-chewing.html">
-      <img class="post-thumb" src="images/Umbrella.png" alt="Do I Overreact to Chewing?" loading="lazy" decoding="async">
+      <img class="post-thumb" src="images/silverware.png" alt="Do I Overreact to Chewing?" loading="lazy" decoding="async">
       <p class="post-date">April 25, 2026</p>
       <h2 class="post-title">Do I Overreact to Chewing?</h2>
       <p class="post-excerpt">The rage and panic you feel about chewing isn't really about the chewing. Here's what your nervous system is actually responding to.</p>
@@ -252,36 +252,37 @@
 
   <article class="post-card">
     <a href="blog/why-coping-strategies-dont-change-misophonia.html">
-      <img class="post-thumb" src="images/Sand Dollar.png" alt="Why Coping Strategies Don't Change Misophonia — And What Actually Does" loading="lazy" decoding="async">
+      <img class="post-thumb" src="images/shell.png" alt="Why Coping Strategies Don't Change Misophonia, and What Actually Does" loading="lazy" decoding="async">
       <p class="post-date">April 19, 2026</p>
-      <h2 class="post-title">Why Coping Strategies Don't Change Misophonia — And What Actually Does</h2>
-      <p class="post-excerpt">Earplugs. White noise. Breathing through it. None of it changes the pattern. Here's what's actually happening — and what does.</p>
+      <h2 class="post-title">Why Coping Strategies Don't Change Misophonia, and What Actually Does</h2>
+      <p class="post-excerpt">Earplugs. White noise. Breathing through it. None of it changes the pattern. Here's what's actually happening, and what does.</p>
       <span class="read-more">Read more →</span>
     </a>
   </article>
 
   <article class="post-card">
     <a href="blog/misophonia-and-relationships.html">
-      <img class="post-thumb" src="images/Starfish.png" alt="Misophonia and Relationships: Why the People You Love Trigger You Most" loading="lazy" decoding="async">
+      <img class="post-thumb" src="images/chairs-umbrella.png" alt="Misophonia and Relationships: Why the People You Love Trigger You Most" loading="lazy" decoding="async">
       <p class="post-date">April 13, 2026</p>
       <h2 class="post-title">Misophonia and Relationships: Why the People You Love Trigger You Most</h2>
-      <p class="post-excerpt">The nervous system monitors the people it needs most — and that's why your partner's chewing is so much worse than a stranger's.</p>
+      <p class="post-excerpt">The nervous system monitors the people it needs most, and that's why your partner's chewing is so much worse than a stranger's.</p>
       <span class="read-more">Read more →</span>
     </a>
   </article>
 
   <article class="post-card">
     <a href="blog/why-does-misophonia-feel-so-out-of-control.html">
-      <img class="post-thumb" src="images/Stand.png" alt="Why Does Misophonia Feel So Out Of Control?" loading="lazy" decoding="async">
+      <img class="post-thumb" src="images/wave-big.png" alt="Why Does Misophonia Feel So Out Of Control?" loading="lazy" decoding="async">
       <p class="post-date">March 18, 2026</p>
       <h2 class="post-title">Why Does Misophonia Feel So Out Of Control?</h2>
-      <p class="post-excerpt">The sound itself is almost never the original source of threat. Here's what your nervous system actually learned — and why the reaction runs faster than control.</p>
+      <p class="post-excerpt">The sound itself is almost never the original source of threat. Here's what your nervous system actually learned, and why the reaction runs faster than control.</p>
       <span class="read-more">Read more →</span>
     </a>
   </article>
     <!-- POSTS:END -->
 </div>
 
+<img src="images/squiggle-line.png" class="squiggle-footer" aria-hidden="true" alt="" loading="lazy" decoding="async">
 <footer>
   <div class="footer-links">
     <a href="about.html">About</a>
@@ -298,25 +299,7 @@
 </footer>
 
 
-<script>
-  (function() {
-    var page = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.nav-links a').forEach(function(a) {
-      if (a.getAttribute('href') === page) a.classList.add('active');
-    });
-  })();
-</script>
-<script>
-  (function() {
-    var toggle = document.querySelector('.nav-toggle');
-    var nav = document.querySelector('nav');
-    if (!toggle || !nav) return;
-    toggle.addEventListener('click', function() { nav.classList.toggle('open'); });
-    document.querySelectorAll('.nav-links a').forEach(function(a) {
-      a.addEventListener('click', function() { nav.classList.remove('open'); });
-    });
-  })();
-</script>
+<script src="js/site.js" defer></script>
 
 </body>
 </html>

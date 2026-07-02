@@ -2,8 +2,8 @@
 title: "Why Does The Sound of Breathing Bother Me?"
 date: "2026-05-05"
 dateDisplay: "May 5, 2026"
-description: "If the sound of someone breathing drives you crazy, you're not too sensitive and you're not alone. Here's the real neurological reason — and what actually helps."
-heroImage: "Beach"
+description: "If the sound of someone breathing drives you crazy, you're not too sensitive and you're not alone. Here's the real neurological reason, and what actually helps."
+heroImage: "seagull"
 nextLabel: "Why Misophonia Feels Worse When You're Stressed"
 nextHref: "misophonia-worse-when-stressed.html"
 ---
@@ -42,7 +42,7 @@ Your nervous system doesn't track breathing sounds randomly. It tracks them beca
     
 Think about what breathing communicates. The rhythm, the depth, the quality of someone's breath tells you whether they are calm or anxious, sick or well, angry or at ease, asleep or about to speak. Research confirms that the spectrum of breathing patterns correlates to anxiety, depression, anger, stress, and other emotional states. Breathing isn't just breathing. It's data.
     
-For our ancestors living in close group proximity, this mattered enormously. Detecting a change in someone's breathing pattern could signal that something in the environment was wrong — maybe that a person nearby was sick, frightened, or preparing for conflict.
+For our ancestors living in close group proximity, this mattered enormously. Detecting a change in someone's breathing pattern could signal that something in the environment was wrong, maybe that a person nearby was sick, frightened, or preparing for conflict.
     
 Your nervous system inherited that vigilance. It was built to track the people closest to you through their breathing. And for some people, under certain conditions, that vigilance became amplified into what we now call misophonia.
     
@@ -100,7 +100,7 @@ You likely have misophonia. Misophonia is real, recognized, and significantly mo
     
 Your nervous system is not malfunctioning. It is responding to what it learned, with the vigilance it was built to have, in the direction of the people it is most attached to. That is coherent. It makes sense. It just also happens to be costing you enormously in daily life.
     
-And the pattern was learned. Which means, with the right support, it can be worked with. Not through willpower. Not through better earplugs. Through working at the level where the pattern actually lives — in the nervous system, in the body, in the learned association between this specific sound and this specific alarm.
+And the pattern was learned. Which means, with the right support, it can be worked with. Not through willpower. Not through better earplugs. Through working at the level where the pattern actually lives, in the nervous system, in the body, in the learned association between this specific sound and this specific alarm.
     
 Your nervous system has been working very hard. It doesn't have to keep working this hard forever.
 
@@ -108,7 +108,7 @@ Your nervous system has been working very hard. It doesn't have to keep working 
 
 **Is it normal to be bothered by breathing sounds?**
 
-Mild annoyance at certain breathing sounds is common, but an intense, automatic reaction that feels impossible to control is a sign of misophonia. The condition is more common than most people realize, affecting up to one in five people. If breathing sounds trigger rage, panic, or an overwhelming urge to escape — and if the reaction feels completely involuntary and disproportionate — you are likely experiencing misophonia.
+Mild annoyance at certain breathing sounds is common, but an intense, automatic reaction that feels impossible to control is a sign of misophonia. The condition is more common than most people realize, affecting up to one in five people. If breathing sounds trigger rage, panic, or an overwhelming urge to escape, and if the reaction feels completely involuntary and disproportionate, you are likely experiencing misophonia.
 
 **Can breathing sound sensitivity get better?**
 

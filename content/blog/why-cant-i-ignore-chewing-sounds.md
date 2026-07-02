@@ -3,7 +3,7 @@ title: "Why Can't I Ignore Chewing Sounds?"
 date: "2026-04-29"
 dateDisplay: "April 29, 2026"
 description: "If you can't ignore chewing sounds no matter how hard you try, there's a real neurological reason. Here's what's actually going on."
-heroImage: "Palm"
+heroImage: "fish-school"
 prevLabel: "Why Misophonia Feels Worse When Stressed"
 prevHref: "misophonia-worse-when-stressed.html"
 nextLabel: "Do I Overreact to Chewing?"
@@ -18,7 +18,7 @@ If anything, trying to ignore it makes it worse. The sound gets louder in your a
     
 And then comes the question you've probably asked yourself more times than you can count. Why can't I just tune this out like everyone else?
     
-The answer has nothing to do with willpower. Nothing to do with being too sensitive, too dramatic, or too difficult. It has everything to do with how your nervous system is working — and once you understand that, something genuinely starts to shift.
+The answer has nothing to do with willpower. Nothing to do with being too sensitive, too dramatic, or too difficult. It has everything to do with how your nervous system is working, and once you understand that, something genuinely starts to shift.
 
     
 
@@ -27,11 +27,11 @@ The answer has nothing to do with willpower. Nothing to do with being too sensit
     
 By the time you're aware of the chewing, your nervous system has already reacted.
     
-The part of your brain responsible for detecting and responding to threat — the amygdala — processes sensory information in milliseconds. It fires a response before your conscious mind has even registered what's happening. Before you've decided how to feel. Before you've had a chance to take a breath or remind yourself to calm down.
+The part of your brain responsible for detecting and responding to threat, the amygdala, processes sensory information in milliseconds. It fires a response before your conscious mind has even registered what's happening. Before you've decided how to feel. Before you've had a chance to take a breath or remind yourself to calm down.
     
 The reaction is subcortical. It's happening below the level of conscious thought, below the level where logic and willpower and breathing exercises live.
     
-This is why the advice people give you — just ignore it, just breathe, just focus on something else — doesn't work. By the time you receive that advice and try to act on it, your nervous system has already mobilized. You're not failing to control the reaction. You're trying to use tools that arrive too late to the process. It is not a willpower problem. It is a timing problem.
+This is why the advice people give you, just ignore it, just breathe, just focus on something else, doesn't work. By the time you receive that advice and try to act on it, your nervous system has already mobilized. You're not failing to control the reaction. You're trying to use tools that arrive too late to the process. It is not a willpower problem. It is a timing problem.
 
     
 
@@ -53,7 +53,7 @@ This condition is called misophonia. It affects roughly one in five people. It i
     
 When you direct your attention toward something while simultaneously trying not to react to it, you're essentially asking your brain to monitor the very thing you're trying to avoid. This heightens your awareness of the sound rather than reducing it.
     
-There's also an emotional layer to this. The effort of trying to suppress your reaction — the internal white-knuckling, the pretending you're fine while your body is mobilizing — is itself activating. You're holding two things at once: the trigger and the effort to contain your response to it. Both of those create activation in your nervous system.
+There's also an emotional layer to this. The effort of trying to suppress your reaction, the internal white-knuckling, the pretending you're fine while your body is mobilizing, is itself activating. You're holding two things at once: the trigger and the effort to contain your response to it. Both of those create activation in your nervous system.
     
 This is why ignoring the sounds isn't just ineffective. It often makes the day-to-day experience of misophonia harder. The suppression costs something. And it never touches the underlying pattern.
 
@@ -66,7 +66,7 @@ A stranger eating at the next table might be annoying. Your partner chewing acro
     
 Your nervous system monitors the people you're closest to most carefully. Attachment and threat detection use overlapping neural pathways. The people you love and need most are also the people your nervous system tracks most vigilantly, listening for cues about their emotional state, their mood, their wellbeing.
     
-This is why misophonia tends to be hardest at home, at the dinner table, in the car, in shared bedrooms — in the places where you're physically closest to the people you care about most. The intimacy of the relationship and the activation of the nervous system are directly connected.
+This is why misophonia tends to be hardest at home, at the dinner table, in the car, in shared bedrooms, in the places where you're physically closest to the people you care about most. The intimacy of the relationship and the activation of the nervous system are directly connected.
 
     
 
@@ -81,7 +81,7 @@ A few things can help you stay with yourself through the reaction rather than be
     
 **Come back to something regulated.** Feet flat on the floor. Back against the chair. Something you can see or touch in the room. You're giving your nervous system a regulated signal to orient toward alongside the activation.
     
-These tools help with the day-to-day experience. They don't change the underlying pattern. The pattern was learned. Which means, with the right support, it can be unlearned — not through better coping, but through working at the level where the pattern actually lives.
+These tools help with the day-to-day experience. They don't change the underlying pattern. The pattern was learned. Which means, with the right support, it can be unlearned, not through better coping, but through working at the level where the pattern actually lives.
 
 ---faq---
 

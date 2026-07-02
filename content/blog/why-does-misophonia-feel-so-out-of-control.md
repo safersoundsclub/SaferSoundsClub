@@ -2,8 +2,8 @@
 title: "Why Does Misophonia Feel So Out Of Control?"
 date: "2026-03-18"
 dateDisplay: "March 18, 2026"
-description: "The sound itself is almost never the original source of threat. Here's what your nervous system actually learned — and why the reaction runs faster than control."
-heroImage: "Stand"
+description: "The sound itself is almost never the original source of threat. Here's what your nervous system actually learned, and why the reaction runs faster than control."
+heroImage: "wave-big"
 prevLabel: "Misophonia and Relationships"
 prevHref: "misophonia-and-relationships.html"
 ---
@@ -25,7 +25,7 @@ Most people think of misophonia as a reaction. Sound happens, reaction follows. 
     
 Your nervous system doesn't wait for things to happen and then respond. It's constantly predicting. It runs a continuous background scan of your environment, comparing what it's sensing right now to a vast library of stored experience, and asking one question on a loop: *is this safe?*
     
-When it finds a match — or when a sound in the present moment resembles something that was paired with threat or overwhelm in the past — it doesn't wait for your conscious mind to weigh in. It mobilizes. Instantly. Subcortically. Before the prefrontal cortex, the thinking part of your brain, has even received the signal.
+When it finds a match, or when a sound in the present moment resembles something that was paired with threat or overwhelm in the past, it doesn't wait for your conscious mind to weigh in. It mobilizes. Instantly. Subcortically. Before the prefrontal cortex, the thinking part of your brain, has even received the signal.
     
 This is why misophonia feels so out of control. It *is* out of conscious control. The reaction is happening in parts of your nervous system that don't process language, don't respond to logic, and genuinely cannot be talked down in the moment. You cannot think your way out of an automatic nervous system response. Not because you're weak or undisciplined. Because that's not how the nervous system works.
 
@@ -38,7 +38,7 @@ Here's the piece that changes everything for most people who have misophonia.
     
 The sound itself is almost never the original source of threat. What your nervous system actually learned, somewhere and at some point, is that this type of sound is a *signal*. A reliable predictor that something overwhelming, unsafe, or uncontrollable was coming.
     
-Maybe it was a caregiver whose emotional state was unpredictable, and certain sounds meant the weather was about to change. Maybe it was an environment where you had very little control and sound was one of the things that made the lack of control feel unbearable. Maybe it was something more subtle — a relational pattern where your needs were secondary, your discomfort was minimized, and you learned to brace and endure rather than express or ask.
+Maybe it was a caregiver whose emotional state was unpredictable, and certain sounds meant the weather was about to change. Maybe it was an environment where you had very little control and sound was one of the things that made the lack of control feel unbearable. Maybe it was something more subtle, a relational pattern where your needs were secondary, your discomfort was minimized, and you learned to brace and endure rather than express or ask.
     
 The nervous system is not picky about the specifics. What it learns is: this sound comes before something hard. This sound means pay attention. This sound means brace. And then it braces. Every time. Faster than thought. Because that's exactly what it learned to do.
     
@@ -60,7 +60,7 @@ Your misophonia isn't just about sound sensitivity. It's about what certain rela
 ## The stuck mobilization: why the reaction has nowhere to go.
 
     
-When your nervous system perceives threat, it prepares a response. Fight or flight — a mobilization of energy, a preparation for action. In a misophonia moment, that mobilization is real and it is significant. Your body is genuinely preparing to do something: push, flee, scream, protect.
+When your nervous system perceives threat, it prepares a response. Fight or flight, a mobilization of energy, a preparation for action. In a misophonia moment, that mobilization is real and it is significant. Your body is genuinely preparing to do something: push, flee, scream, protect.
     
 But the social context almost never allows the completion of that response. You cannot scream at your partner across the dinner table. You cannot flip the chair and walk out of the meeting. You cannot do the thing your body is actually preparing to do. So the mobilization gets suppressed. The energy has nowhere to go. And it stays in the system, held in the tissue, waiting for the moment it can finally complete.
     

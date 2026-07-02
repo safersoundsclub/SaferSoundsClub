@@ -6,11 +6,11 @@
   <link rel="preload" href="fonts/MeowScript.woff2" as="font" type="font/woff2" crossorigin>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Safer Sounds Workshop | Misophonia Relief — $17</title>
-  <meta name="description" content="A 60-minute somatic workshop for people with misophonia. Finally understand what's driving your reaction — in your body, not just your mind. Guided experience, somatic practice, and personal worksheet. $17.">
+  <title>The Safer Sounds Workshop | Misophonia Relief | $17</title>
+  <meta name="description" content="A 60-minute somatic workshop for people with misophonia. Finally understand what's driving your reaction, in your body, not just your mind. Guided experience, somatic practice, and personal worksheet. $17.">
   <meta name="keywords" content="misophonia workshop, misophonia help, misophonia treatment, somatic therapy, sound sensitivity relief, misophonia self-help">
   <meta property="og:title" content="The Safer Sounds Workshop | Misophonia Relief">
-  <meta property="og:description" content="A 60-minute guided experience to finally understand your misophonia from the inside — and start finding your way back to your life.">
+  <meta property="og:description" content="A 60-minute guided experience to finally understand your misophonia from the inside, and start finding your way back to your life.">
   <meta property="og:site_name" content="The Safer Sounds Club">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://www.safersoundsclub.com/images/og-image.jpg">
@@ -18,7 +18,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://www.safersoundsclub.com/images/og-image.jpg">
   <meta name="robots" content="index, follow">
-
+  <link rel="stylesheet" href="css/site.css">
   <style>
     @font-face {
       font-family: 'CoreBandiFace';
@@ -38,7 +38,7 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root { --cream: #faf7f2; --ink: #1a1a1a; --sage: #7a9e8a; --blue-slate: #7a95a8; --max-w: 860px; }
     html { scroll-behavior: smooth; }
-    body { background: var(--cream); color: var(--ink); font-family: 'CoreBandiFace', cursive; font-size: 21px; line-height: 1.7; overflow-x: hidden; }
+    body { background: var(--cream); color: var(--ink); font-family: 'CoreBandiFace', cursive; font-size: 21px; line-height: 1.55;  }
 
     /* ── NAV ── */
     nav { position: sticky; top: 0; z-index: 100; background: var(--cream); border-bottom: 1px solid rgba(26,26,26,0.12); padding: 14px 40px; display: flex; align-items: center; justify-content: space-between; }
@@ -73,7 +73,7 @@
     .page-hero { text-align: center; padding: 72px 32px 56px; max-width: 840px; margin: 0 auto; }
     .page-hero .eyebrow { font-family: 'CoreBandiFace', cursive; font-size: 1.1rem; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.5; margin-bottom: 20px; }
     .page-hero h1 { font-family: 'MeowScript', cursive; font-weight: 400; font-size: clamp(2.8rem, 6vw, 4.8rem); line-height: 1.1; margin-bottom: 24px; }
-    .page-hero .subhead { font-size: 1.05rem; line-height: 1.85; max-width: 620px; margin: 0 auto 36px; }
+    .page-hero .subhead { font-size: 1.05rem; line-height: 1.65; max-width: 620px; margin: 0 auto 36px; }
 
     /* ── OPENING STORY ── */
     .story-section { padding: 56px 32px; max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 400px 1fr; column-gap: 56px; align-items: start; }
@@ -97,11 +97,10 @@
     .modules-section { padding: 56px 32px; max-width: var(--max-w); margin: 0 auto; }
     .modules-eyebrow { font-family: 'CoreBandiFace', cursive; font-size: 1.1rem; letter-spacing: 0.2em; text-transform: uppercase; text-align: center; opacity: 0.45; margin-bottom: 12px; }
     .modules-title { font-family: 'MeowScript', cursive; font-weight: 400; font-size: clamp(2rem, 3.5vw, 2.8rem); text-align: center; margin-bottom: 48px; }
-    .module-card { border: 1.5px solid rgba(122,158,138,0.3); border-radius: 2px; padding: 32px 40px; margin-bottom: 20px; position: relative; background: rgba(122,158,138,0.025); }
-    .module-card::before { content: ''; position: absolute; inset: 4px; border: 1px dashed rgba(26,26,26,0.08); border-radius: 2px; pointer-events: none; }
+    .module-card { background: transparent; border: 1.5px dashed rgba(26,26,26,0.35); border-radius: 2px; padding: 32px 40px; margin-bottom: 20px; }
     .module-num { font-family: 'CoreBandiFace', cursive; font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.4; margin-bottom: 6px; }
     .module-title { font-family: 'CoreBandiFace', cursive; font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
-    .module-body { font-size: 0.97rem; line-height: 1.8; }
+    .module-body { font-size: 0.97rem; line-height: 1.65; }
 
     /* ── MID CTA ── */
     .mid-cta { text-align: center; padding: 48px 32px; }
@@ -128,24 +127,33 @@
     /* ── PRICING ── */
     .pricing-section { padding: 64px 32px; text-align: center; max-width: 640px; margin: 0 auto; }
     .pricing-eyebrow { font-family: 'CoreBandiFace', cursive; font-size: 1.1rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.45; margin-bottom: 12px; }
-    .pricing-title { font-family: 'MeowScript', cursive; font-weight: 400; font-size: clamp(2.2rem, 4vw, 3.2rem); margin-bottom: 8px; }
+    .pricing-title { font-family: 'MeowScript', cursive; font-weight: 400; font-size: min(2.8rem, 4.3vw); white-space: nowrap; margin-bottom: 8px; }
+    @media (max-width: 600px) {
+      .pricing-title { white-space: normal; font-size: 2rem; }
+    }
     .pricing-price { font-family: 'CoreBandiFace', cursive; font-size: 2.4rem; font-weight: 700; margin-bottom: 8px; }
-    .pricing-tagline { font-size: 0.97rem; line-height: 1.8; opacity: 0.75; margin-bottom: 36px; }
-    .pricing-includes { text-align: left; border: 1.5px solid rgba(122,158,138,0.3); padding: 28px 32px; margin-bottom: 36px; background: rgba(122,158,138,0.04); }
+    .pricing-tagline { font-size: 0.97rem; line-height: 1.65; opacity: 0.75; margin-bottom: 36px; }
+    .pricing-includes { text-align: left; border: 1.5px dashed rgba(26,26,26,0.3); padding: 28px 32px; margin-bottom: 36px; background: transparent; }
     .pricing-includes h4 { font-family: 'CoreBandiFace', cursive; font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.5; margin-bottom: 16px; }
     .pricing-includes ul { list-style: none; }
     .pricing-includes li { font-size: 0.97rem; line-height: 1.7; padding: 6px 0; border-bottom: 1px dashed rgba(26,26,26,0.1); display: flex; align-items: baseline; gap: 10px; }
     .pricing-includes li:last-child { border-bottom: none; }
-    .pricing-includes li::before { content: '✓'; color: var(--sage); font-size: 0.85rem; flex-shrink: 0; }
+    .pricing-includes li::before {
+      content: '';
+      width: 1em; height: 1em;
+      flex-shrink: 0;
+      align-self: center;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M12 54 C20 60 30 71 37 84 C50 55 66 30 90 11' fill='none' stroke='%231a1a1a' stroke-width='9' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+    }
     .pricing-wave { max-width: 420px; width: 100%; margin: 0 auto 48px; display: block; mix-blend-mode: multiply; opacity: 0.88; }
 
     /* ── GUARANTEE ── */
-    .guarantee-section { padding: 48px 32px; text-align: center; background: rgba(122,149,168,0.05); border-top: 1.5px dashed rgba(122,149,168,0.2); width: 100%; }
+    .guarantee-section { padding: 48px 32px; text-align: center; border-top: 1.5px dashed rgba(26,26,26,0.2); width: 100%; }
     .guarantee-inner { max-width: 700px; margin: 0 auto; text-align: center; }
-    .guarantee-inner p { font-size: 0.97rem; line-height: 1.85; margin-bottom: 10px; }
+    .guarantee-inner p { font-size: 0.97rem; line-height: 1.65; margin-bottom: 10px; }
 
     /* ── FOOTER ── */
-    footer { text-align: center; padding: 32px 32px 48px; border-top: 1.5px solid rgba(26,26,26,0.12); }
+    footer { text-align: center; padding: 8px 32px 48px; }
     .footer-disclaimer { font-size: 0.75rem; font-family: 'CoreBandiFace', cursive; opacity: 0.5; margin-bottom: 24px; }
     .footer-links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-top: 16px; font-family: 'CoreBandiFace', cursive; font-size: 1.1rem; letter-spacing: 0.1em; }
     .footer-links a { text-decoration: none; color: var(--ink); opacity: 0.5; }
@@ -265,7 +273,7 @@
 
 <!-- ── PRICING ── -->
 <section class="pricing-section">
-  <img src="images/Wave.png" class="pricing-wave" alt="" aria-hidden="true" loading="lazy" decoding="async">
+  <img src="images/sailboat.png" alt="" aria-hidden="true" style="width:clamp(100px,13vw,160px);mix-blend-mode:multiply;opacity:0.85;margin:0 auto 32px;display:block;" loading="lazy" decoding="async">
   <p class="pricing-eyebrow">Ready to begin?</p>
   <h2 class="pricing-title">The Safer Sounds Workshop</h2>
   <p class="pricing-price">$17</p>
@@ -292,7 +300,7 @@
 <!-- ── GUARANTEE / REASSURANCE ── -->
 <section class="guarantee-section">
   <div style="text-align:center;margin-bottom:24px;">
-    <img src="images/Starfish.png" alt="" aria-hidden="true" style="width:clamp(68px,8vw,100px);mix-blend-mode:multiply;opacity:0.65;" loading="lazy" decoding="async">
+    <img src="images/shell.png" alt="" aria-hidden="true" style="width:clamp(72px,9vw,110px);mix-blend-mode:multiply;opacity:0.75;" loading="lazy" decoding="async">
   </div>
   <div class="guarantee-inner">
     <p class="caps-label" style="margin-bottom:16px;">A note before you go</p>
@@ -303,6 +311,7 @@
 </section>
 
 <!-- ── FOOTER ── -->
+<img src="images/squiggle-line.png" class="squiggle-footer" aria-hidden="true" alt="" loading="lazy" decoding="async">
 <footer>
   <div class="footer-links">
     <a href="about.html">About</a>
@@ -318,17 +327,7 @@
   <p class="footer-disclaimer">The Safer Sounds Club, LLC &nbsp;|&nbsp; The Safer Sounds Club is educational and is not a substitute for therapy.</p>
 </footer>
 
-<script>
-  (function() {
-    var toggle = document.querySelector('.nav-toggle');
-    var nav = document.querySelector('nav');
-    if (!toggle || !nav) return;
-    toggle.addEventListener('click', function() { nav.classList.toggle('open'); });
-    document.querySelectorAll('.nav-links a').forEach(function(a) {
-      a.addEventListener('click', function() { nav.classList.remove('open'); });
-    });
-  })();
-</script>
+<script src="js/site.js" defer></script>
 
 </body>
 </html>
