@@ -166,7 +166,7 @@
        Width capped by viewport height so the whole hero fits one screen. */
     .hero-title-arc {
       display: block;
-      width: min(100%, 148svh);
+      width: min(100%, 148vh);
       max-width: 100%;
       margin: 0 auto 8px;
       overflow: visible;
@@ -194,7 +194,7 @@
       justify-content: center;
       gap: 32px;
       max-width: 900px;
-      margin: clamp(-150px, calc(min(100vw, 148svh) * -0.118), -60px) auto 0;
+      margin: clamp(-150px, calc(min(100vw, 148vh) * -0.118), -60px) auto 0;
       padding: 0 32px;
       position: relative;
       z-index: 1;
@@ -202,8 +202,8 @@
     .hero-side { flex: 1; max-width: 260px; }
     .hero-side .caps-label { line-height: 1.6; font-size: clamp(0.9rem, 1.3vw, 1.15rem); }
     .hero-chair-img {
-      flex: 0 0 clamp(170px, min(23vw, 30svh), 320px);
-      width: clamp(170px, min(23vw, 30svh), 320px);
+      flex: 0 0 clamp(170px, min(23vw, 30vh), 320px);
+      width: clamp(170px, min(23vw, 30vh), 320px);
       overflow: hidden;
     }
 
@@ -570,31 +570,34 @@
       .problem-img-col { display: none; }
       .life-section { padding: 24px 20px 8px; }
       .bio-inner { grid-template-columns: 1fr; gap: 32px; }
-      .bio-frame { max-width: 260px; margin: 0 auto; }
-      .bio-body { text-align: center; }
+      .bio-frame { max-width: 280px; margin: 0 auto; }
+      .bio-body p { text-align: left; }
+      .bio-script-h3 { text-align: center; }
+      .bio-body > div { text-align: center; }
+      /* center the quiz CTA under the problem copy */
+      .problem-text > div { text-align: center; }
       .btn-painted { padding: 18px 40px; }
       .how-section { padding: 24px 20px 40px; }
     }
     @media (max-width: 600px) {
-      .hero { padding-top: 12px; }
-      .welcome-badge { margin-bottom: 6px; }
-      .hero-title-mobile { font-size: clamp(1.8rem, min(12vw, 7.5svh), 4.5rem); margin: 6px 0 2px; }
-      .hero-chair-row { flex-direction: column; gap: 4px; align-items: center; margin: 8px auto 0; }
-      .hero-side { text-align: center; flex: none; width: 100%; max-width: 320px; }
-      .hero-chair-img { flex: none; width: min(60%, 26svh); max-width: 240px; margin: 0 auto; display: block; }
-      .tagline-section { padding: 10px 24px 10px; }
-      .tagline-script { margin-bottom: 12px; }
+      .hero { padding-top: 14px; }
+      .welcome-badge { margin-bottom: 4px; }
+      /* one-line title, fixed sizing — nothing depends on viewport height,
+         so nothing resizes when the mobile browser toolbar collapses */
+      .hero-title-mobile { font-size: clamp(1.9rem, 10.2vw, 2.6rem); margin: 8px 0 4px; }
+      .hero-chair-row { flex-direction: column; gap: 0; align-items: center; margin: 8px auto 0; }
+      /* chair first, both labels grouped tightly beneath it */
+      .hero-chair-img { order: 1; flex: none; width: min(56%, 210px); margin: 0 auto 10px; display: block; }
+      .hero-side { text-align: center; flex: none; width: 100%; max-width: 340px; }
+      .hero-side:first-child { order: 2; }
+      .hero-side:last-child { order: 3; }
+      .hero-side .caps-label br { display: none; }
+      .hero-side .caps-label { font-size: 0.9rem; letter-spacing: 0.08em !important; line-height: 2 !important; }
+      .tagline-section { padding: 18px 24px 10px; }
+      .tagline-caps { font-size: 0.95rem; }
+      .tagline-script { font-size: 1.9rem; margin-bottom: 14px; }
       footer { padding: 8px 16px 40px; }
       .footer-links { gap: 12px; font-size: 0.9rem; }
-    }
-    /* short phones (e.g. iPhone SE): compress hero so the full first view fits */
-    @media (max-width: 600px) and (max-height: 700px) {
-      .hero-title-mobile { font-size: min(11vw, 6.5svh); }
-      .hero-chair-img { width: min(55%, 21svh); }
-      .hero-side .caps-label { font-size: 0.85rem; line-height: 1.4 !important; }
-      .welcome-badge { font-size: 0.9rem; }
-      .tagline-caps { font-size: 0.9rem; margin-bottom: 8px; }
-      .tagline-script { font-size: 1.7rem; margin-bottom: 10px; }
     }
     @media (max-width: 480px) {
       nav { padding: 12px 16px; }
@@ -712,13 +715,13 @@
   <h1 class="hero-title-mobile" aria-hidden="true">the Safer Sounds Club</h1>
   <div class="hero-chair-row">
     <div class="hero-side" style="text-align:center;">
-      <p class="caps-label" style="letter-spacing:-0.025em;">PEACE IN<br>YOUR BODY</p>
+      <p class="caps-label" style="letter-spacing:-0.025em;">PEACE IN <br>YOUR BODY</p>
     </div>
     <div class="hero-chair-img">
       <img src="images/Chair.png" alt="Beach chair" style="width:100%;display:block;mix-blend-mode:multiply;" fetchpriority="high" decoding="async">
     </div>
     <div class="hero-side">
-      <p class="caps-label" style="letter-spacing:-0.025em;">AT HOME<br>IN YOUR LIFE</p>
+      <p class="caps-label" style="letter-spacing:-0.025em;">AT HOME <br>IN YOUR LIFE</p>
     </div>
   </div>
 </section>
