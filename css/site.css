@@ -54,6 +54,17 @@ h1, h2, h3, .subhead, .page-hero p, .pricing-tagline {
   aspect-ratio: 4 / 5;
   object-fit: cover;
 }
+/* mobile: swap the text site title for the chair mark */
+@media (max-width: 600px) {
+  .nav-brand {
+    font-size: 0 !important;
+    width: 48px;
+    height: 42px;
+    flex-shrink: 0;
+    background: url('../images/Chair.png') center / contain no-repeat;
+  }
+}
+
 /* small screens: same corner-flourish frame as desktop + centered buttons */
 @media (max-width: 820px) {
   a.btn-painted,

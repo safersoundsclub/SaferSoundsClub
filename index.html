@@ -351,7 +351,7 @@
     .narrative-card {
       background: transparent;
       border: 1.5px dashed rgba(26,26,26,0.35);
-      border-radius: 2px;
+      border-radius: 16px;
       padding: 24px 28px;
       font-size: 0.95rem;
       line-height: 1.65;
@@ -406,7 +406,7 @@
       position: relative;
       padding: 32px 24px 28px;
       border: 1.5px dashed rgba(26,26,26,0.3);
-      border-radius: 2px;
+      border-radius: 16px;
       background: transparent;
       display: flex;
       flex-direction: column;
@@ -585,17 +585,23 @@
       /* one-line title, fixed sizing — nothing depends on viewport height,
          so nothing resizes when the mobile browser toolbar collapses */
       .hero-title-mobile { font-size: clamp(1.9rem, 10.2vw, 2.6rem); margin: 8px 0 4px; }
-      .hero-chair-row { flex-direction: column; gap: 0; align-items: center; margin: 8px auto 0; }
-      /* chair first, both labels grouped tightly beneath it */
-      .hero-chair-img { order: 1; flex: none; width: min(56%, 210px); margin: 0 auto 10px; display: block; }
-      .hero-side { text-align: center; flex: none; width: 100%; max-width: 340px; }
-      .hero-side:first-child { order: 2; }
-      .hero-side:last-child { order: 3; }
-      .hero-side .caps-label br { display: none; }
-      .hero-side .caps-label { font-size: 0.9rem; letter-spacing: 0.08em !important; line-height: 2 !important; }
-      .tagline-section { padding: 18px 24px 10px; }
+      /* hero fills the first view so the dots divider is the last thing
+         visible on load (height frozen at load; nothing reflows on scroll) */
+      .hero {
+        min-height: calc(100vh - 264px);
+        min-height: calc(var(--ssc-vh, 100svh) - 264px);
+        display: flex;
+        flex-direction: column;
+      }
+      /* labels flanking the chair, desktop-style */
+      .hero-chair-row { flex-direction: row; gap: 6px; align-items: center; justify-content: center; margin: auto; padding: 0 12px; }
+      .tagline-section { padding: 12px 24px 14px; }
+      .tagline-script { margin-bottom: 18px; }
+      .hero-chair-img { flex: 0 0 44%; width: 44%; max-width: 190px; margin: 0; display: block; }
+      .hero-side { text-align: center; flex: 1; min-width: 0; max-width: none; }
+      .hero-side .caps-label { font-size: 0.72rem; letter-spacing: 0.04em !important; line-height: 1.7 !important; }
       .tagline-caps { font-size: 0.95rem; }
-      .tagline-script { font-size: 1.9rem; margin-bottom: 14px; }
+      .tagline-script { font-size: 1.9rem; }
       footer { padding: 8px 16px 40px; }
       .footer-links { gap: 12px; font-size: 0.9rem; }
     }
@@ -669,6 +675,13 @@
     }
   ]
 }
+</script>
+<script>
+  (function () {
+    var set = function () { document.documentElement.style.setProperty('--ssc-vh', window.innerHeight + 'px'); };
+    set();
+    window.addEventListener('orientationchange', function () { setTimeout(set, 350); });
+  })();
 </script>
 </head>
 <body>
