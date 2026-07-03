@@ -54,10 +54,8 @@ h1, h2, h3, .subhead, .page-hero p, .pricing-tagline {
   aspect-ratio: 4 / 5;
   object-fit: cover;
 }
-/* small screens: simple portrait outline + centered buttons */
+/* small screens: same corner-flourish frame as desktop + centered buttons */
 @media (max-width: 820px) {
-  .sketch-frame { padding: 6.5%; }
-  .sketch-frame::after { background-image: url('../images/frame-small.png'); }
   a.btn-painted,
   button.btn-painted {
     display: table;
