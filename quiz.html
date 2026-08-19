@@ -536,9 +536,9 @@ function renderQuestion(index) {
 }
 
 // ── SHOW RESULT ──────────────────────────────────────────────────────
-function showResult() {
+function showResult(forcedKey) {
   document.body.classList.remove('quiz-active');
-  const key = computeResult();
+  const key = forcedKey || computeResult();
   const r = RESULTS[key];
   document.getElementById('result-type').textContent = r.type;
   document.getElementById('result-subtitle').textContent = r.subtitle;
@@ -548,6 +548,16 @@ function showResult() {
   document.getElementById('result-next-copy').textContent = r.next;
   showStep('result');
 }
+
+// ── PREVIEW MODE — jump straight to any result page ─────────────────
+// Add ?result=A (or B, C, D, E) to the quiz URL to view that result page
+// directly, without taking the quiz and without adding anyone to Kit.
+(function () {
+  var p = new URLSearchParams(window.location.search).get('result');
+  if (p && RESULTS[p.toUpperCase()]) {
+    document.addEventListener('DOMContentLoaded', function () { showResult(p.toUpperCase()); });
+  }
+})();
 
 // ── EMAIL FORM — Kit V3 tag subscribe ───────────────────────────────
 var KIT_API_KEY   = '-m5hdWkZBggKWuX0bFzsaQ';   // Megan's public API key — safe to expose
