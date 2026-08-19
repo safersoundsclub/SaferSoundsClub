@@ -553,10 +553,10 @@ function showResult(forcedKey) {
 // Add ?result=A (or B, C, D, E) to the quiz URL to view that result page
 // directly, without taking the quiz and without adding anyone to Kit.
 (function () {
+  // accept ?result=A or #result=A — the hash survives www/non-www redirects
   var p = new URLSearchParams(window.location.search).get('result');
-  if (p && RESULTS[p.toUpperCase()]) {
-    document.addEventListener('DOMContentLoaded', function () { showResult(p.toUpperCase()); });
-  }
+  if (!p) { var h = window.location.hash.match(/result=([A-Ea-e])/); if (h) p = h[1]; }
+  if (p && RESULTS[p.toUpperCase()]) { showResult(p.toUpperCase()); }
 })();
 
 // ── EMAIL FORM — Kit V3 tag subscribe ───────────────────────────────
