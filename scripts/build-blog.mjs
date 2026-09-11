@@ -149,11 +149,11 @@ function renderPost(slug, data, bodyHtml, faqItems, prevPost, nextPost) {
     "publisher": {
       "@type": "Organization",
       "name": "The Safer Sounds Club",
-      "url": "https://safersoundsclub.com",
-      "logo": {"@type": "ImageObject", "url": "https://safersoundsclub.com/images/favicon.png"}
+      "url": "https://www.safersoundsclub.com",
+      "logo": {"@type": "ImageObject", "url": "https://www.safersoundsclub.com/images/favicon.png"}
     },
-    "image": heroImgSrc.startsWith("../") ? `https://safersoundsclub.com/${heroImgSrc.slice(3)}` : `https://safersoundsclub.com/${heroImgSrc}`,
-    "mainEntityOfPage": {"@type": "WebPage", "@id": `https://safersoundsclub.com/blog/${slug}.html`}
+    "image": heroImgSrc.startsWith("../") ? `https://www.safersoundsclub.com/${heroImgSrc.slice(3)}` : `https://www.safersoundsclub.com/${heroImgSrc}`,
+    "mainEntityOfPage": {"@type": "WebPage", "@id": `https://www.safersoundsclub.com/blog/${slug}.html`}
   });
 
   return `<!DOCTYPE html>
@@ -167,7 +167,8 @@ function renderPost(slug, data, bodyHtml, faqItems, prevPost, nextPost) {
   <meta property="og:description" content="${description}">
   <meta property="og:type" content="article">
   <meta property="og:image" content="https://www.safersoundsclub.com/images/og-image.jpg">
-  <meta property="og:url" content="https://safersoundsclub.com/blog/${slug}">
+  <meta property="og:url" content="https://www.safersoundsclub.com/blog/${slug}">
+  <link rel="canonical" href="https://www.safersoundsclub.com/blog/${slug}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://www.safersoundsclub.com/images/og-image.jpg">
   <script type="application/ld+json">${articleSchema}</script>
