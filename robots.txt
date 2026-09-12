@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /emailjs-template.html
 
 Sitemap: https://www.safersoundsclub.com/sitemap.xml
