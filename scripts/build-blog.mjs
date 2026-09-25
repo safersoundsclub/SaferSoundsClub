@@ -17,6 +17,12 @@ const CONTENT_DIR = path.join(ROOT, "content", "blog");
 const BLOG_DIR = path.join(ROOT, "blog");
 const BLOG_INDEX = path.join(ROOT, "blog.html");
 
+const SHORT_TITLES = {
+  "misophonia-and-relationships": "Misophonia and Relationships: Why Loved Ones Trigger Most",
+  "misophonia-worse-when-stressed": "Why Misophonia Feels Worse When You're Tired or Stressed",
+  "why-coping-strategies-dont-change-misophonia": "Why Coping Strategies Don't Change Misophonia",
+};
+
 // ── Hero image src resolution ─────────────────────────────────────────────────
 // Legacy format:  "Umbrella"          → ../images/Umbrella.png
 // Tina upload:    "/images/photo.jpg" → ../images/photo.jpg
@@ -128,8 +134,8 @@ function renderPost(slug, data, bodyHtml, faqItems, prevPost, nextPost) {
       : "";
 
   const navLinks = [];
-  if (prevPost) navLinks.push(`<a href="${prevPost.slug}.html">← ${prevPost.title}</a>`);
-  if (nextPost) navLinks.push(`<a href="${nextPost.slug}.html">Next: ${nextPost.title} →</a>`);
+  if (prevPost) navLinks.push(`<a href="/blog/${prevPost.slug}">← ${prevPost.title}</a>`);
+  if (nextPost) navLinks.push(`<a href="/blog/${nextPost.slug}">Next: ${nextPost.title} →</a>`);
 
   const postNavHtml =
     navLinks.length > 0
@@ -138,6 +144,13 @@ function renderPost(slug, data, bodyHtml, faqItems, prevPost, nextPost) {
     ${navLinks.join("\n    ")}
   </div>`
       : "";
+
+  // Search results cut titles near 60 characters. Long post titles get a short
+  // version here (kept out of the Tina schema on purpose), and the brand is added
+  // only if it still fits.
+  const seoTitle = SHORT_TITLES[slug] || title;
+  const branded = `${seoTitle} | The Safer Sounds Club`;
+  const pageTitle = branded.length <= 60 ? branded : seoTitle;
 
   const articleSchema = JSON.stringify({
     "@context": "https://schema.org",
@@ -153,7 +166,7 @@ function renderPost(slug, data, bodyHtml, faqItems, prevPost, nextPost) {
       "logo": {"@type": "ImageObject", "url": "https://www.safersoundsclub.com/images/favicon.png"}
     },
     "image": heroImgSrc.startsWith("../") ? `https://www.safersoundsclub.com/${heroImgSrc.slice(3)}` : `https://www.safersoundsclub.com/${heroImgSrc}`,
-    "mainEntityOfPage": {"@type": "WebPage", "@id": `https://www.safersoundsclub.com/blog/${slug}.html`}
+    "mainEntityOfPage": {"@type": "WebPage", "@id": `https://www.safersoundsclub.com/blog/${slug}`}
   });
 
   return `<!DOCTYPE html>
@@ -161,9 +174,9 @@ function renderPost(slug, data, bodyHtml, faqItems, prevPost, nextPost) {
 <head>
   <link rel="icon" type="image/png" href="../images/favicon.png"><link rel="preload" href="../fonts/CoreBandiFace.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="../fonts/MeowScript.woff2" as="font" type="font/woff2" crossorigin>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${title} — The Safer Sounds Club</title>
+  <title>${pageTitle}</title>
   <meta name="description" content="${description}">
-  <meta property="og:title" content="${title} — The Safer Sounds Club">
+  <meta property="og:title" content="${pageTitle}">
   <meta property="og:description" content="${description}">
   <meta property="og:type" content="article">
   <meta property="og:image" content="https://www.safersoundsclub.com/images/og-image.jpg">
@@ -177,8 +190,8 @@ function renderPost(slug, data, bodyHtml, faqItems, prevPost, nextPost) {
 </head>
 <body>
 <nav>
-  <a href="../index.html" class="nav-brand">the Safer Sounds Club</a>
-  <ul class="nav-links"><li><a href="../about.html">About</a></li><li><a href="../products.html">Workshop</a></li><li><a href="https://the-safer-sounds-club.kit.com/awayback" target="_blank" rel="noopener">Group</a></li><li><a href="../quiz.html">Quiz</a></li><li><a href="../faq.html">FAQ</a></li><li><a href="../blog.html" class="active">Blog</a></li><li><a href="../contact.html">Contact</a></li></ul>
+  <a href="/" class="nav-brand">the Safer Sounds Club</a>
+  <ul class="nav-links"><li><a href="/about">About</a></li><li><a href="/products">Workshop</a></li><li><a href="https://the-safer-sounds-club.kit.com/awayback" target="_blank" rel="noopener">Group</a></li><li><a href="/quiz">Quiz</a></li><li><a href="/faq">FAQ</a></li><li><a href="/blog" class="active">Blog</a></li><li><a href="/contact">Contact</a></li></ul>
 <button class="nav-toggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button></nav>
 <div style="width:100%;height:220px;overflow:hidden;border-bottom:1.5px dashed rgba(26,26,26,0.25);"><img class="post-hero" src="${heroImgSrc}" alt="" aria-hidden="true" loading="eager" decoding="async"></div>
 <div class="post-wrap">
@@ -190,13 +203,13 @@ ${bodyHtml}
 ${faqHtml}
   <div class="post-cta">
     <p>Wondering what's underneath your own misophonia? Take the free quiz to find out which emotion is driving your reactions, and get an affirmation written specifically for you.</p>
-    <a href="../quiz.html" class="btn-quiz"><span class="bg"></span><span class="label">Take the Quiz</span></a>
+    <a href="/quiz" class="btn-quiz"><span class="bg"></span><span class="label">Take the Quiz</span></a>
   </div>
 ${postNavHtml}
 </div>
 <img src="../images/squiggle-line.png" class="squiggle-footer" aria-hidden="true" alt="" loading="lazy" decoding="async">
 <footer>
-  <div class="footer-links"><a href="../about.html">About</a><a href="../products.html">Workshop</a><a href="https://the-safer-sounds-club.kit.com/awayback" target="_blank" rel="noopener">Group</a><a href="../quiz.html">Quiz</a><a href="../faq.html">FAQ</a><a href="../blog.html" class="active">Blog</a><a href="../contact.html">Contact</a></div>
+  <div class="footer-links"><a href="/about">About</a><a href="/products">Workshop</a><a href="https://the-safer-sounds-club.kit.com/awayback" target="_blank" rel="noopener">Group</a><a href="/quiz">Quiz</a><a href="/faq">FAQ</a><a href="/blog" class="active">Blog</a><a href="/contact">Contact</a></div>
   <div class="footer-links" style="margin-top:20px;margin-bottom:0;"><a href="https://the-safer-sounds-club.kit.com/0bb51426e7" target="_blank" style="font-family:'CoreBandiFace',cursive;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--sage);text-decoration:none;opacity:.85;">Join the email list →</a></div>
   <p class="post-meta" style="text-align:center;margin-top:16px;margin-bottom:0;">The Safer Sounds Club, LLC &nbsp;|&nbsp; The Safer Sounds Club is educational and is not a substitute for therapy.</p>
 </footer>
@@ -245,7 +258,7 @@ const cardHtml = allPosts
     const { title = "", dateDisplay = "", heroImage = "", description = "", excerpt = "" } = data;
     return `
   <article class="post-card">
-    <a href="blog/${slug}.html">
+    <a href="/blog/${slug}">
       <img class="post-thumb" src="${heroSrcForIndex(heroImage)}" alt="${title}" loading="lazy" decoding="async">
       <p class="post-date">${dateDisplay}</p>
       <h2 class="post-title">${title}</h2>
