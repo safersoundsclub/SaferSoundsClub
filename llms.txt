@@ -4,20 +4,20 @@ A resource for people with misophonia, created by Megan Carlson — licensed the
 
 ## Pages
 
-- [Home](https://safersoundsclub.pages.dev/index.html): Introduction to The Safer Sounds Club and Megan's approach to misophonia.
-- [About](https://safersoundsclub.pages.dev/about.html): Megan Carlson's background, training, and personal experience with misophonia.
-- [Workshop](https://safersoundsclub.pages.dev/products.html): The Safer Sounds Workshop — a 60-minute guided somatic experience for misophonia.
-- [Free Quiz](https://safersoundsclub.pages.dev/quiz.html): A 2-minute quiz to identify your misophonia pattern and nervous system response type.
-- [FAQ](https://safersoundsclub.pages.dev/faq.html): Frequently asked questions about misophonia, the workshop, and Megan's approach.
-- [Blog](https://safersoundsclub.pages.dev/blog.html): Articles on misophonia — why it happens, how it affects relationships, and what can help.
-- [Contact](https://safersoundsclub.pages.dev/contact.html): Get in touch with Megan directly.
+- [Home](https://safersoundsclub.pages.dev/): Introduction to The Safer Sounds Club and Megan's approach to misophonia.
+- [About](https://safersoundsclub.pages.dev/about): Megan Carlson's background, training, and personal experience with misophonia.
+- [Workshop](https://safersoundsclub.pages.dev/products): The Safer Sounds Workshop — a 60-minute guided somatic experience for misophonia.
+- [Free Quiz](https://safersoundsclub.pages.dev/quiz): A 2-minute quiz to identify your misophonia pattern and nervous system response type.
+- [FAQ](https://safersoundsclub.pages.dev/faq): Frequently asked questions about misophonia, the workshop, and Megan's approach.
+- [Blog](https://safersoundsclub.pages.dev/blog): Articles on misophonia — why it happens, how it affects relationships, and what can help.
+- [Contact](https://safersoundsclub.pages.dev/contact): Get in touch with Megan directly.
 
 ## Blog Posts
 
-- [Do I Overreact to Chewing?](https://safersoundsclub.pages.dev/blog/do-i-overreact-to-chewing.html)
-- [Misophonia and Relationships](https://safersoundsclub.pages.dev/blog/misophonia-and-relationships.html)
-- [Why Is Misophonia Worse When Stressed?](https://safersoundsclub.pages.dev/blog/misophonia-worse-when-stressed.html)
-- [Why Can't I Ignore Chewing Sounds?](https://safersoundsclub.pages.dev/blog/why-cant-i-ignore-chewing-sounds.html)
-- [Why Coping Strategies Don't Change Misophonia](https://safersoundsclub.pages.dev/blog/why-coping-strategies-dont-change-misophonia.html)
-- [Why Does Misophonia Feel So Out of Control?](https://safersoundsclub.pages.dev/blog/why-does-misophonia-feel-so-out-of-control.html)
-- [Why Does the Sound of Breathing Bother Me?](https://safersoundsclub.pages.dev/blog/why-does-the-sound-of-breathing-bother-me.html)
+- [Do I Overreact to Chewing?](https://safersoundsclub.pages.dev/blog/do-i-overreact-to-chewing)
+- [Misophonia and Relationships](https://safersoundsclub.pages.dev/blog/misophonia-and-relationships)
+- [Why Is Misophonia Worse When Stressed?](https://safersoundsclub.pages.dev/blog/misophonia-worse-when-stressed)
+- [Why Can't I Ignore Chewing Sounds?](https://safersoundsclub.pages.dev/blog/why-cant-i-ignore-chewing-sounds)
+- [Why Coping Strategies Don't Change Misophonia](https://safersoundsclub.pages.dev/blog/why-coping-strategies-dont-change-misophonia)
+- [Why Does Misophonia Feel So Out of Control?](https://safersoundsclub.pages.dev/blog/why-does-misophonia-feel-so-out-of-control)
+- [Why Does the Sound of Breathing Bother Me?](https://safersoundsclub.pages.dev/blog/why-does-the-sound-of-breathing-bother-me)
